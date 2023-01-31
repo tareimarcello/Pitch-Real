@@ -7,8 +7,8 @@ import entity.club;
 
 /* Questa classe ha responsabilità di factory e di information expert per gli ogggetti definiti nella sezione attributi
  */
-public class createlogin {
-    private static createlogin instance = null;
+public class Createlogin {
+    private static Createlogin instance = null;
 
     public Logincontroller controller;
     public account acc;
@@ -27,9 +27,9 @@ public class createlogin {
         c=new club(ClubName,IdClub);
         return c;
     }
-    public static createlogin getInstance() {
-        if (createlogin.instance == null)
-            createlogin.instance = new createlogin();
+    public static Createlogin getInstance() {
+        if (Createlogin.instance == null)
+            Createlogin.instance = new Createlogin();
         return instance;
     }
 }

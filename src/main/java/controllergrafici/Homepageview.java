@@ -1,6 +1,6 @@
-package controllerGrafici;
+package controllergrafici;
 
-import bean.buygadgetbean;
+import bean.Buygadgetbean;
 import dao.clubDAO;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -15,7 +15,7 @@ import java.io.IOException;
 
 /*Questa classe rappresenta il controller grafico della HomepageView
  */
-public class homepageView {
+public class Homepageview {
     @FXML
     private Button loginButton;
     @FXML
@@ -25,7 +25,7 @@ public class homepageView {
     @FXML
     private TextField researchText;
     private static void pageLoader(String filename){            //Metodo per il caricamneto della pagina
-        FXMLLoader loader = new FXMLLoader(homepageView.class.getClassLoader().getResource(filename));
+        FXMLLoader loader = new FXMLLoader(Homepageview.class.getClassLoader().getResource(filename));
         Parent root = null;
         try {
             root = loader.load();           //caricamento della pagina del Login
@@ -40,26 +40,26 @@ public class homepageView {
     }
     @FXML
     public void loginButtonClick(ActionEvent e) {
-        homepageView.pageLoader("First-View/LoginView.fxml");                  //Invoca caricamento della pagina
+        Homepageview.pageLoader("First-View/LoginView.fxml");                  //Invoca caricamento della pagina
     }
     @FXML
     public void registerButtonClick(ActionEvent e){
-        homepageView.pageLoader("First-View/RegisterView.fxml");               //Invoca caricamento della pagina
+        Homepageview.pageLoader("First-View/RegisterView.fxml");               //Invoca caricamento della pagina
     }
     @FXML
     public void researchButtonClick(ActionEvent e){
         String clubName = researchText.getText();                     //Cattura del testo nella barra di ricerca
-        buygadgetbean bean =new buygadgetbean(clubName);             //Istanziazione del Bean
+        Buygadgetbean bean =new Buygadgetbean(clubName);             //Istanziazione del Bean
         clubDAO club=new clubDAO();
         entity.club researchClub =null;
         try {
             researchClub = club.CercaPerNome(bean);                           //INvocazione della DAO per tirare fuori dallo stato di persistenza il nome del club
         }catch (Exception ex) {                                            //Lancio l'eccezione in casoo non riesca a trovare niente con quel nome sul database
-            homepageView.pageLoader("HomepageError.fxml");          //Se non trovo niente el db devo comunicarlo all'utente
+            Homepageview.pageLoader("HomepageError.fxml");          //Se non trovo niente el db devo comunicarlo all'utente
         }
         if(researchClub !=null) {                                //Se il risultato fosse null allora già ho caricato un'altra pagina e non voglio caricarne
                                                             // una nuova mentre se non fosse null non entro nella clausola cach e devo caricare la pagina nuova
-            homepageView.pageLoader(clubName +".fxml");
+            Homepageview.pageLoader(clubName +".fxml");
         }
     }
 }

@@ -1,4 +1,4 @@
-package controllerGrafici;
+package controllergrafici;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -10,7 +10,7 @@ import javafx.stage.Stage;
 
 import java.io.IOException;
 
-public class cityhomeController {
+public class CityhomeController {
     private Button homeButton;
     @FXML
     public void onHomeButtonClick(ActionEvent e) throws IOException {

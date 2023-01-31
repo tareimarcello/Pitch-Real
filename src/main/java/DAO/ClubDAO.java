@@ -1,6 +1,6 @@
 package DAO;
 
-import Bean.BuyGadgetBean;
+import bean.BuyGadgetBean;
 import CREATE.CreateLogin;
 import DAO.queries.ClubQuery;
 import Entity.Club;

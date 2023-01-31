@@ -1,6 +1,6 @@
 package ControllerGrafici;
 
-import Bean.BuyGadgetBean;
+import bean.BuyGadgetBean;
 import DAO.ClubDAO;
 import Entity.Club;
 import javafx.event.ActionEvent;

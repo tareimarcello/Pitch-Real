@@ -9,6 +9,6 @@ public class buygadgetbean {
     public String getClubName(){
         return this.clubName;
     }
-    private void CheckInput(){
+    private void Checkinput(){
     }
 }

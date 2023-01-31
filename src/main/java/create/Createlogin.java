@@ -8,37 +8,37 @@ import entity.club;
 /* Questa classe ha responsabilità di factory e di information expert per gli ogggetti definiti nella sezione attributi
  */
 public class Createlogin {
-    private static Createlogin instance = null;
+    private static Createlogin instance;
 
-    public static Logincontroller controller=null;
-    public static account acc=null;
-    public static club c=null;
+    public static Logincontroller controller;
+    public static account acc;
+    public static club c;
 
     public Logincontroller createController() {
-        if(this.controller==null) {
             controller = new Logincontroller();
             return controller;
-        }
-        return controller;
     }
 
     public account createAccount() {
-        if(this.acc==null) {
-            acc = new account();
-            return acc;
-        }
+        acc = new account();
         return acc;
     }
     public club createClub(String ClubName, int IdClub){
-        if(this.c==null) {
             c = new club(ClubName, IdClub);
             return c;
-        }
-        return c;
     }
     public static Createlogin getInstance() {
         if (Createlogin.instance == null)
             Createlogin.instance = new Createlogin();
         return instance;
+    }
+    public Logincontroller getcontroller(){
+        return this.controller;
+    }
+    public account getaccount(){
+        return this.acc;
+    }
+    public club getclub(){
+        return this.c;
     }
 }

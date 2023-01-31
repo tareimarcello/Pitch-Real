@@ -1,7 +1,7 @@
 package create;
 
 
-import applicationcontroller.logincontroller;
+import applicationcontroller.Logincontroller;
 import entity.account;
 import entity.club;
 
@@ -10,12 +10,12 @@ import entity.club;
 public class createlogin {
     private static createlogin instance = null;
 
-    public logincontroller controller;
+    public Logincontroller controller;
     public account acc;
     public club c;
 
-    public logincontroller createController() {
-        controller=new logincontroller();
+    public Logincontroller createController() {
+        controller=new Logincontroller();
         return controller;
     }
 

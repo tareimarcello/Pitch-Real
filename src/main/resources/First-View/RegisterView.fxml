@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.shape.*?>
+<?import javafx.scene.layout.*?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="0.0" minWidth="0.0" prefHeight="407.0" prefWidth="599.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
+    <top>
+        <StackPane prefHeight="74.0" prefWidth="600.0" BorderPane.alignment="CENTER">
+           <children>
+               <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#47484a" height="75.0" stroke="BLACK" strokeType="INSIDE" width="603.0" />
+               <Text fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="PITCH" StackPane.alignment="CENTER">
+                   <StackPane.margin>
+                       <Insets left="10.0" />
+                   </StackPane.margin>
+                   <font>
+                       <Font size="48.0" />
+                   </font>
+               </Text>
+           </children>
+        </StackPane>
+    </top>
+    <center>
+        <StackPane prefHeight="161.0" prefWidth="450.0" BorderPane.alignment="CENTER">
+           <children>
+               <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#47484a" height="97.0" stroke="#47484a" strokeLineJoin="ROUND" strokeType="INSIDE" width="601.0" StackPane.alignment="BOTTOM_CENTER" />
+               <ImageView fitHeight="56.0" fitWidth="54.0" translateY="-48.0">
+                  <image>
+                      <Image url="@../ImmaginiUI/download.png" />
+                  </image>
+               </ImageView>
+               <ImageView fitHeight="56.0" fitWidth="94.0" translateX="135.0" translateY="-48.0">
+                  <image>
+                      <Image url="@../ImmaginiUI/Bayern-Munchen-Logo.png" />
+                  </image>
+               </ImageView>
+               <ImageView fitHeight="56.0" fitWidth="54.0" translateX="-135.0" translateY="-48.0">
+                  <image>
+                      <Image url="@../ImmaginiUI/logo.png" />
+                  </image>
+               </ImageView>
+               <Text fill="#fffdfd" strokeType="OUTSIDE" strokeWidth="0.0" text="Come vuoi registrarti?" wrappingWidth="243.6708984375" StackPane.alignment="BOTTOM_CENTER">
+                   <StackPane.margin>
+                       <Insets bottom="25.0" />
+                   </StackPane.margin>
+                   <font>
+                       <Font size="24.0" />
+                   </font>
+               </Text>
+           </children>
+        </StackPane>
+    </center>
+    <bottom>
+        <StackPane prefHeight="150.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+           <children>
+               <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#47484a" height="164.0" stroke="#47484a" strokeType="INSIDE" width="601.0" />
+               <Button mnemonicParsing="false" text="Club" translateX="-135.0" />
+               <Button mnemonicParsing="false" text="Fan" translateX="135.0" />
+           </children>
+        </StackPane>
+    </bottom>
+</BorderPane>

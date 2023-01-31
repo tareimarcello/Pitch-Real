@@ -1,7 +1,7 @@
 package dao;
 
-import bean.buyGadgetBean;
-import create.createLogin;
+import bean.buygadgetbean;
+import create.createlogin;
 import dao.queries.ClubQuery;
 import entity.club;
 
@@ -12,7 +12,7 @@ public class clubDAO {
     public static String PASSWD="";
     public static String DB_URL="";
     public static String DRIVER_CLASS_NAME="";                                                //Tutte queste sono le credenziali per accedere al database
-    public club CercaPerNome(buyGadgetBean Bean) throws Exception {
+    public club CercaPerNome(buygadgetbean Bean) throws Exception {
         Statement stm = null;                                                                    //Dichiarazione di statement e connessione
         Connection conn = null;
         club c=null;
@@ -28,7 +28,7 @@ public class clubDAO {
             rs.first();
             String nomeClub = rs.getString("Nome");
             int IDClub = rs.getInt("ID");                                                 //Estraggo i dati dalla tabella per nome della colonna
-            createLogin create = createLogin.getInstance();                                           //Utilizzo la classe Factory per creare un istanza di club
+            createlogin create = createlogin.getInstance();                                           //Utilizzo la classe Factory per creare un istanza di club
             c = create.CreateClub(nomeClub, IDClub);
             rs.close();                                             //Chiusura del result set
         } catch (ClassNotFoundException e) {

@@ -8,6 +8,6 @@ module pitch {
     opens main to javafx.fxml;
     exports controllerGrafici;
     opens controllerGrafici to javafx.fxml;
-    exports controllerApp;
-    opens controllerApp to javafx.fxml;
+    exports applicationcontroller;
+    opens applicationcontroller to javafx.fxml;
 }

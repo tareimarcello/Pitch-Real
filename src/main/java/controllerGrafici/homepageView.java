@@ -1,6 +1,6 @@
 package controllerGrafici;
 
-import bean.buyGadgetBean;
+import bean.buygadgetbean;
 import dao.clubDAO;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -49,7 +49,7 @@ public class homepageView {
     @FXML
     public void researchButtonClick(ActionEvent e){
         String clubName = researchText.getText();                     //Cattura del testo nella barra di ricerca
-        buyGadgetBean bean =new buyGadgetBean(clubName);             //Istanziazione del Bean
+        buygadgetbean bean =new buygadgetbean(clubName);             //Istanziazione del Bean
         clubDAO club=new clubDAO();
         entity.club researchClub =null;
         try {

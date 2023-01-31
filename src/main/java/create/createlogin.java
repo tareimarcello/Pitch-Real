@@ -1,21 +1,21 @@
 package create;
 
 
-import controllerApp.loginController;
+import applicationcontroller.logincontroller;
 import entity.account;
 import entity.club;
 
 /* Questa classe ha responsabilità di factory e di information expert per gli ogggetti definiti nella sezione attributi
  */
-public class createLogin {
-    private static createLogin instance = null;
+public class createlogin {
+    private static createlogin instance = null;
 
-    public loginController controller;
+    public logincontroller controller;
     public account acc;
     public club c;
 
-    public loginController createController() {
-        controller=new loginController();
+    public logincontroller createController() {
+        controller=new logincontroller();
         return controller;
     }
 
@@ -27,9 +27,9 @@ public class createLogin {
         c=new club(ClubName,IdClub);
         return c;
     }
-    public static createLogin getInstance() {
-        if (createLogin.instance == null)
-            createLogin.instance = new createLogin();
+    public static createlogin getInstance() {
+        if (createlogin.instance == null)
+            createlogin.instance = new createlogin();
         return instance;
     }
 }

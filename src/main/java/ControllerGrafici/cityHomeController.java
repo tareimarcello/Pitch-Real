@@ -10,7 +10,7 @@ import javafx.stage.Stage;
 
 import java.io.IOException;
 
-public class CityHomeController {
+public class cityHomeController {
     private Button HomeButton;
     @FXML
     public void OnHomeButtonClick(ActionEvent e) throws IOException {

@@ -6,23 +6,23 @@ import javafx.scene.control.Button;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.TextField;
 
-public class CityTicketShopController {
+public class cityTicketShopController {
     @FXML
-    private ComboBox<String> Sector;
+    private ComboBox<String> sector;
     @FXML
     private Button goOnButton;
     @FXML
     private Button goBackButton;
     @FXML
-    private TextField SectorNumber;
+    private TextField sectorNumber;
     @FXML
-    private Button HomeButton;
+    private Button homeButton;
     @FXML
-    private Button LogoutButton;
+    private Button logoutButton;
     @FXML
     private Button messageButton;
 
     public void initialize(){
-        Sector.setItems(FXCollections.observableArrayList("North Stand","East Stand","South Stand","The Collin Bell Stand"));
+        sector.setItems(FXCollections.observableArrayList("North Stand","East Stand","South Stand","The Collin Bell Stand"));
     }
 }

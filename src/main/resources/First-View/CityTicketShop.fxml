@@ -10,7 +10,7 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="830.0" prefWidth="799.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ControllerGrafici.CityTicketShopController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="830.0" prefWidth="799.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ControllerGrafici.cityTicketShopController">
     <children>
         <AnchorPane prefHeight="78.0" prefWidth="804.0" style="-fx-background-color: #47484a;">
             <children>
@@ -19,13 +19,13 @@
                         <Font size="48.0" />
                     </font>
                 </Text>
-            <Button fx:id="HomeButton" layoutX="735.0" layoutY="22.0" mnemonicParsing="false" prefHeight="37.0" prefWidth="37.0" />
+            <Button fx:id="homeButton" layoutX="735.0" layoutY="22.0" mnemonicParsing="false" prefHeight="37.0" prefWidth="37.0" />
             <ImageView fitHeight="30.0" fitWidth="30.0" layoutX="739.0" layoutY="23.0" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@../ImmaginiUI/icons8-casa-24.png" />
                </image>
             </ImageView>
-            <Button fx:id="LogoutButton" layoutX="736.0" layoutY="22.0" mnemonicParsing="false" prefHeight="37.0" prefWidth="37.0" translateX="-65.0" />
+            <Button fx:id="logoutButton" layoutX="736.0" layoutY="22.0" mnemonicParsing="false" prefHeight="37.0" prefWidth="37.0" translateX="-65.0" />
             <Button fx:id="messageButton" layoutX="671.0" layoutY="22.0" mnemonicParsing="false" prefHeight="37.0" prefWidth="37.0" translateX="-65.0" />
             <ImageView fitHeight="30.0" fitWidth="30.0" layoutX="675.0" layoutY="26.0" pickOnBounds="true" preserveRatio="true">
                <image>
@@ -63,7 +63,7 @@
                         <Font size="24.0" />
                      </font>
                   </Text>
-                  <ComboBox fx:id="Sector" layoutX="87.0" layoutY="594.0" prefWidth="150.0" promptText="Settore" />
+                  <ComboBox fx:id="sector" layoutX="87.0" layoutY="594.0" prefWidth="150.0" promptText="Settore" />
                   <Button layoutX="273.0" layoutY="594.0" mnemonicParsing="false" text="Avanti " />
                </children>
             </AnchorPane>

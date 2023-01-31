@@ -8,7 +8,7 @@
 <?import javafx.scene.shape.*?>
 <?import javafx.scene.layout.*?>
 
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="0.0" minWidth="0.0" prefHeight="407.0" prefWidth="599.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ControllerGrafici.HomepageView">
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="0.0" minWidth="0.0" prefHeight="407.0" prefWidth="599.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ControllerGrafici.homepageView">
     <top>
         <StackPane prefHeight="74.0" prefWidth="600.0" BorderPane.alignment="CENTER">
             <children>
@@ -58,13 +58,13 @@
         <StackPane prefHeight="150.0" prefWidth="200.0" BorderPane.alignment="CENTER">
             <children>
                 <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#47484a" height="164.0" stroke="#47484a" strokeType="INSIDE" width="601.0" />
-                <TextField fx:id="ResearchText" maxHeight="35.0" maxWidth="376.0" minHeight="0.0" minWidth="0.0" prefHeight="37.0" prefWidth="376.0" StackPane.alignment="TOP_CENTER">
+                <TextField fx:id="researchText" maxHeight="35.0" maxWidth="376.0" minHeight="0.0" minWidth="0.0" prefHeight="37.0" prefWidth="376.0" StackPane.alignment="TOP_CENTER">
                     <StackPane.margin>
                         <Insets />
                     </StackPane.margin>
                 </TextField>
-                <Button fx:id="RegisterButton" mnemonicParsing="false" onAction="#RegisterButtonClick" text="Registrati" translateX="135.0" translateY="20.0" />
-                <Button fx:id="LoginButton" mnemonicParsing="false" onAction="#LoginButtonClick" text="Login" translateX="-135.0" translateY="20.0" StackPane.alignment="CENTER" />
+                <Button fx:id="RegisterButton" mnemonicParsing="false" onAction="#registerButtonClick" text="Registrati" translateX="135.0" translateY="20.0" />
+                <Button fx:id="LoginButton" mnemonicParsing="false" onAction="#loginButtonClick" text="Login" translateX="-135.0" translateY="20.0" StackPane.alignment="CENTER" />
                 <Button fx:id="SearchButton" mnemonicParsing="false" prefHeight="37.0" prefWidth="37.0" translateX="-56.0" StackPane.alignment="TOP_RIGHT" />
                 <ImageView fitHeight="25.0" fitWidth="24.0" pickOnBounds="true" preserveRatio="true" translateX="-62.0" translateY="5.0" StackPane.alignment="TOP_RIGHT">
                     <image>

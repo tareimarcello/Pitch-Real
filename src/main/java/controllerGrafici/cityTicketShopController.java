@@ -1,4 +1,4 @@
-package ControllerGrafici;
+package controllerGrafici;
 
 import javafx.collections.FXCollections;
 import javafx.fxml.FXML;

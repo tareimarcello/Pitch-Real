@@ -1,4 +1,4 @@
-package ControllerGrafici;
+package controllerGrafici;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -11,9 +11,9 @@ import javafx.stage.Stage;
 import java.io.IOException;
 
 public class cityHomeController {
-    private Button HomeButton;
+    private Button homeButton;
     @FXML
-    public void OnHomeButtonClick(ActionEvent e) throws IOException {
+    public void onHomeButtonClick(ActionEvent e) throws IOException {
         FXMLLoader loader = new FXMLLoader(getClass().getResource("Homepage.fxml"));
         Parent root=loader.load();
         Stage stage = new Stage();

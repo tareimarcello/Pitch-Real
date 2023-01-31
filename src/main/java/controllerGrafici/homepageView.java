@@ -1,4 +1,4 @@
-package ControllerGrafici;
+package controllerGrafici;
 
 import bean.buyGadgetBean;
 import dao.clubDAO;
@@ -24,8 +24,8 @@ public class homepageView {
     private Button searchButton;
     @FXML
     private TextField researchText;
-    private static void pageLoader(String Filename){            //Metodo per il caricamneto della pagina
-        FXMLLoader loader = new FXMLLoader(homepageView.class.getClassLoader().getResource(Filename));
+    private static void pageLoader(String filename){            //Metodo per il caricamneto della pagina
+        FXMLLoader loader = new FXMLLoader(homepageView.class.getClassLoader().getResource(filename));
         Parent root = null;
         try {
             root = loader.load();           //caricamento della pagina del Login
@@ -49,11 +49,11 @@ public class homepageView {
     @FXML
     public void researchButtonClick(ActionEvent e){
         String clubName = researchText.getText();                     //Cattura del testo nella barra di ricerca
-        buyGadgetBean Bean=new buyGadgetBean(clubName);             //Istanziazione del Bean
+        buyGadgetBean bean =new buyGadgetBean(clubName);             //Istanziazione del Bean
         clubDAO club=new clubDAO();
         entity.club researchClub =null;
         try {
-            researchClub = club.CercaPerNome(Bean);                           //INvocazione della DAO per tirare fuori dallo stato di persistenza il nome del club
+            researchClub = club.CercaPerNome(bean);                           //INvocazione della DAO per tirare fuori dallo stato di persistenza il nome del club
         }catch (Exception ex) {                                            //Lancio l'eccezione in casoo non riesca a trovare niente con quel nome sul database
             homepageView.pageLoader("HomepageError.fxml");          //Se non trovo niente el db devo comunicarlo all'utente
         }

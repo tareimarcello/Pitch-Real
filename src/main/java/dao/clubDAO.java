@@ -29,7 +29,7 @@ public class clubDAO {
             String nomeClub = rs.getString("Nome");
             int IDClub = rs.getInt("ID");                                                 //Estraggo i dati dalla tabella per nome della colonna
             Createlogin create = Createlogin.getInstance();                                           //Utilizzo la classe Factory per creare un istanza di club
-            c = create.CreateClub(nomeClub, IDClub);
+            c = create.createClub(nomeClub, IDClub);
             rs.close();                                             //Chiusura del result set
         } catch (ClassNotFoundException e) {
             throw new RuntimeException(e);

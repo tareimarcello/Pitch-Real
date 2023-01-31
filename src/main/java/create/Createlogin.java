@@ -10,21 +10,30 @@ import entity.club;
 public class Createlogin {
     private static Createlogin instance = null;
 
-    public Logincontroller controller;
-    public account acc;
-    public club c;
+    public static Logincontroller controller=null;
+    public static account acc=null;
+    public static club c=null;
 
     public Logincontroller createController() {
-        controller=new Logincontroller();
+        if(this.controller==null) {
+            controller = new Logincontroller();
+            return controller;
+        }
         return controller;
     }
 
-    public account CreateAccount() {
-        acc=new account();
-        return  acc;
+    public account createAccount() {
+        if(this.acc==null) {
+            acc = new account();
+            return acc;
+        }
+        return acc;
     }
-    public club CreateClub(String ClubName, int IdClub){
-        c=new club(ClubName,IdClub);
+    public club createClub(String ClubName, int IdClub){
+        if(this.c==null) {
+            c = new club(ClubName, IdClub);
+            return c;
+        }
         return c;
     }
     public static Createlogin getInstance() {

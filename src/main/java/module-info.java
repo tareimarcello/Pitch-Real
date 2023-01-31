@@ -4,10 +4,10 @@ module pitch {
     requires java.sql;
 
 
-    exports Main;
-    opens Main to javafx.fxml;
+    exports main;
+    opens main to javafx.fxml;
     exports ControllerGrafici;
     opens ControllerGrafici to javafx.fxml;
-    exports ControllerApp;
-    opens ControllerApp to javafx.fxml;
+    exports controllerApp;
+    opens controllerApp to javafx.fxml;
 }

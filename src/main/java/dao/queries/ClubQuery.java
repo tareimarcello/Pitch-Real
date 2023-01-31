@@ -1,4 +1,4 @@
-package DAO.queries;
+package dao.queries;
 
 import java.sql.ResultSet;
 import java.sql.SQLException;

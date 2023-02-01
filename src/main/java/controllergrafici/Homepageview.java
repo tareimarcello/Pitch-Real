@@ -32,7 +32,6 @@ public class Homepageview {
             root = loader.load();           //caricamento della pagina del Login
         } catch (IOException exception) {
             System.exit(0);
-            /* Manca la roba per la gestione dell'errore*/
         }
         Stage stage = new Stage();
         stage.setScene(new Scene(root, 500, 500));
@@ -56,7 +55,7 @@ public class Homepageview {
         try {
             researchClub = club.cercaPerNome(bean);                           //INvocazione della DAO per tirare fuori dallo stato di persistenza il nome del club
         }catch (Exception ex) {                                            //Lancio l'eccezione in casoo non riesca a trovare niente con quel nome sul database
-            Homepageview.pageLoader("HomepageError.fxml");          //Se non trovo niente el db devo comunicarlo all'utente
+            Homepageview.pageLoader("First-View/HomepageError.fxml");          //Se non trovo niente el db devo comunicarlo all'utente
         }
         if(researchClub !=null) {                                //Se il risultato fosse null allora già ho caricato un'altra pagina e non voglio caricarne
                                                             // una nuova mentre se non fosse null non entro nella clausola cach e devo caricare la pagina nuova

@@ -8,7 +8,7 @@
 <?import javafx.scene.shape.*?>
 <?import javafx.scene.layout.*?>
 
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="0.0" minWidth="0.0" prefHeight="407.0" prefWidth="599.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="0.0" minWidth="0.0" prefHeight="407.0" prefWidth="599.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllergrafici.LoginView">
     <top>
         <StackPane prefHeight="74.0" prefWidth="600.0" BorderPane.alignment="CENTER">
            <children>
@@ -28,12 +28,12 @@
         <StackPane prefHeight="161.0" prefWidth="450.0" BorderPane.alignment="CENTER">
            <children>
                <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#47484a" height="97.0" stroke="#47484a" strokeLineJoin="ROUND" strokeType="INSIDE" width="601.0" StackPane.alignment="BOTTOM_CENTER" />
-               <ImageView fitHeight="54.0" fitWidth="55.0" translateY="-48.0">
+               <ImageView fitHeight="62.0" fitWidth="48.0" translateY="-48.0">
                   <image>
                       <Image url="@../ImmaginiUI/download.png" />
                   </image>
                </ImageView>
-               <ImageView fitHeight="56.0" fitWidth="79.0" translateX="135.0" translateY="-48.0">
+               <ImageView fitHeight="56.0" fitWidth="93.0" translateX="135.0" translateY="-48.0">
                   <image>
                       <Image url="@../ImmaginiUI/Bayern-Munchen-Logo.png" />
                   </image>
@@ -51,7 +51,7 @@
                        <Font size="18.0" />
                    </font>
                </Text>
-               <TextField maxHeight="20.0" maxWidth="376.0" minHeight="0.0" minWidth="0.0" prefHeight="35.0" prefWidth="376.0" translateY="-20.0" StackPane.alignment="BOTTOM_CENTER">
+               <TextField fx:id="emailText" maxHeight="20.0" maxWidth="376.0" minHeight="0.0" minWidth="0.0" prefHeight="35.0" prefWidth="376.0" translateY="-20.0" StackPane.alignment="BOTTOM_CENTER">
                    <StackPane.margin>
                        <Insets />
                    </StackPane.margin>
@@ -68,8 +68,8 @@
                        <Font size="18.0" />
                    </font>
                </Text>
-               <Button mnemonicParsing="false" prefHeight="31.0" prefWidth="57.0" text="Login" translateY="-42.0" StackPane.alignment="BOTTOM_CENTER" />
-               <PasswordField maxHeight="20.0" maxWidth="376.0" minHeight="0.0" minWidth="0.0" translateY="-30.0" />
+               <Button fx:id="loginButton" mnemonicParsing="false" onAction="#startLogin" prefHeight="31.0" prefWidth="57.0" text="Login" translateY="-42.0" StackPane.alignment="BOTTOM_CENTER" />
+               <PasswordField fx:id="passwdText" maxHeight="20.0" maxWidth="376.0" minHeight="0.0" minWidth="0.0" translateY="-30.0" />
            </children>
         </StackPane>
     </bottom>

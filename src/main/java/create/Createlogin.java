@@ -23,8 +23,8 @@ public class Createlogin {
         acc = new account();
         return acc;
     }
-    public club createClub(String ClubName, int IdClub){
-            c = new club(ClubName, IdClub);
+    public club createClub(String clubName, int idClub){
+            c = new club(clubName, idClub);
             return c;
     }
     public static Createlogin getInstance() {

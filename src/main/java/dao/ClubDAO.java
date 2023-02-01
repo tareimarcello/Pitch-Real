@@ -4,25 +4,26 @@ import bean.Buygadgetbean;
 import create.Createlogin;
 import dao.queries.ClubQuery;
 import entity.club;
+import exception.ClubNotFoundException;
 
 import java.sql.*;
 
-public class clubDAO {
-    public static String USER="";
-    public static String PASSWD="";
-    public static String DB_URL="";
-    public static String DRIVER_CLASS_NAME="";                                                //Tutte queste sono le credenziali per accedere al database
-    public club CercaPerNome(Buygadgetbean Bean) throws Exception {
+public class ClubDAO {
+    private static String user="";
+    private static String passwd="";
+    private static String db_url="";
+    private static String driver_class_name ="";                                                //Tutte queste sono le credenziali per accedere al database
+    public club cercaPerNome(Buygadgetbean bean) throws ClubNotFoundException {
         Statement stm = null;                                                                    //Dichiarazione di statement e connessione
         Connection conn = null;
         club c=null;
         try {
-            Class.forName(DRIVER_CLASS_NAME);                                                                 //Caricamento dinamico del driver mysql
-            conn = DriverManager.getConnection(USER, PASSWD, DB_URL);                                           //Richiesta di connesione al DB
+            Class.forName(driver_class_name);                                                                 //Caricamento dinamico del driver mysql
+            conn = DriverManager.getConnection(user, passwd, db_url);                                           //Richiesta di connesione al DB
             stm = conn.createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE, ResultSet.CONCUR_READ_ONLY);         //Creazione dello statement
-            ResultSet rs = ClubQuery.CercaSquadraPerNome(stm, Bean.getClubName());                            //Lancio della query con conseguente restituzione del result set
+            ResultSet rs = ClubQuery.CercaSquadraPerNome(stm, bean.getClubName());                            //Lancio della query con conseguente restituzione del result set
             if (!rs.first()) {                                                                                //Lancio l'eccezione nel caso in cui il Result Set risulti vuoto
-                Exception e = new Exception("Nessun Club corrisponde al nome:" + Bean.getClubName());
+                ClubNotFoundException e = new ClubNotFoundException("Nessun Club corrisponde al nome:" + bean.getClubName());
                 throw e;
             }
             rs.first();

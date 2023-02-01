@@ -1,5 +1,9 @@
 package applicationcontroller;
 
-public class Logincontroller {
+import bean.Loginbean;
 
+public class Logincontroller {
+    public void controllaCredenziali(Loginbean b){
+
+    }
 }

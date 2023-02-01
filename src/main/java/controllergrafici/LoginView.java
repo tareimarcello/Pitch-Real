@@ -1,6 +1,8 @@
 package controllergrafici;
 
+import applicationcontroller.Logincontroller;
 import bean.Loginbean;
+import create.Createlogin;
 import exception.InvalidDate;
 import interfacce.Credenziali;
 import javafx.fxml.FXML;
@@ -41,8 +43,14 @@ public class LoginView implements Credenziali {
             stage.setScene(new Scene(root, 500, 500));
             stage.setResizable(false);
             stage.show();
-            }
         }
+            if(credenzialiInput!=null) {
+                Createlogin create = Createlogin.getInstance();
+                Logincontroller controller = create.createController();
+                controller.controllaCredenziali(credenzialiInput);
+            }
+    }
+
 
     @Override
     public void catturaCredenziali() {

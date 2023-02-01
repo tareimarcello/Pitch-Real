@@ -70,7 +70,7 @@
                 </Text>
                 <Button fx:id="loginButton" mnemonicParsing="false" onAction="#startLogin" prefHeight="31.0" prefWidth="57.0" text="Login" translateY="-30.0" StackPane.alignment="BOTTOM_CENTER" />
                 <PasswordField fx:id="passwdText" maxHeight="20.0" maxWidth="376.0" minHeight="0.0" minWidth="0.0" translateY="-30.0" />
-            <Text fill="#f80505" strokeType="OUTSIDE" strokeWidth="0.0" text="Email o password errati, riprova" wrappingWidth="361.6708984375">
+            <Text fill="#f80505" strokeType="OUTSIDE" strokeWidth="0.0" text="Email o password vuoti, riprova" wrappingWidth="361.6708984375">
                <font>
                   <Font size="18.0" />
                </font>

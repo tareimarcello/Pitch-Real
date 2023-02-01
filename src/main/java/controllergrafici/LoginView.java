@@ -3,7 +3,9 @@ package controllergrafici;
 import applicationcontroller.Logincontroller;
 import bean.Loginbean;
 import create.Createlogin;
-import exception.InvalidDate;
+import exception.FormatErrorException;
+import exception.NullString;
+import exception.ShortPassException;
 import interfacce.Credenziali;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -30,28 +32,36 @@ public class LoginView implements Credenziali {
         Loginbean credenzialiInput=null;
         try {
             credenzialiInput=new Loginbean(credenziali.get(0),credenziali.get(1));
-        }catch (InvalidDate e){
+        }catch (NullString e){                                      //Eccezione che lancio in caso i campi email e password vengano lasciati vuoti
             credenzialiInput=null;
-            FXMLLoader loader = new FXMLLoader(LoginView.class.getClassLoader().getResource("First-View/LoginViewError.fxml"));
-            Parent root = null;
-            try {
-                root = loader.load();           //caricamento della pagina del Login
-            } catch (IOException exception) {
-                System.exit(0);           //SE non trovo la pagina chiudo l'applicazione
-            }
-            Stage stage = new Stage();
-            stage.setScene(new Scene(root, 500, 500));
-            stage.setResizable(false);
-            stage.show();
+            this.loginPageLoader("First-View/LoginViewNullString.fxml");
+        }catch(FormatErrorException e){
+            credenzialiInput=null;
+            this.loginPageLoader("First-View/LoginViewFormatError.fxml");
+        }catch (ShortPassException e){
+            credenzialiInput=null;
+            this.loginPageLoader("First-View/loginViewShortPass");
         }
-            if(credenzialiInput!=null) {
+        if(credenzialiInput!=null) {
                 Createlogin create = Createlogin.getInstance();
                 Logincontroller controller = create.createController();
                 controller.controllaCredenziali(credenzialiInput);
-            }
+        }
     }
 
-
+    private void loginPageLoader(String filename){
+        FXMLLoader loader = new FXMLLoader(LoginView.class.getClassLoader().getResource(filename));
+        Parent root = null;
+        try {
+            root = loader.load();           //caricamento della pagina del Login
+        } catch (IOException exception) {
+            System.exit(0);           //SE non trovo la pagina chiudo l'applicazione
+        }
+        Stage stage = new Stage();
+        stage.setScene(new Scene(root, 500, 500));
+        stage.setResizable(false);
+        stage.show();
+    }
     @Override
     public void catturaCredenziali() {
         credenziali=new ArrayList<String>();       //Creo una lista dove mettere le crdenziali da passare poi al bean

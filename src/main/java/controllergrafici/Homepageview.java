@@ -2,6 +2,7 @@ package controllergrafici;
 
 import bean.Buygadgetbean;
 import dao.ClubDAO;
+import entity.Club;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -51,7 +52,7 @@ public class Homepageview {
         String clubName = researchText.getText();                     //Cattura del testo nella barra di ricerca
         Buygadgetbean bean =new Buygadgetbean(clubName);             //Istanziazione del Bean
         ClubDAO club=new ClubDAO();
-        entity.club researchClub =null;
+        Club researchClub =null;
         try {
             researchClub = club.cercaPerNome(bean);                           //INvocazione della DAO per tirare fuori dallo stato di persistenza il nome del club
         }catch (Exception ex) {                                            //Lancio l'eccezione in casoo non riesca a trovare niente con quel nome sul database

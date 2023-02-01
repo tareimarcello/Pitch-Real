@@ -1,9 +1,9 @@
 package entity;
 
-public class club {
+public class Club {
     private String NomeClub;
     private int IDclub;
-    public club(String Nome, int Id){
+    public Club(String Nome, int Id){
         this.NomeClub=Nome;
         this.IDclub=Id;
     }

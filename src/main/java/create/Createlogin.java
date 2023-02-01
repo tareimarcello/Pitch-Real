@@ -2,8 +2,8 @@ package create;
 
 
 import applicationcontroller.Logincontroller;
-import entity.account;
-import entity.club;
+import entity.Account;
+import entity.Club;
 
 /* Questa classe ha responsabilità di factory e di information expert per gli ogggetti definiti nella sezione attributi
  */
@@ -11,20 +11,20 @@ public class Createlogin {
     private static Createlogin instance;
 
     private  Logincontroller controller;
-    private  account acc;
-    private  club c;
+    private Account acc;
+    private Club c;
 
     public Logincontroller createController() {
             controller = new Logincontroller();
             return controller;
     }
 
-    public account createAccount() {
-        acc = new account();
+    public Account createAccount() {
+        acc = new Account();
         return acc;
     }
-    public club createClub(String clubName, int idClub){
-            c = new club(clubName, idClub);
+    public Club createClub(String clubName, int idClub){
+            c = new Club(clubName, idClub);
             return c;
     }
     public static Createlogin getInstance() {
@@ -35,10 +35,10 @@ public class Createlogin {
     public Logincontroller getcontroller(){
         return this.controller;
     }
-    public account getaccount(){
+    public Account getaccount(){
         return this.acc;
     }
-    public club getclub(){
+    public Club getclub(){
         return this.c;
     }
 }

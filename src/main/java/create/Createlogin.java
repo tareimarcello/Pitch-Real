@@ -10,9 +10,9 @@ import entity.club;
 public class Createlogin {
     private static Createlogin instance;
 
-    public  Logincontroller controller;
-    public  account acc;
-    public  club c;
+    private  Logincontroller controller;
+    private  account acc;
+    private  club c;
 
     public Logincontroller createController() {
             controller = new Logincontroller();

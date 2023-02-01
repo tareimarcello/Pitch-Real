@@ -3,6 +3,7 @@ package controllergrafici;
 import applicationcontroller.Logincontroller;
 import bean.Loginbean;
 import create.Createlogin;
+import exception.CredentialException;
 import exception.FormatErrorException;
 import exception.NullString;
 import exception.ShortPassException;
@@ -40,12 +41,16 @@ public class LoginView implements Credenziali {
             this.loginPageLoader("First-View/LoginViewFormatError.fxml");
         }catch (ShortPassException e){
             credenzialiInput=null;
-            this.loginPageLoader("First-View/loginViewShortPass");
+            this.loginPageLoader("First-View/loginViewShortPass.fxml");
         }
         if(credenzialiInput!=null) {
                 Createlogin create = Createlogin.getInstance();
                 Logincontroller controller = create.createController();
-                controller.controllaCredenziali(credenzialiInput);
+                try {
+                    controller.controllaCredenziali(credenzialiInput);
+                }catch(CredentialException e){
+                    this.loginPageLoader("First-View/LoginViewCredError.fxml");
+                }
         }
     }
 

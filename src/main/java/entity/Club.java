@@ -1,16 +1,16 @@
 package entity;
 
 public class Club {
-    private String NomeClub;
-    private int IDclub;
-    public Club(String Nome, int Id){
-        this.NomeClub=Nome;
-        this.IDclub=Id;
+    private String nomeClub;
+    private int iDclub;
+    public Club(String nome, int id){
+        this.nomeClub = nome;
+        this.iDclub= id;
     }
     public String getName(){
-        return this.NomeClub;
+        return this.nomeClub;
     }
     public int getId(){
-        return this.IDclub;
+        return this.iDclub;
     }
 }

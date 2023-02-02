@@ -33,7 +33,7 @@ public class AccountDao {
             String nomeClub=rs.getString("NomeClub");
             int idClub=rs.getInt("Id");
             Createlogin create = Createlogin.getInstance();                                           //Utilizzo la classe Factory per creare un istanza di club
-            c=create.createClub(nomeClub,idClub);
+            c=create.createClub(nomeClub,idClub);                       //Creo anche un'istanza di club per realizzare l'associazione tra istanza di club e istanza di account
             create.createAccount(nome,passwd,email,type,c);
             rs.close();                                             //Chiusura del result set
         } catch (ClassNotFoundException e) {

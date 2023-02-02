@@ -9,11 +9,4 @@ public class ClubQuery {
         String sql = "SELECT * FROM Club where Nome = '" + nome + "';";
         return stmt.executeQuery(sql);
     }
-/*
-    public static ResultSet selectAlbumIds(Statement stmt) throws SQLException  {
-        String sql = "SELECT DISTINCT AlbumId FROM Album ;";
-        System.out.println(sql);
-        return stmt.executeQuery(sql);
-    }
- */
 }

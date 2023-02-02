@@ -10,7 +10,7 @@ import java.sql.*;
 
 public class ClubDAO {
     private static String user="";
-    private static String passwd="";
+    private static String dbpasswd="";
     private static String dburl ="";
     private static String driverclassname ="";                                                //Tutte queste sono le credenziali per accedere al database
     public Club cercaPerNome(Buygadgetbean bean) throws ClubNotFoundException {
@@ -19,7 +19,7 @@ public class ClubDAO {
         Club c=null;
         try {
             Class.forName(driverclassname);                                                                 //Caricamento dinamico del driver mysql
-            conn = DriverManager.getConnection(user, passwd, dburl);                                           //Richiesta di connesione al DB
+            conn = DriverManager.getConnection(user, dbpasswd, dburl);                                           //Richiesta di connesione al DB
             stm = conn.createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE, ResultSet.CONCUR_READ_ONLY);         //Creazione dello statement
             ResultSet rs = ClubQuery.cercaSquadraPerNome(stm, bean.getClubName());                            //Lancio della query con conseguente restituzione del result set
             if (!rs.first()) {                                                                                //Lancio l'eccezione nel caso in cui il Result Set risulti vuoto

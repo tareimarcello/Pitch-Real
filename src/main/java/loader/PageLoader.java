@@ -2,6 +2,7 @@ package loader;
 
 import controllergrafici.Homepageview;
 import controllergrafici.LoginView;
+import exception.PrivateConstructorException;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
@@ -10,6 +11,9 @@ import javafx.stage.Stage;
 import java.io.IOException;
 
 public class PageLoader {
+    private PageLoader() throws PrivateConstructorException {
+        throw new PrivateConstructorException("Non chiamare questo costruttore");
+    }
     public static void pageLoader(String filename){            //Metodo per il caricamneto della pagina
         FXMLLoader loader = new FXMLLoader(Homepageview.class.getClassLoader().getResource(filename));
         Parent root = null;

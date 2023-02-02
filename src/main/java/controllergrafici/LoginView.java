@@ -73,4 +73,8 @@ public class LoginView implements Credenziali {
         credenziali.add(emailText.getText());
         credenziali.add(passwdText.getText());
     }
+
+    public void finalizzaControllo() {
+        this.loginPageLoader("First-View/LoggedHomepage.fxml");
+    }
 }

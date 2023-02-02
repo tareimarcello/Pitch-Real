@@ -6,7 +6,7 @@ import java.sql.Statement;
 //Classe che riassume tutte le query lancianili sulla tabella account
 public class AccountQuery {
     public static ResultSet logQuery(Statement stmt, String mail, String passwd) throws SQLException {
-        String sql = "SELECT * FROM Account where Email = '" + mail + "'& Passwd="+ passwd +"';'";
+        String sql = "SELECT * FROM Account join Club on Club=Nome where Email = '" + mail + "'& Passwd="+ passwd +"';'";
         return stmt.executeQuery(sql);
     }
     public static ResultSet nameQuery(Statement stm,String nome) throws SQLException {

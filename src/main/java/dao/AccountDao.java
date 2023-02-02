@@ -3,6 +3,7 @@ package dao;
 import bean.Loginbean;
 import create.Createlogin;
 import dao.queries.AccountQuery;
+import entity.Club;
 import exception.CredentialException;
 
 import java.sql.*;
@@ -15,6 +16,7 @@ public class AccountDao {
     public void cercaAccountperLog(Loginbean b) throws CredentialException{
         Statement stm = null;                                                                    //Dichiarazione di statement e connessione
         Connection conn = null;
+        Club c=null;
         try {
             Class.forName(driverclassname);                                                                 //Caricamento dinamico del driver mysql
             conn = DriverManager.getConnection(user, dbpasswd, dburl);                                           //Richiesta di connesione al DB
@@ -28,9 +30,11 @@ public class AccountDao {
             String passwd = rs.getString("Passwd");                                                 //Estraggo i dati dalla tabella per nome della colonna
             String email=rs.getString("Email");
             String type=rs.getString("Type");
-            //String nomeClub=rs.getString("NomeClub");
+            String nomeClub=rs.getString("NomeClub");
+            int idClub=rs.getInt("Id");
             Createlogin create = Createlogin.getInstance();                                           //Utilizzo la classe Factory per creare un istanza di club
-            create.createAccount(nome,passwd,email,type);
+            c=create.createClub(nomeClub,idClub);
+            create.createAccount(nome,passwd,email,type,c);
             rs.close();                                             //Chiusura del result set
         } catch (ClassNotFoundException e) {
             throw new RuntimeException(e);

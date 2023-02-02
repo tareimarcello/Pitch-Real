@@ -19,8 +19,8 @@ public class Createlogin {
             return controller;
     }
 
-    public Account createAccount(String nome,String email,String passwd,String type) {
-        acc = new Account(nome,email,passwd,type);
+    public Account createAccount(String nome,String email,String passwd,String type,Club c) {
+        acc = new Account(nome,email,passwd,type,c);
         return acc;
     }
     public Club createClub(String clubName, int idClub){

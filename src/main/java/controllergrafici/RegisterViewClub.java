@@ -13,9 +13,8 @@ public class RegisterViewClub extends RegisterView{
     private TextField nomeClubText;
     @Override
     protected void registerButtonClick() {
-        RegisterBean registraClub=null;
         try{
-            registraClub = new RegisterBean(emailText.getText(), passwdText.getText(), nomeClubText.getText(), "Club",null);
+            RegisterBean registraClub = new RegisterBean(emailText.getText(), passwdText.getText(), nomeClubText.getText(), "Club",null);
         } catch (ShortPassException e) {
             PageLoader.pageLoader("First-View/RegisterViewClubShortPass.fxml");
         } catch (FormatErrorException e) {

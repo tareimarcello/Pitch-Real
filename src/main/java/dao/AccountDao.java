@@ -73,7 +73,7 @@ public class AccountDao {
 
                 // STEP 4.2: creazione ed esecuzione della query
                 dbConnection.setStm(dbConnection.getConnStabilita().createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE, ResultSet.CONCUR_READ_ONLY));
-                int result = AccountQuery.insertAccount(dbConnection.getStm(), newAcc);
+                AccountQuery.insertAccount(dbConnection.getStm(), newAcc);
 
                 // STEP 5.1: Clean-up dell'ambiente
                 rs.close();

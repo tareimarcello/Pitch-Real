@@ -4,7 +4,6 @@ package controllergrafici;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import loader.PageLoader;
-
 public class SceltaTipoView {
     @FXML
     private Button clubButton;

@@ -21,6 +21,12 @@
                        <Font size="48.0" />
                    </font>
                </Text>
+            <Button mnemonicParsing="false" prefHeight="37.0" prefWidth="37.0" translateX="-20.0" StackPane.alignment="CENTER_RIGHT" />
+            <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true" translateX="-23.0" StackPane.alignment="CENTER_RIGHT">
+               <image>
+                  <Image url="@../ImmaginiUI/icons8-casa-24.png" />
+               </image>
+            </ImageView>
            </children>
         </StackPane>
     </top>
@@ -68,7 +74,7 @@
         <StackPane prefHeight="150.0" prefWidth="200.0" BorderPane.alignment="CENTER">
            <children>
                <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#47484a" height="164.0" stroke="#47484a" strokeType="INSIDE" width="601.0" />
-               <Text fill="#f8f7f7" strokeType="OUTSIDE" strokeWidth="0.0" text="ID Club" translateX="-145.0" translateY="-53.0" wrappingWidth="81.6142578125">
+               <Text fill="#f8f7f7" strokeType="OUTSIDE" strokeWidth="0.0" text="Nome Club" translateX="-120.0" translateY="-53.0" wrappingWidth="131.6142578125">
                    <font>
                        <Font size="18.0" />
                    </font>

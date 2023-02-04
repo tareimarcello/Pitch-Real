@@ -21,6 +21,12 @@
                        <Font size="48.0" />
                    </font>
                </Text>
+            <Button mnemonicParsing="false" prefHeight="37.0" prefWidth="37.0" translateX="-20.0" StackPane.alignment="CENTER_RIGHT" />
+            <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true" translateX="-23.0" StackPane.alignment="CENTER_RIGHT">
+               <image>
+                  <Image url="@../ImmaginiUI/icons8-casa-24.png" />
+               </image>
+            </ImageView>
            </children>
         </StackPane>
     </top>
@@ -38,7 +44,7 @@
                       <Image url="@../ImmaginiUI/logo.png" />
                   </image>
                </ImageView>
-               <ImageView fitHeight="57.0" fitWidth="59.0" translateY="-48.0">
+               <ImageView fitHeight="66.0" fitWidth="64.0" translateY="-48.0">
                   <image>
                       <Image url="@../ImmaginiUI/download.png" />
                   </image>

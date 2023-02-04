@@ -28,6 +28,6 @@ public class RegisterViewFan extends RegisterView{
         }
         Createregister log=Createregister.getInstance();
         Registercontroller registra=log.createController();
-        registra.registraFan(b);
+        registra.registra(b);
     }
 }

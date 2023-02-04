@@ -8,7 +8,7 @@
 <?import javafx.scene.shape.*?>
 <?import javafx.scene.layout.*?>
 
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="0.0" minWidth="0.0" prefHeight="407.0" prefWidth="599.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="0.0" minWidth="0.0" prefHeight="407.0" prefWidth="599.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllergrafici.RegisterViewClub">
     <top>
         <StackPane prefHeight="74.0" prefWidth="600.0" BorderPane.alignment="CENTER">
            <children>
@@ -21,7 +21,7 @@
                        <Font size="48.0" />
                    </font>
                </Text>
-            <Button mnemonicParsing="false" prefHeight="37.0" prefWidth="37.0" translateX="-20.0" StackPane.alignment="CENTER_RIGHT" />
+            <Button fx:id="homeButton" mnemonicParsing="false" onAction="#homeButtonClick" prefHeight="37.0" prefWidth="37.0" translateX="-20.0" StackPane.alignment="CENTER_RIGHT" />
             <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true" translateX="-23.0" StackPane.alignment="CENTER_RIGHT">
                <image>
                   <Image url="@../ImmaginiUI/icons8-casa-24.png" />
@@ -57,7 +57,7 @@
                        <Font size="18.0" />
                    </font>
                </Text>
-               <TextField maxHeight="20.0" maxWidth="376.0" minHeight="0.0" minWidth="0.0" prefHeight="35.0" prefWidth="376.0" translateY="-45.0" StackPane.alignment="BOTTOM_CENTER">
+               <TextField fx:id="emailText" maxHeight="20.0" maxWidth="376.0" minHeight="0.0" minWidth="0.0" prefHeight="35.0" prefWidth="376.0" translateY="-45.0" StackPane.alignment="BOTTOM_CENTER">
                    <StackPane.margin>
                        <Insets />
                    </StackPane.margin>
@@ -79,9 +79,9 @@
                        <Font size="18.0" />
                    </font>
                </Text>
-               <TextField maxHeight="20.0" maxWidth="376.0" minHeight="0.0" minWidth="0.0" translateY="-25.0" />
-               <Button mnemonicParsing="false" text="Registrati" translateY="20.0" />
-               <PasswordField maxHeight="20.0" maxWidth="376.0" minHeight="0.0" minWidth="0.0" translateY="-10.0" StackPane.alignment="TOP_CENTER" />
+               <TextField fx:id="nomeClubText" maxHeight="20.0" maxWidth="376.0" minHeight="0.0" minWidth="0.0" translateY="-25.0" />
+               <Button fx:id="registerButton" mnemonicParsing="false" onAction="#registerButtonClick" text="Registrati" translateY="20.0" />
+               <PasswordField fx:id="passwdText" maxHeight="20.0" maxWidth="376.0" minHeight="0.0" minWidth="0.0" translateY="-10.0" StackPane.alignment="TOP_CENTER" />
            </children>
         </StackPane>
     </bottom>

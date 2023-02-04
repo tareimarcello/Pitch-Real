@@ -8,12 +8,16 @@ public class RegisterBean extends Loginbean{
     private String nome;
     private String nomeClub=null;
     private String type;
-    public RegisterBean(String mail, String passwd,String nomeClub,String type, String nome) throws ShortPassException, FormatErrorException, NullString {
+    public RegisterBean(String mail, String passwd,String nomeInputClub,String tipoAcc, String nomeAcc) throws ShortPassException, FormatErrorException, NullString {
         super(mail,passwd);
-        checkName(nome);
-        this.nomeClub=nomeClub;
-        this.type=type;
-        this.nome=nome;
+        if(nomeInputClub==null) {
+            checkName(nomeAcc);
+        }else{
+            checkName(nomeInputClub);
+        }
+        this.nomeClub=nomeInputClub;
+        this.type=tipoAcc;
+        this.nome=nomeAcc;
     }
     public String getClubName(){
         return this.nomeClub;
@@ -26,7 +30,7 @@ public class RegisterBean extends Loginbean{
     }
     private void checkName(String nome) throws NullString {
         if(nome==null){
-            throw new NullString("Uno dei campoi è vuoto");
+            throw new NullString("Uno dei campi è vuoto");
         }
     }
 }

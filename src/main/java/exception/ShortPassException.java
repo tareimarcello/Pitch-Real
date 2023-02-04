@@ -1,7 +1,7 @@
 package exception;
 //Eccezione che lancio quando la password immessa è troppo corta
 public class ShortPassException extends Exception{
-    private static final long serialVersionUID = 4L;
+    private static final long serialVersionUID = 6L;
 
     public ShortPassException (String message){
         super(message);

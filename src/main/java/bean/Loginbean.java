@@ -6,7 +6,7 @@ import exception.ShortPassException;
 
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
-
+//Bean che uso per passare i parametri sia nel caso d'uso Login sia nella fase di registrazione per il fan
 public class Loginbean {
     private String email;
     private String passwd;

@@ -1,5 +1,6 @@
 package dao.queries;
 
+import entity.Account;
 import exception.PrivateConstructorException;
 
 import java.sql.ResultSet;
@@ -14,13 +15,16 @@ public class AccountQuery {
         String sql = "SELECT * FROM Account join Club on Club=Nome where Email = '" + mail + "'& Passwd="+ passwd +"';'";
         return stmt.executeQuery(sql);
     }
-    public static ResultSet nameQuery(Statement stm,String nome) throws SQLException {
-        String sql="SELECT * FROM Account where Nome = '" + nome + "';";
+    public static ResultSet emailQuery(Statement stm, String mail) throws SQLException {
+        String sql="SELECT * FROM Account where Email = '" + mail + "';";
         return stm.executeQuery(sql);
     }
     public static ResultSet typeQuery(Statement stm,String tipo) throws SQLException {
         String sql="SELECT * FROM Account where Tipo = '" + tipo + "';";
         return stm.executeQuery(sql);
     }
-
+    public static int insertAccount(Statement stm, Account newAccount) throws SQLException{
+        String insertStatement = String.format("INSERT INTO Album (Email, Passwd, Nome, Tipo,Club) VALUES (%s,'%s','%s',%s,%s)", newAccount.getemail(), newAccount.getPaswd(), newAccount.getNome(), newAccount.getType(),newAccount.getClub().getName());
+        return stm.executeUpdate(insertStatement);
+    }
 }

@@ -1,7 +1,7 @@
 package dao;
 
 import bean.Buygadgetbean;
-import create.Createlogin;
+import create.Createentity;
 import dao.queries.ClubQuery;
 import entity.Club;
 import exception.ClubNotFoundException;
@@ -26,10 +26,9 @@ public class ClubDAO {
                 throw new ClubNotFoundException("Nessun Club corrisponde al nome:" + bean.getClubName());
             }
             rs.first();
-            String nomeClub = rs.getString("Nome");
-            int idClub = rs.getInt("ID");                                                 //Estraggo i dati dalla tabella per nome della colonna
-            Createlogin create = Createlogin.getInstance();                                           //Utilizzo la classe Factory per creare un istanza di club
-            c = create.createClub(nomeClub, idClub);
+            String nomeClub = rs.getString("Nome");             //Estraggo i dati dalla tabella per nome della colonna
+            Createentity create = Createentity.getInstance();                                           //Utilizzo la classe Factory per creare un istanza di club
+            c = create.createClub(nomeClub);
             rs.close();                                             //Chiusura del result set
         } catch (ClassNotFoundException e) {
             throw new RuntimeException(e);

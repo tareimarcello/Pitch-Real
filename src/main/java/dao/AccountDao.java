@@ -1,12 +1,18 @@
 package dao;
 
+import bean.Connectionbean;
 import bean.Loginbean;
-import create.Createlogin;
+import bean.RegisterBean;
+import create.Createentity;
+import dao.operazionisuconnesione.ConnOperation;
 import dao.queries.AccountQuery;
+import entity.Account;
 import entity.Club;
 import exception.CredentialException;
+import exception.DuplicatedRecordException;
 
-import java.sql.*;
+import java.sql.ResultSet;
+import java.sql.SQLException;
 
 public class AccountDao {
     private static String user="";
@@ -14,14 +20,14 @@ public class AccountDao {
     private static String dburl ="";
     private static String driverclassname ="";
     public void cercaAccountperLog(Loginbean b) throws CredentialException{
-        Statement stm = null;                                                                    //Dichiarazione di statement e connessione
-        Connection conn = null;
         Club c=null;
+        Connectionbean dbConnection=null;
+        ConnOperation op=null;
         try {
-            Class.forName(driverclassname);                                                                 //Caricamento dinamico del driver mysql
-            conn = DriverManager.getConnection(user, dbpasswd, dburl);                                           //Richiesta di connesione al DB
-            stm = conn.createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE, ResultSet.CONCUR_READ_ONLY);         //Creazione dello statement
-            ResultSet rs = AccountQuery.logQuery(stm, b.getEmail(),b.getPasswd());                            //Lancio della query con conseguente restituzione del result set
+            dbConnection = new Connectionbean(user, dbpasswd, dburl, driverclassname);
+            op=new ConnOperation();
+            dbConnection=op.openConnection(dbConnection);
+            ResultSet rs = AccountQuery.logQuery(dbConnection.getStm(), b.getEmail(),b.getPasswd());                            //Lancio della query con conseguente restituzione del result set
             if (!rs.first()) {                                                                                //Lancio l'eccezione nel caso in cui il Result Set risulti vuoto
                 throw new CredentialException("Non esiste Account collegato con queste credenziali");
             }
@@ -31,28 +37,55 @@ public class AccountDao {
             String email=rs.getString("Email");
             String type=rs.getString("Type");
             String nomeClub=rs.getString("NomeClub");
-            int idClub=rs.getInt("Id");
-            Createlogin create = Createlogin.getInstance();                                           //Utilizzo la classe Factory per creare un istanza di club
-            c=create.createClub(nomeClub,idClub);                       //Creo anche un'istanza di club per realizzare l'associazione tra istanza di club e istanza di account
+            Createentity create = Createentity.getInstance();                                           //Utilizzo la classe Factory per creare un istanza di club
+            c=create.createClub(nomeClub);                       //Creo anche un'istanza di club per realizzare l'associazione tra istanza di club e istanza di account
             create.createAccount(nome,passwd,email,type,c);
             rs.close();                                             //Chiusura del result set
-        } catch (ClassNotFoundException e) {
-            throw new RuntimeException(e);
         } catch (SQLException e) {
-            throw new RuntimeException(e);
+            System.exit(0);
         } finally {
-            try {
-                if (stm != null)
-                    stm.close();
-            } catch (SQLException se2) {
-            }
-            try {
-                if (conn != null)
-                    conn.close();
-            } catch (SQLException se) {
-                se.printStackTrace();                       //TUTTA QUESTA PARTE FINALE DEL TRY CATCH DA RIVEDER
-            }
+            op.closeConnection(dbConnection);
         }
     }
+    public void newInsertFan(RegisterBean b, Account newAcc){
+            // STEP 1: dichiarazioni
+        Connectionbean dbConnection=null;
+        ConnOperation op=null;
 
+            try {
+                //CReazione statement e instaurazione della connessione
+                dbConnection = new Connectionbean(user, dbpasswd, dburl, driverclassname);
+                op=new ConnOperation();
+                dbConnection=op.openConnection(dbConnection);
+
+                // In pratica i risultati delle query possono essere visti come un Array Associativo o un Map
+                ResultSet rs = AccountQuery.emailQuery(dbConnection.getStm(),b.getEmail());
+                while (rs.next()) {
+                    // lettura delle colonne "by name"
+                    String email = rs.getString("Email");
+                    if (email == newAcc.getemail()){
+                        throw new DuplicatedRecordException(email + " è già assegnata");
+                    }
+                }
+
+                rs.close();
+                dbConnection.getStm().close();
+
+                // STEP 4.2: creazione ed esecuzione della query
+                dbConnection.setStm(dbConnection.getConnStabilita().createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE, ResultSet.CONCUR_READ_ONLY));
+                int result = AccountQuery.insertAccount(dbConnection.getStm(), newAcc);
+
+                // STEP 5.1: Clean-up dell'ambiente
+                rs.close();
+            } catch (SQLException e) {
+                throw new RuntimeException(e);
+            } catch (DuplicatedRecordException e) {
+                throw new RuntimeException(e);
+            } finally {
+                op.closeConnection(dbConnection);
+            }
+    }
+    public void newInsertClub(RegisterBean b){
+
+    }
 }

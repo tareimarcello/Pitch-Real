@@ -15,9 +15,9 @@ public class RegisterViewFan extends RegisterView{
     private TextField nomeText;
     @Override
     protected void registerButtonClick(){
-        RegisterBean b=null;
+        RegisterBean registraFan=null;
         try {
-            b = new RegisterBean(emailText.getText(), passwdText.getText(), null, "Fan", nomeText.getText());
+            registraFan = new RegisterBean(emailText.getText(), passwdText.getText(), null, "Fan", nomeText.getText());
         }catch(ShortPassException e){           //Eccezione lanciata nel caso in cui la pssword inserita sia più corta di 5 caratteri
             PageLoader.pageLoader("First-View/RegisterVIewFanShortPass.fxml");
         }catch(FormatErrorException e){        //Eccezione lanciata nel caso di formato sbagliato dell'email
@@ -27,6 +27,6 @@ public class RegisterViewFan extends RegisterView{
         }
         Createregister log=Createregister.getInstance();
         Registercontroller registra=log.createController();
-        registra.registra(b);                       //Lancio la registrazione
+        registra.registra(registraFan);                       //Lancio la registrazione
     }
 }

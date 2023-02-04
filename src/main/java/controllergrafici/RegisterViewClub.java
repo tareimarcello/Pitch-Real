@@ -1,6 +1,8 @@
 package controllergrafici;
 
+import applicationcontroller.Registercontroller;
 import bean.RegisterBean;
+import create.Createregister;
 import exception.FormatErrorException;
 import exception.NullString;
 import exception.ShortPassException;
@@ -13,8 +15,9 @@ public class RegisterViewClub extends RegisterView{
     private TextField nomeClubText;
     @Override
     protected void registerButtonClick() {
+        RegisterBean registraClub=null;
         try{
-            RegisterBean registraClub = new RegisterBean(emailText.getText(), passwdText.getText(), nomeClubText.getText(), "Club",null);
+            registraClub = new RegisterBean(emailText.getText(), passwdText.getText(), nomeClubText.getText(), "Club",null);
         } catch (ShortPassException e) {
             PageLoader.pageLoader("First-View/RegisterViewClubShortPass.fxml");
         } catch (FormatErrorException e) {
@@ -22,5 +25,8 @@ public class RegisterViewClub extends RegisterView{
         } catch (NullString e) {
             PageLoader.pageLoader("First-View/RegisterViewClubNullString.fxml");
         }
+        Createregister log=Createregister.getInstance();
+        Registercontroller registra=log.createController();
+        registra.registra(registraClub);                       //Lancio la registrazione
     }
 }

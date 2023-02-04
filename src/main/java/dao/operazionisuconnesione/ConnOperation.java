@@ -19,7 +19,7 @@ public class ConnOperation {
             System.exit(0);
         }
         b.setStm(stm);
-        b.setConnStabilita(conn);;
+        b.setConnStabilita(conn);
         return b;
     }
     public void closeConnection(Connectionbean closebean){

@@ -63,7 +63,7 @@ public class AccountDao {
                 while (rs.next()) {
                     // lettura delle colonne "by name"
                     String email = rs.getString("Email");
-                    if (email == newAcc.getemail()){
+                    if (email.equals(newAcc.getemail())){
                         throw new DuplicatedRecordException(email + " è già assegnata");
                     }
                 }

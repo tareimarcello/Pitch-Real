@@ -9,7 +9,7 @@ import javafx.scene.control.TextField;
 
 public abstract class RegisterView {
     @FXML
-    protected Button RegisterButton;
+    protected Button registerButton;
     @FXML
     protected TextField emailText;
     @FXML

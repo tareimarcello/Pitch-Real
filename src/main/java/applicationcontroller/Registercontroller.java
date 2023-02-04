@@ -20,7 +20,7 @@ public class Registercontroller {
             }
             Createentity createAcc=new Createentity();
             Account newAcc=createAcc.createAccount(b.getNome(),b.getEmail(),b.getPasswd(),b.getType(),c);   //Creo l'istanza di accout da inserire nel database
-            registerDaoFan.newInsertFan(b,newAcc);
+            registerDaoFan.newInsert(b,newAcc);                  //Inserimento dell'istanza sul db
         }
     }
 }

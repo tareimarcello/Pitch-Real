@@ -8,7 +8,7 @@
 <?import javafx.scene.shape.*?>
 <?import javafx.scene.layout.*?>
 
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="0.0" minWidth="0.0" prefHeight="407.0" prefWidth="599.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="0.0" minWidth="0.0" prefHeight="407.0" prefWidth="599.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllergrafici.RegisterViewFan">
     <top>
         <StackPane prefHeight="74.0" prefWidth="600.0" BorderPane.alignment="CENTER">
            <children>
@@ -21,7 +21,7 @@
                        <Font size="48.0" />
                    </font>
                </Text>
-            <Button mnemonicParsing="false" prefHeight="37.0" prefWidth="37.0" translateX="-20.0" StackPane.alignment="CENTER_RIGHT" />
+            <Button fx:id="homeButton" mnemonicParsing="false" onAction="#homeButtonClick" prefHeight="37.0" prefWidth="37.0" translateX="-20.0" StackPane.alignment="CENTER_RIGHT" />
             <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true" translateX="-23.0" StackPane.alignment="CENTER_RIGHT">
                <image>
                   <Image url="@../ImmaginiUI/icons8-casa-24.png" />
@@ -49,7 +49,7 @@
                       <Image url="@../ImmaginiUI/download.png" />
                   </image>
                </ImageView>
-            <TextField maxHeight="20.0" maxWidth="376.0" minHeight="0.0" minWidth="0.0" prefHeight="35.0" prefWidth="376.0" translateY="60.0" />
+            <TextField fx:id="nomeText" maxHeight="20.0" maxWidth="376.0" minHeight="0.0" minWidth="0.0" prefHeight="35.0" prefWidth="376.0" translateY="60.0" />
             <Text fill="#f5f4f4" strokeType="OUTSIDE" strokeWidth="0.0" text="Nome" translateY="35.0" wrappingWidth="371.9287109375">
                <font>
                   <Font size="18.0" />
@@ -62,14 +62,14 @@
         <StackPane prefHeight="150.0" prefWidth="200.0" BorderPane.alignment="CENTER">
            <children>
                <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#47484a" height="164.0" stroke="#47484a" strokeType="INSIDE" width="601.0" />
-               <Button mnemonicParsing="false" text="Registrati" translateY="40.0" />
-               <PasswordField maxHeight="20.0" maxWidth="376.0" minHeight="0.0" minWidth="0.0" translateY="75.0" StackPane.alignment="TOP_CENTER" />
+               <Button fx:id="registerButton" mnemonicParsing="false" onAction="#registerButtonClick" text="Registrati" translateY="40.0" />
+               <PasswordField fx:id="passwdText" maxHeight="20.0" maxWidth="376.0" minHeight="0.0" minWidth="0.0" translateY="75.0" StackPane.alignment="TOP_CENTER" />
                <Text fill="#fffdfd" strokeType="OUTSIDE" strokeWidth="0.0" text="Password" translateY="-95.0" wrappingWidth="375.43896484375" StackPane.alignment="BOTTOM_CENTER">
                    <font>
                        <Font size="18.0" />
                    </font>
                </Text>
-               <TextField maxHeight="20.0" maxWidth="376.0" minHeight="0.0" minWidth="0.0" prefHeight="35.0" prefWidth="376.0" translateY="-120.0" StackPane.alignment="BOTTOM_CENTER">
+               <TextField fx:id="emailText" maxHeight="20.0" maxWidth="376.0" minHeight="0.0" minWidth="0.0" prefHeight="35.0" prefWidth="376.0" translateY="-120.0" StackPane.alignment="BOTTOM_CENTER">
                    <StackPane.margin>
                        <Insets />
                    </StackPane.margin>

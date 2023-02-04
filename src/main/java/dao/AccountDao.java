@@ -47,7 +47,7 @@ public class AccountDao {
             op.closeConnection(dbConnection);
         }
     }
-    public void newInsertFan(RegisterBean b, Account newAcc){
+    public void newInsert(RegisterBean b, Account newAcc){
             // STEP 1: dichiarazioni
         Connectionbean dbConnection=null;
         ConnOperation op=null;
@@ -85,7 +85,5 @@ public class AccountDao {
                 op.closeConnection(dbConnection);
             }
     }
-    public void newInsertClub(RegisterBean b){
 
-    }
 }

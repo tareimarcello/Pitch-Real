@@ -1,6 +1,7 @@
 package controllergrafici;
 
 import bean.Buygadgetbean;
+import create.Createentity;
 import dao.ClubDAO;
 import entity.Club;
 import exception.ClubNotFoundException;
@@ -25,9 +26,13 @@ public class HomepageView {
         }catch (ClubNotFoundException ex) {                                            //Lancio l'eccezione in casoo non riesca a trovare niente con quel nome sul database
             PageLoader.pageLoader("First-View/HomepageError.fxml");          //Se non trovo niente el db devo comunicarlo all'utente
         }
-        if(researchClub !=null) {                                //Se il risultato fosse null allora già ho caricato un'altra pagina e non voglio caricarne
-            // una nuova mentre se non fosse null non entro nella clausola cach e devo caricare la pagina nuova
-            PageLoader.pageLoader(clubName +".fxml");
+        if(researchClub !=null) {                                //Se il risultato fosse null allora già ho caricato un'altra pagina e non voglio caricarne una nuova mentre se non fosse null non entro nella clausola cach e devo caricare la pagina nuova
+            Createentity infoAccount=Createentity.getInstance();
+            if(infoAccount.getaccount().equals(null)) {
+                PageLoader.pageLoader(clubName + "Unlogged.fxml");
+            }else{
+                PageLoader.pageLoader(clubName + "Logged.fxml");
+            }
         }
     }
 }

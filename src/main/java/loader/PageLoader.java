@@ -1,6 +1,6 @@
 package loader;
 
-import controllergrafici.Homepageview;
+import controllergrafici.HomepagUnloggedView;
 import controllergrafici.LoginView;
 import exception.PrivateConstructorException;
 import javafx.fxml.FXMLLoader;
@@ -15,7 +15,7 @@ public class PageLoader {
         throw new PrivateConstructorException("Non chiamare questo costruttore");
     }
     public static void pageLoader(String filename){            //Metodo per il caricamneto della pagina
-        FXMLLoader loader = new FXMLLoader(Homepageview.class.getClassLoader().getResource(filename));
+        FXMLLoader loader = new FXMLLoader(HomepagUnloggedView.class.getClassLoader().getResource(filename));
         Parent root = null;
         try {
             root = loader.load();           //caricamento della pagina del Login

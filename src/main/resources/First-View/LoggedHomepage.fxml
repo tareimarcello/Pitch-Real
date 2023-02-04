@@ -8,7 +8,7 @@
 <?import javafx.scene.shape.*?>
 <?import javafx.scene.text.*?>
 
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="0.0" minWidth="0.0" prefHeight="407.0" prefWidth="599.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="0.0" minWidth="0.0" prefHeight="407.0" prefWidth="599.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllergrafici.LoggedHomepage">
     <top>
         <StackPane prefHeight="74.0" prefWidth="600.0" BorderPane.alignment="CENTER">
             <children>
@@ -21,7 +21,7 @@
                         <Font size="48.0" />
                     </font>
                 </Text>
-            <Button mnemonicParsing="false" prefHeight="37.0" prefWidth="37.0" translateX="-80.0" StackPane.alignment="CENTER_RIGHT" />
+            <Button fx:id="logOutButton" mnemonicParsing="false" onAction="#logOutButtonClick" prefHeight="37.0" prefWidth="37.0" translateX="-80.0" StackPane.alignment="CENTER_RIGHT" />
             <Button layoutX="576.0" layoutY="29.0" mnemonicParsing="false" prefHeight="37.0" prefWidth="37.0" translateX="-15.0" StackPane.alignment="CENTER_RIGHT" />
             <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true" translateX="-84.0" StackPane.alignment="CENTER_RIGHT">
                <image>
@@ -33,7 +33,7 @@
                   <Image url="@../ImmaginiUI/icons8-casa-24.png" />
                </image>
             </ImageView>
-            <Button layoutX="576.0" layoutY="29.0" mnemonicParsing="false" prefHeight="37.0" prefWidth="37.0" translateX="-145.0" StackPane.alignment="CENTER_RIGHT" />
+            <Button fx:id="msgButton" layoutX="576.0" layoutY="29.0" mnemonicParsing="false" onAction="#msgButtonClick" prefHeight="37.0" prefWidth="37.0" translateX="-145.0" StackPane.alignment="CENTER_RIGHT" />
             <ImageView fitHeight="30.0" fitWidth="30.0" layoutX="583.0" layoutY="33.0" pickOnBounds="true" preserveRatio="true" translateX="-149.0" StackPane.alignment="CENTER_RIGHT">
                <image>
                   <Image url="@../ImmaginiUI/icons8-nuovo-messaggio-24.png" />

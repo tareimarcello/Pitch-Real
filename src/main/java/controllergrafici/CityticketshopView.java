@@ -51,6 +51,6 @@ public class CityticketshopView {
         }catch(NullSelectionException e){
             PageLoader.pageLoader("First-View/CityTicketShopNullSelection.fxml");
         }
-        CreateBuyTicket.getInstance().createController().VerificaDispSector(sectorInput);
+        CreateBuyTicket.getInstance().createController().verificaDispSector(sectorInput);
     }
 }

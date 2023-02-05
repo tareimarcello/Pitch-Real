@@ -23,7 +23,7 @@ public class PageLoader {
             System.exit(0);
         }
         Stage stage = new Stage();
-        stage.setScene(new Scene(root, 500, 500));
+        stage.setScene(new Scene(root));
         stage.setResizable(false);
         stage.show();
     }

@@ -58,8 +58,8 @@
         <StackPane prefHeight="150.0" prefWidth="200.0" BorderPane.alignment="CENTER">
             <children>
                 <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#47484a" height="164.0" stroke="#47484a" strokeType="INSIDE" width="601.0" />
-                <Button fx:id="loginButton" mnemonicParsing="false" text="Login" translateX="-135.0" />
-                <Button fx:id="registerButton" mnemonicParsing="false" text="Registrati" translateX="135.0" />
+                <Button fx:id="loginButton" mnemonicParsing="false" onAction="#goToLogin" text="Login" translateX="-135.0" />
+                <Button fx:id="registerButton" mnemonicParsing="false" onAction="#goToRegister" text="Registrati" translateX="135.0" />
             </children>
         </StackPane>
     </bottom>

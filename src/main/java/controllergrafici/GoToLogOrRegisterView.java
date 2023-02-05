@@ -5,7 +5,7 @@ import javafx.scene.control.Button;
 import loader.PageLoader;
 
 //Controller della pagina che reindirizza o al log o alla registrazione nel caso in cui dovessi acquistare da uno store
-public class GoToLogOrRegisterController {
+public class GoToLogOrRegisterView {
     @FXML
     private Button loginButton;
     @FXML

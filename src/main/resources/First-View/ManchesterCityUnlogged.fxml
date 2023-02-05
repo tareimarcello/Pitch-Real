@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import java.lang.*?>
 <?import javafx.geometry.*?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.image.*?>
@@ -8,7 +7,7 @@
 <?import javafx.scene.shape.*?>
 <?import javafx.scene.text.*?>
 
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="0.0" minWidth="0.0" prefHeight="407.0" prefWidth="599.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllergrafici.CityhomeController">
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="0.0" minWidth="0.0" prefHeight="407.0" prefWidth="599.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllergrafici.UnloggedCityHomeView">
     <top>
         <StackPane prefHeight="74.0" prefWidth="600.0" BorderPane.alignment="CENTER">
             <children>
@@ -21,7 +20,7 @@
                         <Font size="48.0" />
                     </font>
                 </Text>
-            <Button mnemonicParsing="false" text="Login" translateX="-20.0" StackPane.alignment="CENTER_RIGHT" />
+            <Button fx:id="loginButton" mnemonicParsing="false" onAction="#loginButtonClick" text="Login" translateX="-20.0" StackPane.alignment="CENTER_RIGHT" />
             </children>
         </StackPane>
     </top>
@@ -71,7 +70,7 @@
                     </font>
                 </Text>
                 <Text strokeType="OUTSIDE" strokeWidth="0.0" text="FA Cup" translateX="145.0" StackPane.alignment="TOP_CENTER" />
-                <Button mnemonicParsing="false" prefHeight="45.0" prefWidth="45.0" translateX="-142.0" translateY="20.0" />
+                <Button fx:id="ticketButton" mnemonicParsing="false" onAction="#ticketButtonClick" prefHeight="45.0" prefWidth="45.0" translateX="-142.0" translateY="20.0" />
                 <ImageView fitHeight="71.0" fitWidth="73.0" translateX="38.0" translateY="-32.0" StackPane.alignment="TOP_LEFT">
                     <image>
                         <Image url="@../ImmaginiUI/logo.png" />
@@ -92,21 +91,15 @@
                         <Image url="@../ImmaginiUI/Southampton_FC.png" />
                     </image>
                 </ImageView>
-                <Button mnemonicParsing="false" prefHeight="45.0" prefWidth="45.0" translateY="20.0" />
-                <Button mnemonicParsing="false" prefHeight="45.0" prefWidth="45.0" translateX="145.0" translateY="20.0" />
+                <Button fx:id="gadgetButton" mnemonicParsing="false" onAction="#gadgetButtonClick" prefHeight="45.0" prefWidth="45.0" translateX="145.0" translateY="20.0" />
                 <ImageView fitHeight="40.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true" translateX="-142.0" translateY="20.0">
                     <image>
                         <Image url="@../ImmaginiUI/icons8-biglietto-stellato-24.png" />
                     </image>
                 </ImageView>
-                <ImageView fitHeight="40.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true" translateY="20.0">
-                    <image>
-                        <Image url="@../ImmaginiUI/icons8-negozio-online-24.png" />
-                    </image>
-                </ImageView>
                 <ImageView fitHeight="40.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true" translateX="145.0" translateY="20.0">
                     <image>
-                        <Image url="@../ImmaginiUI/icons8-conferenza-telefonica-24.png" />
+                        <Image url="@../ImmaginiUI/icons8-negozio-online-24.png" />
                     </image>
                 </ImageView>
             </children>

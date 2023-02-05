@@ -1,9 +1,8 @@
 package controllergrafici;
 
-import create.Createentity;
+import buttonbehavior.ButtonOperation;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
-import loader.PageLoader;
 
 public class LoggedHomepage extends HomepageView{
     @FXML
@@ -11,13 +10,11 @@ public class LoggedHomepage extends HomepageView{
     @FXML
     private Button msgButton;
     @FXML
-    private void logOutButtonClick(){
-        Createentity infoAccount=Createentity.getInstance();
-        infoAccount.delAccount();
-        PageLoader.pageLoader("First-View/Homepage.fxml");
+    private void logOutButtonClick(){                       //Metodo che mi fa fare il logout
+        ButtonOperation.behaviorLogOut();
     }
     @FXML
     private void msgButtonClick(){
-
+        ButtonOperation.behaviorMsgButton();
     }
 }

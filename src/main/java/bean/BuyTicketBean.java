@@ -10,6 +10,7 @@ public class BuyTicketBean {
     public BuyTicketBean(String nomeClub){
         this.sectorName=null;
         this.seatNumber=null;
+        this.nomeClub=nomeClub;
     }
     public void setSectorName(String name) throws NullSelectionException {
         this.sectorName=name;

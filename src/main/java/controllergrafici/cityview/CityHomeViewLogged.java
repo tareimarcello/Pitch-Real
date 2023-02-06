@@ -1,4 +1,4 @@
-package controllergrafici;
+package controllergrafici.cityview;
 
 import buttonbehavior.ButtonOperation;
 import create.Createentity;
@@ -7,7 +7,7 @@ import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import loader.PageLoader;
 
-public class CityHomeViewLogged extends CityHomeView{
+public class CityHomeViewLogged extends CityHomeView {
     @FXML
     private Button homeButton;
     @FXML

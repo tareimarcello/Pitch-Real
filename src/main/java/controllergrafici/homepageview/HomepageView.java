@@ -1,4 +1,4 @@
-package controllergrafici;
+package controllergrafici.homepageview;
 
 import bean.Buygadgetbean;
 import create.Createentity;

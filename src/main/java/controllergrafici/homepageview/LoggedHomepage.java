@@ -1,10 +1,10 @@
-package controllergrafici;
+package controllergrafici.homepageview;
 
 import buttonbehavior.ButtonOperation;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 
-public class LoggedHomepage extends HomepageView{
+public class LoggedHomepage extends HomepageView {
     @FXML
     private Button logOutButton;
     @FXML

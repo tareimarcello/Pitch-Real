@@ -5,7 +5,7 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="659.0" prefWidth="799.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllergrafici.CityticketshopView">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="659.0" prefWidth="799.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllergrafici.cityview.CityTicketSeatView">
     <children>
         <AnchorPane prefHeight="78.0" prefWidth="804.0" style="-fx-background-color: #47484a;">
             <children>
@@ -14,14 +14,14 @@
                         <Font size="48.0" />
                     </font>
                 </Text>
-                <Button fx:id="HomeButton" layoutX="735.0" layoutY="22.0" mnemonicParsing="false" prefHeight="37.0" prefWidth="37.0" />
+                <Button fx:id="HomeButton" layoutX="735.0" layoutY="22.0" mnemonicParsing="false" onAction="#homeButtonClick" prefHeight="37.0" prefWidth="37.0" />
                 <ImageView fitHeight="30.0" fitWidth="30.0" layoutX="739.0" layoutY="23.0" pickOnBounds="true" preserveRatio="true">
                     <image>
                         <Image url="@../ImmaginiUI/icons8-casa-24.png" />
                     </image>
                 </ImageView>
-                <Button fx:id="LogoutButton" layoutX="736.0" layoutY="22.0" mnemonicParsing="false" prefHeight="37.0" prefWidth="37.0" translateX="-65.0" />
-                <Button fx:id="messageButton" layoutX="671.0" layoutY="22.0" mnemonicParsing="false" prefHeight="37.0" prefWidth="37.0" translateX="-65.0" />
+                <Button fx:id="LogoutButton" layoutX="736.0" layoutY="22.0" mnemonicParsing="false" onAction="#logOutButtonClick" prefHeight="37.0" prefWidth="37.0" translateX="-65.0" />
+                <Button fx:id="messageButton" layoutX="671.0" layoutY="22.0" mnemonicParsing="false" onAction="#messageButtonClick" prefHeight="37.0" prefWidth="37.0" translateX="-65.0" />
                 <ImageView fitHeight="30.0" fitWidth="30.0" layoutX="675.0" layoutY="26.0" pickOnBounds="true" preserveRatio="true">
                     <image>
                         <Image url="@../ImmaginiUI/icons8-uscita-24.png" />
@@ -66,14 +66,14 @@
             <Text layoutX="140.0" layoutY="103.0" strokeType="OUTSIDE" strokeWidth="0.0" text="1     2     3    4      5     6    7    8     9   10    11  12   13   14  15   16   17   18   19   20    21  22   23  24 " wrappingWidth="620.6708984375" />
             <Text layoutX="140.0" layoutY="59.0" strokeType="OUTSIDE" strokeWidth="0.0" text="1     2     3     4    5     6     7     8     9    10  11   12   13   14   15   16   17   18   19  20   21   22  23  24 " wrappingWidth="620.6708984375" />
             <Text layoutX="75.0" layoutY="35.0" strokeType="OUTSIDE" strokeWidth="0.0" text="1     2    3     4     5     6      7    8    9    10   11   12   13   14  15   16   17   18  19    20  21   22   23  24   25   26   27  28   29   30  " wrappingWidth="664.6708984375" />
-            <TextField layoutX="39.0" layoutY="442.0" prefHeight="31.0" prefWidth="274.0" />
+            <TextField fx:id="seatNumber" layoutX="39.0" layoutY="442.0" prefHeight="31.0" prefWidth="274.0" />
             <Text fill="#f5f3f3" layoutX="39.0" layoutY="427.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Inserisci il numero del posto che vuoi comprare ">
                <font>
                   <Font size="24.0" />
                </font>
             </Text>
-            <Button layoutX="356.0" layoutY="442.0" mnemonicParsing="false" text="Paga" />
-            <Button layoutX="458.0" layoutY="442.0" mnemonicParsing="false" text="Torna alla selezione del settore " />
+            <Button fx:id="goOnButton" layoutX="356.0" layoutY="442.0" mnemonicParsing="false" onAction="#goToOrder" text="Paga" />
+            <Button fx:id="goBackButton" layoutX="458.0" layoutY="442.0" mnemonicParsing="false" onAction="#goBackButtonClick" text="Torna alla selezione del settore " />
          </children>
       </AnchorPane>
     </children>

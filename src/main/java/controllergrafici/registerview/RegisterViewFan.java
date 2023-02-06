@@ -1,7 +1,8 @@
-package controllergrafici;
+package controllergrafici.registerview;
 
 import applicationcontroller.Registercontroller;
 import bean.RegisterBean;
+import controllergrafici.registerview.RegisterView;
 import create.Createregister;
 import exception.FormatErrorException;
 import exception.NullString;
@@ -10,7 +11,7 @@ import javafx.fxml.FXML;
 import javafx.scene.control.TextField;
 import loader.PageLoader;
 
-public class RegisterViewFan extends RegisterView{
+public class RegisterViewFan extends RegisterView {
     @FXML
     private TextField nomeText;
     @Override

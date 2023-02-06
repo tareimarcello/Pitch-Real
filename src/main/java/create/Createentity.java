@@ -2,6 +2,7 @@ package create;
 
 import entity.Account;
 import entity.Club;
+import entity.Seat;
 import entity.Sector;
 
 public class Createentity {
@@ -9,6 +10,7 @@ public class Createentity {
     private Account accountOrder=null;        //Questo è il riferimento all'account che deve ricevere la notifica in caso di ordine di un gadget
     private Club c;
     private Sector s;
+    private Seat seat;
     private static Createentity instance;
     public Account createAccount(String nome, String email, String passwd, String type, Club c) {  //metodo di creazione di istanza di account
         acc = new Account(nome,email,passwd,type,c);
@@ -24,6 +26,10 @@ public class Createentity {
     public Club createClub(String clubName){                //metodo di creazione di istanza di club
         c = new Club(clubName);
         return c;
+    }
+    public Seat createSeat(String num,String settore,String club){
+        this.seat=new Seat(num,settore,club);
+        return seat;
     }
     public static Createentity getInstance() {              //metodo per farsi restituire l'istazna di Createentity dato che è suna singleton class
         if (Createentity.instance == null)

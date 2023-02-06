@@ -1,4 +1,4 @@
-package controllergrafici;
+package controllergrafici.loginview;
 
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;

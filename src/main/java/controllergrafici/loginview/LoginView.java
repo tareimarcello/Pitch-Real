@@ -1,4 +1,4 @@
-package controllergrafici;
+package controllergrafici.loginview;
 
 import applicationcontroller.Logincontroller;
 import bean.Loginbean;

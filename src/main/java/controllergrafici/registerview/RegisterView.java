@@ -1,4 +1,4 @@
-package controllergrafici;
+package controllergrafici.registerview;
 
 import exception.FormatErrorException;
 import exception.NullString;

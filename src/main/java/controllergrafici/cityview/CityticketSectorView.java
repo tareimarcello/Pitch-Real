@@ -1,46 +1,21 @@
-package controllergrafici;
+package controllergrafici.cityview;
 
 import bean.BuyTicketBean;
-import buttonbehavior.ButtonOperation;
 import create.CreateBuyTicket;
 import exception.NullSelectionException;
 import javafx.collections.FXCollections;
 import javafx.fxml.FXML;
-import javafx.scene.control.Button;
 import javafx.scene.control.ComboBox;
 import loader.PageLoader;
 
-public class CityticketshopView {
+public class CityticketSectorView extends CityTicketShopView{
     @FXML
     private ComboBox<String> sector;
-    @FXML
-    private Button goOnButton;
-    @FXML
-    private Button goBackButton;
-    @FXML
-    private Button homeButton;
-    @FXML
-    private Button logoutButton;
-    @FXML
-    private Button messageButton;
-
     public void initialize(){               //Metodo per inizializzare la comboBox
         sector.setItems(FXCollections.observableArrayList("North Stand","East Stand","South Stand","The Collin Bell Stand"));
     }
-    @FXML
-    private void logOutButtonClick(){
-        ButtonOperation.behaviorLogOut();
-    }
-    @FXML
-    private void messageButtonClick(){
-        ButtonOperation.behaviorMsgButton();
-    }
-    @FXML
-    private void homeButtonClick(){
-        PageLoader.pageLoader("First-View/LoggedHomepage.fxml");
-    }
-    @FXML
-    private void goBackButtonClick(){
+    @FXML @Override
+    protected void goBackButtonClick(){
         PageLoader.pageLoader("First-View/ManchesterCityLogged.fxml");
     }
     @FXML
@@ -52,5 +27,6 @@ public class CityticketshopView {
             PageLoader.pageLoader("First-View/CityTicketShopNullSelection.fxml");
         }
         CreateBuyTicket.getInstance().createController().verificaDispSector(sectorInput);
+        PageLoader.pageLoader("First-View/CitySelectSeat.fxml");
     }
 }

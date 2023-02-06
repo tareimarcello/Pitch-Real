@@ -1,7 +1,7 @@
 package loader;
 
-import controllergrafici.HomepagUnloggedView;
-import controllergrafici.LoginView;
+import controllergrafici.homepageview.HomepagUnloggedView;
+import controllergrafici.loginview.LoginView;
 import exception.PrivateConstructorException;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;

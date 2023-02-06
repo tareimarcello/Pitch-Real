@@ -1,5 +1,6 @@
-package controllergrafici;
+package controllergrafici.homepageview;
 
+import controllergrafici.homepageview.HomepageView;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
@@ -7,7 +8,7 @@ import loader.PageLoader;
 
 /*Questa classe rappresenta il controller grafico della HomepageView
  */
-public class HomepagUnloggedView extends HomepageView{
+public class HomepagUnloggedView extends HomepageView {
     @FXML
     private Button loginButton;
     @FXML

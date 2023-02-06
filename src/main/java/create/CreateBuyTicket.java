@@ -20,4 +20,7 @@ public class CreateBuyTicket {
     public BuyTicketController getcontroller(){
         return this.controller;
     }
+    public void delController(){
+        this.controller=null;
+    }
 }

@@ -1,4 +1,4 @@
-package controllergrafici;
+package controllergrafici.registerview;
 //Questa è la classe che rappresenta il cpntroller grafico del caso d'uso registrati
 
 import javafx.fxml.FXML;

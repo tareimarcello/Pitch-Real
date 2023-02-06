@@ -1,7 +1,7 @@
 package applicationcontroller;
 
 import bean.Loginbean;
-import controllergrafici.LoginView;
+import controllergrafici.loginview.LoginView;
 import dao.AccountDao;
 import exception.CredentialException;
 

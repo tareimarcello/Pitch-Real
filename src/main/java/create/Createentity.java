@@ -2,15 +2,20 @@ package create;
 
 import entity.Account;
 import entity.Club;
+import entity.Sector;
 
 public class Createentity {
     private Account acc=null;                    //Questo rappresenta l'account loggato
     private Account accountOrder=null;        //Questo è il riferimento all'account che deve ricevere la notifica in caso di ordine di un gadget
     private Club c;
+    private Sector s;
     private static Createentity instance;
     public Account createAccount(String nome, String email, String passwd, String type, Club c) {  //metodo di creazione di istanza di account
         acc = new Account(nome,email,passwd,type,c);
         return acc;
+    }
+    public Sector createSector(String nomeSettore,String nomeClub){
+        return this.s=new Sector(nomeSettore,nomeClub);
     }
     public Account createAccountOrder(String nome, String email, String passwd,String type,Club c,boolean isOrder){
         accountOrder=new Account(nome,email,passwd,type,null,false);
@@ -24,6 +29,9 @@ public class Createentity {
         if (Createentity.instance == null)
             Createentity.instance = new Createentity();
         return instance;
+    }
+    public Sector getSector(){
+        return this.s;
     }
     public Account getaccount(){
         return this.acc;

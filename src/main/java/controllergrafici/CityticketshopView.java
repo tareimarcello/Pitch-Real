@@ -45,7 +45,7 @@ public class CityticketshopView {
     }
     @FXML
     private void goToSelectSeat(){
-        BuyTicketBean sectorInput=new BuyTicketBean();
+        BuyTicketBean sectorInput=new BuyTicketBean("Manchester City");
         try {
             sectorInput.setSectorName(sector.getValue());
         }catch(NullSelectionException e){

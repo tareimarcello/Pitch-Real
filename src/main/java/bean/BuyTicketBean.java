@@ -6,7 +6,8 @@ import exception.NullSelectionException;
 public class BuyTicketBean {
     private String sectorName;
     private String seatNumber;
-    public BuyTicketBean(){
+    private String nomeClub;
+    public BuyTicketBean(String nomeClub){
         this.sectorName=null;
         this.seatNumber=null;
     }
@@ -22,6 +23,9 @@ public class BuyTicketBean {
     }
     public String getSeat(){
         return this.seatNumber;
+    }
+    public String getNomeClub(){
+        return this.nomeClub;
     }
     private void checkValidSector() throws NullSelectionException {
         if(this.sectorName==null){

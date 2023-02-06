@@ -1,16 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.image.*?>
-<?import javafx.scene.text.*?>
-<?import javafx.scene.effect.*?>
-<?import javafx.scene.shape.*?>
-<?import java.lang.*?>
-<?import java.util.*?>
-<?import javafx.scene.*?>
 <?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
 <?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="659.0" prefWidth="799.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllergrafici.CityticketshopView">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="659.0" prefWidth="799.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllergrafici.CityticketshopView">
     <children>
         <AnchorPane prefHeight="78.0" prefWidth="804.0" style="-fx-background-color: #47484a;">
             <children>
@@ -56,21 +51,21 @@
                   <Image url="@../ImmaginiUI/stadio.png" />
                </image>
             </ImageView>
-            <Text layoutX="107.0" layoutY="355.0" strokeType="OUTSIDE" strokeWidth="0.0" text="1    2    3   4   5    6   7    8   9   10  11 12 13 14 15 16 17  18  19  20 21 22 23  24  25  26  27" wrappingWidth="601.6708984375" />
-            <Text layoutX="107.0" layoutY="334.0" strokeType="OUTSIDE" strokeWidth="0.0" text="1    2    3   4   5    6   7    8   9   10  11 12 13 14 15 16 17  18  19  20 21 22 23  24  25  26  27" wrappingWidth="601.6708984375" />
-            <Text layoutX="107.0" layoutY="313.0" strokeType="OUTSIDE" strokeWidth="0.0" text="1    2    3   4   5    6   7    8   9   10  11 12 13 14 15 16 17  18  19  20 21 22 23  24  25  26  27" wrappingWidth="601.6708984375" />
-            <Text layoutX="107.0" layoutY="286.0" strokeType="OUTSIDE" strokeWidth="0.0" text="1    2    3   4   5    6   7    8   9   10  11 12 13 14 15 16 17  18  19  20 21 22 23  24  25  26  27" wrappingWidth="601.6708984375" />
-            <Text layoutX="107.0" layoutY="265.0" strokeType="OUTSIDE" strokeWidth="0.0" text="1    2    3   4   5    6   7    8   9   10  11 12 13 14 15 16 17  18  19  20 21 22 23  24  25  26  27" wrappingWidth="601.6708984375" />
-            <Text layoutX="107.0" layoutY="243.0" strokeType="OUTSIDE" strokeWidth="0.0" text="1    2    3   4   5    6   7    8   9   10  11 12 13 14 15 16 17  18  19  20 21 22 23  24  25  26  27" wrappingWidth="601.6708984375" />
-            <Text layoutX="97.0" layoutY="219.0" strokeType="OUTSIDE" strokeWidth="0.0" text="1    2    3   4   5    6   7    8   9   10  11 12 13 14 15 16 17  18  19  20 21 22 23  24  25  26 27 28" wrappingWidth="620.6708984375" />
-            <Text layoutX="97.0" layoutY="198.0" strokeType="OUTSIDE" strokeWidth="0.0" text="1    2    3   4   5    6   7    8   9   10  11 12 13 14 15 16 17  18  19  20 21 22 23  24  25  26 27 28" wrappingWidth="620.6708984375" />
-            <Text layoutX="97.0" layoutY="171.0" strokeType="OUTSIDE" strokeWidth="0.0" text="1    2    3   4   5    6   7    8   9  10  11 12 13 14  15 16  17  18  19  20 21 22 23  24  25  26 27 28" wrappingWidth="620.6708984375" />
-            <Text layoutX="97.0" layoutY="150.0" strokeType="OUTSIDE" strokeWidth="0.0" text="1    2    3   4   5    6   7    8   9  10  11 12 13 14  15 16  17  18  19  20 21 22 23  24  25  26 27 28" wrappingWidth="620.6708984375" />
-            <Text layoutX="140.0" layoutY="129.0" strokeType="OUTSIDE" strokeWidth="0.0" text="1    2    3   4   5    6   7    8   9  10  11 12 13 14  15 16  17  18  19  20 21 22 23  24 " wrappingWidth="620.6708984375" />
-            <Text layoutX="140.0" layoutY="83.0" strokeType="OUTSIDE" strokeWidth="0.0" text="1    2    3   4   5    6   7    8   9  10  11 12 13 14  15 16  17  18  19  20 21 22 23  24 " wrappingWidth="620.6708984375" />
-            <Text layoutX="140.0" layoutY="103.0" strokeType="OUTSIDE" strokeWidth="0.0" text="1    2    3   4   5    6   7    8   9  10  11 12 13 14  15 16  17  18  19  20 21 22 23  24 " wrappingWidth="620.6708984375" />
-            <Text layoutX="140.0" layoutY="62.0" strokeType="OUTSIDE" strokeWidth="0.0" text="1    2    3   4   5    6   7    8   9  10  11 12 13 14  15 16  17  18  19  20 21 22 23  24 " wrappingWidth="620.6708984375" />
-            <Text layoutX="80.0" layoutY="41.0" strokeType="OUTSIDE" strokeWidth="0.0" text="1    2    3   4   5    6   7    8   9  10  11 12 13 14  15 16  17  18  19  20 21 22 23 24 25 26 27  28 29 30  " wrappingWidth="680.6708984375" />
+            <Text layoutX="107.0" layoutY="355.0" strokeType="OUTSIDE" strokeWidth="0.0" text="1    2     3    4     5    6     7     8     9     10   11  12  13   14   15   16   17   18  19   20  21   22   23   24    25  26  27" wrappingWidth="601.6708984375" />
+            <Text layoutX="107.0" layoutY="334.0" strokeType="OUTSIDE" strokeWidth="0.0" text="1    2      3    4     5    6     7     8     9     10   11  12  13   14   15   16   17   18  19   20   21   22   23  24    25  26  27" wrappingWidth="601.6708984375" />
+            <Text layoutX="107.0" layoutY="313.0" strokeType="OUTSIDE" strokeWidth="0.0" text="1     2      3    4     5    6     7     8     9     10   11  12   13   14  15   16   17   18   19   20   21   22  23   24   25   26  27" wrappingWidth="601.6708984375" />
+            <Text layoutX="107.0" layoutY="286.0" strokeType="OUTSIDE" strokeWidth="0.0" text=" 1    2     3    4     5    6     7     8     9    10   11   12   13   14  15   16   17  18    19   20    21  22  23   24   25   26   27" wrappingWidth="601.6708984375" />
+            <Text layoutX="107.0" layoutY="265.0" strokeType="OUTSIDE" strokeWidth="0.0" text="1     2    3     4      5    6     7     8    9    10   11    12  13   14  15   16   17  18     19  20    21  22   23   24   25   26   27" wrappingWidth="601.6708984375" />
+            <Text layoutX="107.0" layoutY="243.0" strokeType="OUTSIDE" strokeWidth="0.0" text="1     2     3    4      5     6    7     8    9    10   11    12  13   14  15   16  17   18    19   20   21  22   23   24   25   26   27 " wrappingWidth="601.6708984375" />
+            <Text layoutX="97.0" layoutY="219.0" strokeType="OUTSIDE" strokeWidth="0.0" text="1    2     3     4    5      6   7       8     9   10   11   12   13   14   15  16   17   18    19   20   21  22   23   24   25   26  27  28" wrappingWidth="620.6708984375" />
+            <Text layoutX="97.0" layoutY="198.0" strokeType="OUTSIDE" strokeWidth="0.0" text="1    2     3     4    5      6    7      8     9   10  11    12   13   14  15  16    17   18   19   20   21  22  23    24  25    26  27  28" wrappingWidth="620.6708984375" />
+            <Text layoutX="97.0" layoutY="171.0" strokeType="OUTSIDE" strokeWidth="0.0" text="1     2    3     4    5      6    7      8     9    10  11   12   13  14   15  16    17   18   19   20   21  22  23   24   25    26  27  28" wrappingWidth="620.6708984375" />
+            <Text layoutX="97.0" layoutY="150.0" strokeType="OUTSIDE" strokeWidth="0.0" text="1      2    3     4    5      6   7      8     9    10  11   12   13  14   15  16    17   18   19   20   21  22  23   24   25    26  27  28" wrappingWidth="620.6708984375" />
+            <Text layoutX="140.0" layoutY="129.0" strokeType="OUTSIDE" strokeWidth="0.0" text="1     2     3     4     5      6     7    8    9    10   11   12   13   14   15   16   17  18  19   20  21   22   23   24 " wrappingWidth="620.6708984375" />
+            <Text layoutX="140.0" layoutY="83.0" strokeType="OUTSIDE" strokeWidth="0.0" text=" 1     2    3    4      5    6      7    8     9   10    11  12  13    14  15   16   17   18  19   20   21   22   23  24 " wrappingWidth="620.6708984375" />
+            <Text layoutX="140.0" layoutY="103.0" strokeType="OUTSIDE" strokeWidth="0.0" text="1     2     3    4      5     6    7    8     9   10    11  12   13   14  15   16   17   18   19   20    21  22   23  24 " wrappingWidth="620.6708984375" />
+            <Text layoutX="140.0" layoutY="59.0" strokeType="OUTSIDE" strokeWidth="0.0" text="1     2     3     4    5     6     7     8     9    10  11   12   13   14   15   16   17   18   19  20   21   22  23  24 " wrappingWidth="620.6708984375" />
+            <Text layoutX="75.0" layoutY="35.0" strokeType="OUTSIDE" strokeWidth="0.0" text="1     2    3     4     5     6      7    8    9    10   11   12   13   14  15   16   17   18  19    20  21   22   23  24   25   26   27  28   29   30  " wrappingWidth="664.6708984375" />
             <TextField layoutX="39.0" layoutY="442.0" prefHeight="31.0" prefWidth="274.0" />
             <Text fill="#f5f3f3" layoutX="39.0" layoutY="427.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Inserisci il numero del posto che vuoi comprare ">
                <font>

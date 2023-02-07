@@ -32,10 +32,11 @@ public class TicketDao {
                 throw new DuplicatedNameException("Hai già comprato un biglietto von questo account");
             }
             rsTicket.close();
-            dbConnection.getPstm().close();
+            dbConnection.getStm().close();
 
             // STEP 4.2: creazione ed esecuzione della query
-            TicketQuery.insertTicket(dbConnection.getConnStabilita(), biglietto.getNomeProp(), biglietto.getSelectSector().getNomeSettore(),biglietto.getSelectSeat().getNumSeat());
+            dbConnection.setStm(dbConnection.getConnStabilita().createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE, ResultSet.CONCUR_READ_ONLY));
+            TicketQuery.insertTicket(dbConnection.getStm(), biglietto.getNomeProp(), biglietto.getSelectSector().getNomeSettore(),biglietto.getSelectSeat().getNumSeat());
             Createentity.getInstance().createTicket(biglietto);
             // STEP 5.1: Clean-up dell'ambiente
             rsTicket.close();

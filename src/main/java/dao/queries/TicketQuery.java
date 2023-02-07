@@ -9,10 +9,16 @@ public class TicketQuery {
         throw new PrivateConstructorException("Non chiamare questo costruttore");
     }
     public static ResultSet nameQuery(Connection conn, String nomeProp) throws SQLException {
-        String sql="SELECT * FROM Biglietto where Nome = '" + nomeProp + "';";
-        PreparedStatement pstm=conn.prepareStatement(sql);
-        pstm.setString(1,nomeProp);
-        return pstm.executeQuery(sql);
+        Statement stmt1 = null;
+        PreparedStatement pstmt = null;
+        String query = "SELECT * FROM Biglietto where Nome = '" + nomeProp + "';";
+        stmt1 = conn.createStatement();
+        ResultSet rs1 = stmt1.executeQuery("GETDATE()");
+
+        pstmt = conn.prepareStatement(query);
+        pstmt.setString(1, nomeProp);  // Good; PreparedStatements escape their inputs.
+        ResultSet rs2 = pstmt.executeQuery();
+        return rs2;
     }
     public static int insertTicket(Statement stm,String nomeProp,String sector,String seat) throws SQLException {
         String insertStatement = String.format("INSERT INTO Biglietto (Nome, Settore, Seat) VALUES (%s,'%s','%s')",nomeProp,sector,seat);

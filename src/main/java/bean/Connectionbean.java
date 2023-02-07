@@ -1,7 +1,6 @@
 package bean;
 
 import java.sql.Connection;
-import java.sql.PreparedStatement;
 import java.sql.Statement;
 //Bean  che uso nella fase di apertura e chiusura della connessione al database
 public class Connectionbean {
@@ -10,7 +9,7 @@ public class Connectionbean {
     private String dburl;
     private String driverclassname;
     private Connection connStabilita;
-    private PreparedStatement pstm;
+    private Statement stm;
     public Connectionbean(String us,String pass,String url,String dcs){
         this.user=us;
         this.passwd=pass;
@@ -32,13 +31,13 @@ public class Connectionbean {
     public Connection getConnStabilita(){
         return this.connStabilita;
     }
-    public Statement getPstm(){
-        return this.pstm;
+    public Statement getStm(){
+        return this.stm;
     }
     public void setConnStabilita(Connection conn){
         this.connStabilita=conn;
     }
-    public void setPstm(Statement stm){
-        this.pstm=stm;
+    public void setStm(Statement stm){
+        this.stm=stm;
     }
 }

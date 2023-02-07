@@ -1,9 +1,7 @@
 package create;
 
-import entity.Account;
-import entity.Club;
-import entity.Seat;
-import entity.Sector;
+import bean.CreateTicketBean;
+import entity.*;
 
 public class Createentity {
     private Account acc=null;                    //Questo rappresenta l'account loggato
@@ -11,25 +9,30 @@ public class Createentity {
     private Club c;
     private Sector s;
     private Seat seat;
+    private Ticket ticket;
     private static Createentity instance;
     public Account createAccount(String nome, String email, String passwd, String type, Club c) {  //metodo di creazione di istanza di account
-        acc = new Account(nome,email,passwd,type,c);
-        return acc;
+        this.acc = new Account(nome,email,passwd,type,c);
+        return this.acc;
     }
     public Sector createSector(String nomeSettore,String nomeClub){
         return this.s=new Sector(nomeSettore,nomeClub);
     }
-    public Account createAccountOrder(String nome, String email, String passwd,String type,Club c,boolean isOrder){
-        accountOrder=new Account(nome,email,passwd,type,null,false);
-        return accountOrder;
+    public Account createAccountOrder(String nome, String email, String passwd,String type){
+        this.accountOrder=new Account(nome,email,passwd,type,null,false);
+        return this.accountOrder;
     }
     public Club createClub(String clubName){                //metodo di creazione di istanza di club
         c = new Club(clubName);
-        return c;
+        return this.c;
     }
     public Seat createSeat(String num,String settore,String club){
         this.seat=new Seat(num,settore,club);
-        return seat;
+        return this.seat;
+    }
+    public Ticket createTicket(CreateTicketBean biglietto){
+        this.ticket=new Ticket(biglietto.getSelectSeat(),biglietto.getSelectSector());
+        return this.ticket;
     }
     public static Createentity getInstance() {              //metodo per farsi restituire l'istazna di Createentity dato che è suna singleton class
         if (Createentity.instance == null)

@@ -24,7 +24,7 @@ public class AccountQuery {
         return stm.executeQuery(sql);
     }
     public static int insertAccount(Statement stm, Account newAccount) throws SQLException{
-        String insertStatement = String.format("INSERT INTO Album (Email, Passwd, Nome, Tipo,Club) VALUES (%s,'%s','%s',%s,%s)", newAccount.getemail(), newAccount.getPaswd(), newAccount.getNome(), newAccount.getType(),newAccount.getClub().getName());
+        String insertStatement = String.format("INSERT INTO Account (Email, Passwd, Nome, Tipo,Club) VALUES (%s,'%s','%s',%s,%s)", newAccount.getemail(), newAccount.getPaswd(), newAccount.getNome(), newAccount.getType(),newAccount.getClub().getName());
         return stm.executeUpdate(insertStatement);
     }
 }

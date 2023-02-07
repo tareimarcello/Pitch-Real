@@ -1,10 +1,14 @@
 package applicationcontroller;
 
 import bean.BuyTicketBean;
+import bean.CreateTicketBean;
+import create.Createentity;
 import dao.SeatDao;
 import dao.SectorDao;
+import dao.TicketDao;
 import entity.Seat;
 import entity.Sector;
+import exception.DuplicatedNameException;
 import exception.OccupedSeatException;
 import exception.SectorFullException;
 import loader.PageLoader;
@@ -26,8 +30,15 @@ public class BuyTicketController {
         try{
             selectedSeat=estraiSeat.cercaPerNumero(seat);
         }catch(OccupedSeatException e){
-            PageLoader.pageLoader("First-View/CitySelectSeatWrong");
+            PageLoader.pageLoader("First-View/CitySelectSeatWrong.fxml");
         }
     }
-    //Manca il pezzo della creazione del biglietto e dela gestione dell'eccezione in caso in cui scrivo male il biglietto
+    public void creaBiglietto(){                //metodo che crea un'istanza di bilgietto
+        TicketDao createBiglietto=new TicketDao();
+        try {
+            createBiglietto.newInsertTicket(new CreateTicketBean(selectedSeat, selectedSector, Createentity.getInstance().getaccount().getNome()));            //Sto passando come ultimo parametro il nome dell'Account che fa l'acquisto
+        }catch(DuplicatedNameException e){
+            PageLoader.pageLoader("First-View/ErrorNameExisting.fxml");
+        }
+    }
 }

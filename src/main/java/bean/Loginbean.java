@@ -25,8 +25,8 @@ public class Loginbean {
         if (this.email.isBlank() || this.email==null || this.passwd==null || this.passwd.isBlank()){ //Controllo se uno dei due campi riaane vuoto e lancio l'eccezione corrispondente
             throw new NullString("Campo mail o password vuoto, riprova");
         }
-        String espressione = "[A-z0-9\\.\\+_-]+@[A-z0-9\\._-]+\\.[A-z]{2,6}";     //Espressione regolare della email
-        Pattern p = Pattern.compile(espressione);
+        String regExMail = "[A-z0-9\\.\\+_-]+@[A-z0-9\\._-]+\\.[A-z]{2,6}";     //Espressione regolare della email
+        Pattern p = Pattern.compile(regExMail);
         Matcher m = p.matcher(email);
         boolean matchFound = m.matches();
         if (!matchFound){         //Controllo se il formato email sia corretto

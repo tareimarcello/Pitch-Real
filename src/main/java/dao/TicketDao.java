@@ -27,16 +27,15 @@ public class TicketDao {
             dbConnection=op.openConnection(dbConnection);
 
             // In pratica i risultati delle query possono essere visti come un Array Associativo o un Map
-            ResultSet rsTicket = TicketQuery.nameQuery(dbConnection.getStm(),biglietto.getNomeProp());
+            ResultSet rsTicket = TicketQuery.nameQuery(dbConnection.getConnStabilita(),biglietto.getNomeProp());
             if(rsTicket.first()){
                 throw new DuplicatedNameException("Hai già comprato un biglietto von questo account");
             }
             rsTicket.close();
-            dbConnection.getStm().close();
+            dbConnection.getPstm().close();
 
             // STEP 4.2: creazione ed esecuzione della query
-            dbConnection.setStm(dbConnection.getConnStabilita().createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE, ResultSet.CONCUR_READ_ONLY));
-            TicketQuery.insertTicket(dbConnection.getStm(), biglietto.getNomeProp(), biglietto.getSelectSector().getNomeSettore(),biglietto.getSelectSeat().getNumSeat());
+            TicketQuery.insertTicket(dbConnection.getConnStabilita(), biglietto.getNomeProp(), biglietto.getSelectSector().getNomeSettore(),biglietto.getSelectSeat().getNumSeat());
             Createentity.getInstance().createTicket(biglietto);
             // STEP 5.1: Clean-up dell'ambiente
             rsTicket.close();

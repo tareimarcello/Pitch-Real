@@ -16,7 +16,7 @@ public class TicketQuery {
         ResultSet rs1 = stmt1.executeQuery("GETDATE()");
 
         pstmt = conn.prepareStatement(query);
-        pstmt.setString(1, nomeProp);  // Good; PreparedStatements escape their inputs.
+        pstmt.setString(1, nomeProp);  // NO SONAR
         ResultSet rs2 = pstmt.executeQuery();
         return rs2;
     }

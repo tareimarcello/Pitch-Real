@@ -27,13 +27,13 @@ public class ConnOperation {
             if (closebean.getStm() != null)
                 closebean.getStm().close();
         } catch (SQLException se2) {
-            System.exit(0);
+            se2.getMessage();
         }
         try {
             if (closebean.getConnStabilita() != null)
                 closebean.getConnStabilita().close();
         } catch (SQLException se) {
-            se.printStackTrace();                       //TUTTA QUESTA PARTE FINALE DEL TRY CATCH DA RIVEDER
+            se.getMessage();                       //TUTTA QUESTA PARTE FINALE DEL TRY CATCH DA RIVEDER
         }
     }
 }

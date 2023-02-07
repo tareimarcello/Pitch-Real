@@ -12,15 +12,15 @@ public class AccountQuery {
         throw new PrivateConstructorException("Non chiamare questo costruttore");
     }
     public static ResultSet logQuery(Statement stmt, String mail, String passwd) throws SQLException {
-        String sql = "SELECT * FROM Account join Club on Club=Nome where Email = '" + mail + "'& Passwd="+ passwd +"';'";
+        String sql = String.format("SELECT * FROM Account join Club on Club=Nome where Email = %s & Passwd= %s ;",mail,passwd);
         return stmt.executeQuery(sql);
     }
     public static ResultSet emailQuery(Statement stm, String mail) throws SQLException {
-        String sql="SELECT * FROM Account where Email = '" + mail + "';";
+        String sql=String.format("SELECT * FROM Account where Email = &s ;",mail);
         return stm.executeQuery(sql);
     }
     public static ResultSet typeQuery(Statement stm,String tipo) throws SQLException {
-        String sql="SELECT * FROM Account where Tipo = '" + tipo + "';";
+        String sql=String.format("SELECT * FROM Account where Tipo = %s ;",tipo);
         return stm.executeQuery(sql);
     }
     public static int insertAccount(Statement stm, Account newAccount) throws SQLException{

@@ -12,7 +12,7 @@ public class SectorQuery {
         throw new PrivateConstructorException("Non chiamare questo costruttore");
     }
     public static ResultSet nomeSectorQuery(Statement stm, String nomeSettore, String nomeClub) throws SQLException {
-        String sql = "SELECT * FROM Settore where Nome = '" + nomeSettore +"&& Club = "+ nomeClub+"';";
+        String sql = String.format("SELECT * FROM Settore where Nome = %s && Club = %s ;",nomeSettore,nomeClub);
         return stm.executeQuery(sql);
     }
 }

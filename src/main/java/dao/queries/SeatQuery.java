@@ -11,7 +11,7 @@ public class SeatQuery{
         throw new PrivateConstructorException("Non chiamare questo costruttore");
     }
         public static ResultSet numSeatQuery(Statement stm, String nomeSettore, String numSeat) throws SQLException {
-            String sql = "SELECT * FROM Settore where Nome = '" + nomeSettore +"&& Numero = "+ numSeat+"';";
+            String sql = String.format("SELECT * FROM Settore where Nome = %s Numero =  %s ;",nomeSettore,numSeat);
             return stm.executeQuery(sql);
         }
 }

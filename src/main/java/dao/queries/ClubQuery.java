@@ -11,7 +11,7 @@ public class ClubQuery {
         throw new PrivateConstructorException("Non chiamare questo costruttore");
     }
     public static ResultSet cercaSquadraPerNome(Statement stmt, String nome) throws SQLException {
-        String sql = "SELECT * FROM Club where Nome = '" + nome + "';";
+        String sql = String.format("SELECT * FROM Club where Nome =  %s  ;",nome);
         return stmt.executeQuery(sql);
     }
 }

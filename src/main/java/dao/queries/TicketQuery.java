@@ -12,8 +12,6 @@ public class TicketQuery {
         Statement stmt1 = null;
         PreparedStatement pstmt = null;
         String query = "SELECT * FROM Biglietto where Nome = '" + nomeProp + "';";
-        stmt1 = conn.createStatement();
-        ResultSet rs1 = stmt1.executeQuery("GETDATE()");
 
         pstmt = conn.prepareStatement(query);
         pstmt.setString(1, nomeProp);  // NO SONAR

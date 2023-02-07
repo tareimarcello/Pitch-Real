@@ -47,7 +47,7 @@ public class AccountDao {
             op.closeConnection(dbConnection);
         }
     }
-    public void newInsert(RegisterBean b, Account newAcc){
+    public void newInsert(RegisterBean b, Account newAcc) throws DuplicatedRecordException {
             // STEP 1: dichiarazioni
         Connectionbean dbConnection=null;
         ConnOperation op=null;
@@ -78,9 +78,7 @@ public class AccountDao {
                 // STEP 5.1: Clean-up dell'ambiente
                 rs.close();
             } catch (SQLException e) {
-                throw new RuntimeException(e);
-            } catch (DuplicatedRecordException e) {
-                throw new RuntimeException(e);
+                e.getMessage();
             } finally {
                 op.closeConnection(dbConnection);
             }

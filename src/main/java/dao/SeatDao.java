@@ -36,7 +36,7 @@ public class SeatDao {
             seatFetched = create.createSeat(num, settore,club);                                      //Creazione dell'entità settore
             seatRs.close();                                             //Chiusura del result set
         } catch (SQLException e) {
-            System.exit(0);
+            e.getMessage();
         } finally {
             op.closeConnection(dbConnection);
         }

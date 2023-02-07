@@ -1,7 +1,9 @@
 package dao;
 
 import bean.Buygadgetbean;
+import bean.Connectionbean;
 import create.Createentity;
+import dao.operazionisuconnesione.ConnOperation;
 import dao.queries.ClubQuery;
 import entity.Club;
 import exception.ClubNotFoundException;
@@ -14,38 +16,26 @@ public class ClubDAO {
     private static String dburl ="";
     private static String driverclassname ="";                                                //Tutte queste sono le credenziali per accedere al database
     public Club cercaPerNome(Buygadgetbean bean) throws ClubNotFoundException {
-        Statement stm = null;                                                                    //Dichiarazione di statement e connessione
-        Connection conn = null;
+        Connectionbean dbConnection = null;
+        ConnOperation op = null;
         Club c=null;
         try {
-            Class.forName(driverclassname);                                                                 //Caricamento dinamico del driver mysql
-            conn = DriverManager.getConnection(user, dbpasswd, dburl);                                           //Richiesta di connesione al DB
-            stm = conn.createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE, ResultSet.CONCUR_READ_ONLY);         //Creazione dello statement
-            ResultSet rs = ClubQuery.cercaSquadraPerNome(stm, bean.getClubName());                            //Lancio della query con conseguente restituzione del result set
-            if (!rs.first()) {                                                                                //Lancio l'eccezione nel caso in cui il Result Set risulti vuoto
+            dbConnection = new Connectionbean(user, dbpasswd, dburl, driverclassname);
+            op = new ConnOperation();
+            dbConnection = op.openConnection(dbConnection);
+            ResultSet clubRs = ClubQuery.cercaSquadraPerNome(dbConnection.getStm(), bean.getClubName());                            //Lancio della query con conseguente restituzione del result set
+            if (!clubRs.first()) {                                                                                //Lancio l'eccezione nel caso in cui il Result Set risulti vuoto
                 throw new ClubNotFoundException("Nessun Club corrisponde al nome:" + bean.getClubName());
             }
-            rs.first();
-            String nomeClub = rs.getString("Nome");             //Estraggo i dati dalla tabella per nome della colonna
+            clubRs.first();
+            String nomeClub = clubRs.getString("Nome");             //Estraggo i dati dalla tabella per nome della colonna
             Createentity create = Createentity.getInstance();                                           //Utilizzo la classe Factory per creare un istanza di club
             c = create.createClub(nomeClub);
-            rs.close();                                             //Chiusura del result set
-        } catch (ClassNotFoundException e) {
-            throw new RuntimeException(e);
+            clubRs.close();                                             //Chiusura del result set
         } catch (SQLException e) {
-            throw new RuntimeException(e);
+            e.getMessage();
         } finally {
-            try {
-                if (stm != null)
-                    stm.close();
-            } catch (SQLException se2) {
-            }
-            try {
-                if (conn != null)
-                    conn.close();
-            } catch (SQLException se) {
-                se.printStackTrace();                       //TUTTA QUESTA PARTE FINALE DEL TRY CATCH DA RIVEDER
-            }
+            op.closeConnection(dbConnection);
         }
         return c;
     }

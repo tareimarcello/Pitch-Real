@@ -16,7 +16,7 @@ public class AccountQuery {
         return stmt.executeQuery(sql);
     }
     public static ResultSet emailQuery(Statement stm, String mail) throws SQLException {
-        String sql=String.format("SELECT * FROM Account where Email = &s ;",mail);
+        String sql=String.format("SELECT * FROM Account where Email = %s ;",mail);
         return stm.executeQuery(sql);
     }
     public static ResultSet typeQuery(Statement stm,String tipo) throws SQLException {

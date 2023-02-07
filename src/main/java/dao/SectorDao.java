@@ -36,7 +36,7 @@ public class SectorDao {
             sectorFetched = create.createSector(nome, nomeClub);                                      //Creazione dell'entità settore
             sectorRs.close();                                             //Chiusura del result set
         } catch (SQLException e) {
-            System.exit(0);
+            e.getMessage();
         } finally {
             op.closeConnection(dbConnection);
         }

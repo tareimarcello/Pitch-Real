@@ -11,6 +11,7 @@ public class TicketQuery {
     public static ResultSet nameQuery(Connection conn, String nomeProp) throws SQLException {
         String sql="SELECT * FROM Biglietto where Nome = '" + nomeProp + "';";
         PreparedStatement pstm=conn.prepareStatement(sql);
+        pstm.setString(1,nomeProp);
         return pstm.executeQuery(sql);
     }
     public static int insertTicket(Statement stm,String nomeProp,String sector,String seat) throws SQLException {

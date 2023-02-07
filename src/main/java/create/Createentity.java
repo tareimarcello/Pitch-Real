@@ -16,7 +16,8 @@ public class Createentity {
         return this.acc;
     }
     public Sector createSector(String nomeSettore,String nomeClub){
-        return this.s=new Sector(nomeSettore,nomeClub);
+        this.s=new Sector(nomeSettore,nomeClub);
+        return this.s;
     }
     public Account createAccountOrder(String nome, String email, String passwd,String type){
         this.accountOrder=new Account(nome,email,passwd,type,null,false);

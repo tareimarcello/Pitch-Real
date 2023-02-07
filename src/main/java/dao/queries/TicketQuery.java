@@ -1,10 +1,15 @@
 package dao.queries;
 
+import exception.PrivateConstructorException;
+
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 
 public class TicketQuery {
+    private TicketQuery() throws PrivateConstructorException {
+        throw new PrivateConstructorException("Non chiamare questo costruttore");
+    }
     public static ResultSet nameQuery(Statement stm, String nomeProp) throws SQLException {
         String sql="SELECT * FROM Biglietto where Nome = '" + nomeProp + "';";
         return stm.executeQuery(sql);

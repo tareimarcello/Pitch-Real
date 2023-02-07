@@ -4,7 +4,7 @@ import bean.BuyTicketBean;
 import bean.Connectionbean;
 import create.Createentity;
 import dao.operazionisuconnesione.ConnOperation;
-import dao.queries.SectorQuery;
+import dao.queries.SeatQuery;
 import entity.Seat;
 import exception.OccupedSeatException;
 
@@ -24,7 +24,7 @@ public class SeatDao {
             dbConnection = new Connectionbean(user, dbpasswd, dburl, driverclassname);
             op = new ConnOperation();
             dbConnection = op.openConnection(dbConnection);                                                               //Fase di connnesione al database
-            ResultSet seatRs = SectorQuery.nomeSectorQuery(dbConnection.getStm(), seat.getSector(), seat.getSeat());                           //Lancio della query con conseguente restituzione del result set
+            ResultSet seatRs = SeatQuery.numSeatQuery(dbConnection.getStm(), seat.getSector(), seat.getSeat());                           //Lancio della query con conseguente restituzione del result set
             if(seatRs.first()){
                 throw new OccupedSeatException("Il posto che hai scelto è occupato");
             }

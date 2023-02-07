@@ -2,8 +2,10 @@ package controllergrafici.cityview;
 
 import bean.BuyTicketBean;
 import create.CreateBuyTicket;
+import exception.DuplicatedNameException;
 import exception.FormatErrorException;
 import exception.NullSelectionException;
+import exception.OccupedSeatException;
 import javafx.fxml.FXML;
 import javafx.scene.control.TextField;
 import loader.PageLoader;
@@ -26,7 +28,15 @@ public class CityTicketSeatView extends CityTicketShopView{
         }catch(FormatErrorException e){                 //Catch dell'eccezione in caso di formato errato
             PageLoader.pageLoader("First-View/CitySelectedSeatFormatError.fxml");
         }
-        CreateBuyTicket.getInstance().getcontroller().verificaDispSeat(seat);
-        CreateBuyTicket.getInstance().getcontroller().creaBiglietto();
+        try {
+            CreateBuyTicket.getInstance().getcontroller().verificaDispSeat(seat);
+        }catch(OccupedSeatException e){
+            PageLoader.pageLoader("First-View/CitySelectSeatWrong.fxml");
+        }
+        try {
+            CreateBuyTicket.getInstance().getcontroller().creaBiglietto();
+        }catch(DuplicatedNameException e){
+            PageLoader.pageLoader("First-View/ErrorNameExisting.fxml");
+        }
     }
 }

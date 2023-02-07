@@ -17,28 +17,17 @@ import loader.PageLoader;
 public class BuyTicketController {
     private Sector selectedSector;     //metto private perchè mi interessa che lo usi solo il controller
     private Seat selectedSeat;
-    public void verificaDispSector(BuyTicketBean input){
+    public void verificaDispSector(BuyTicketBean input) throws SectorFullException {
         SectorDao estraiSettore=new SectorDao();
-        try {
-            selectedSector=estraiSettore.cercaPerNome(input);   //Invoco la Dao per cercare il settore per il nome nel database
-        }catch(SectorFullException e){
-            PageLoader.pageLoader("First-View/CityTicketShopSectorFull.fxml");
-        }
+        selectedSector=estraiSettore.cercaPerNome(input);   //Invoco la Dao per cercare il settore per il nome nel database
     }
-    public void verificaDispSeat(BuyTicketBean seat){
+    public void verificaDispSeat(BuyTicketBean seat) throws OccupedSeatException {
         SeatDao estraiSeat=new SeatDao();
-        try{
-            selectedSeat=estraiSeat.cercaPerNumero(seat);
-        }catch(OccupedSeatException e){
-            PageLoader.pageLoader("First-View/CitySelectSeatWrong.fxml");
-        }
+        selectedSeat=estraiSeat.cercaPerNumero(seat);
     }
-    public void creaBiglietto(){                //metodo che crea un'istanza di bilgietto
+    public void creaBiglietto() throws DuplicatedNameException {                //metodo che crea un'istanza di bilgietto
         TicketDao createBiglietto=new TicketDao();
-        try {
-            createBiglietto.newInsertTicket(new CreateTicketBean(selectedSeat, selectedSector, Createentity.getInstance().getaccount().getNome()));            //Sto passando come ultimo parametro il nome dell'Account che fa l'acquisto
-        }catch(DuplicatedNameException e){
-            PageLoader.pageLoader("First-View/ErrorNameExisting.fxml");
-        }
+        createBiglietto.newInsertTicket(new CreateTicketBean(selectedSeat, selectedSector, Createentity.getInstance().getaccount().getNome()));            //Sto passando come ultimo parametro il nome dell'Account che fa l'acquisto
+        PageLoader.ticketPageLoader("First-View/CitySelectSeatOrder.fxml");
     }
 }

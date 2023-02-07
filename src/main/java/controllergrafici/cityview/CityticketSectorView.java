@@ -3,6 +3,7 @@ package controllergrafici.cityview;
 import bean.BuyTicketBean;
 import create.CreateBuyTicket;
 import exception.NullSelectionException;
+import exception.SectorFullException;
 import javafx.collections.FXCollections;
 import javafx.fxml.FXML;
 import javafx.scene.control.ComboBox;
@@ -26,7 +27,11 @@ public class CityticketSectorView extends CityTicketShopView{
         }catch(NullSelectionException e){
             PageLoader.pageLoader("First-View/CityTicketShopNullSelection.fxml");
         }
-        CreateBuyTicket.getInstance().createController().verificaDispSector(sectorInput);
+        try {
+            CreateBuyTicket.getInstance().createController().verificaDispSector(sectorInput);
+        }catch(SectorFullException e){
+            PageLoader.pageLoader("First-View/CityTicketShopSectorFull.fxml");
+        }
         PageLoader.pageLoader("First-View/CitySelectSeat.fxml");
     }
 }

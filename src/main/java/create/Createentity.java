@@ -52,6 +52,9 @@ public class Createentity {
     public Club getclub(){
         return this.c;
     }     //getter di account e club
+    public Seat getSeat(){
+        return this.seat;
+    }
     public void delAccount(){               //metodo per cancellare l'istanza di account
         this.acc=null;
     }

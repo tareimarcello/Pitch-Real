@@ -27,7 +27,7 @@ public class TicketDao {
             dbConnection=op.openConnection(dbConnection);
 
             // In pratica i risultati delle query possono essere visti come un Array Associativo o un Map
-            ResultSet rsTicket = TicketQuery.nameQuery(dbConnection.getConnStabilita(),biglietto.getNomeProp());
+            ResultSet rsTicket = TicketQuery.nameQuery(dbConnection.getStm(),biglietto.getNomeProp());
             if(rsTicket.first()){
                 throw new DuplicatedNameException("Hai già comprato un biglietto von questo account");
             }

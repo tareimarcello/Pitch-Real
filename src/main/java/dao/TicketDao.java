@@ -41,7 +41,7 @@ public class TicketDao {
             // STEP 5.1: Clean-up dell'ambiente
             rsTicket.close();
         } catch (SQLException e) {
-            e.printStackTrace();
+            e.getMessage();
         } finally {
             op.closeConnection(dbConnection);
         }

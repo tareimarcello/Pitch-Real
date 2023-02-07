@@ -29,7 +29,7 @@ public class SectorDao {
             String nome = sectorRs.getString("Nome");
             String nomeClub = sectorRs.getString("Club");                                        //leggo i record della tabella settore
             boolean isFull = sectorRs.getBoolean("Full");
-            if (isFull == true) {
+            if (isFull) {
                 throw new SectorFullException("Settore pieno provane un altro ");                       //Eccezion eche òancio se il settore è pieno
             }
             Createentity create = Createentity.getInstance();                                           //Utilizzo la classe Factory per creare un istanza di club

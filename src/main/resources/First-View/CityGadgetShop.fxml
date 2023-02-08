@@ -162,7 +162,8 @@
                         <Button layoutX="170.0" layoutY="51.0" mnemonicParsing="false" prefHeight="35.0" prefWidth="35.0" text="-" />
                      </children>
                   </AnchorPane>
-                  <Button layoutX="246.0" layoutY="757.0" mnemonicParsing="false" text="Vai al carrello" />
+                  <Button layoutX="340.0" layoutY="756.0" mnemonicParsing="false" text="Vai al carrello" />
+                  <Button layoutX="147.0" layoutY="756.0" mnemonicParsing="false" text="Torna indietro" />
                </children>
             </AnchorPane>
          </content>

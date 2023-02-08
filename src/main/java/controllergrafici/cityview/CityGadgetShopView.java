@@ -20,6 +20,7 @@ public class CityGadgetShopView {
     private Button msgButton;
     @FXML
     private Button goBackButton;
+    private String nomeClubShop;
     @FXML
     private void goHome(){
         PageLoader.pageLoader("First-View/LoggedHomepage.fxml");
@@ -38,52 +39,52 @@ public class CityGadgetShopView {
     }
     @FXML
     private void aggiungiMagliaHome(){
-        BuyGadgetBean gadget=new BuyGadgetBean("Maglia Home 22/23","Manchester City");
+        BuyGadgetBean gadget=new BuyGadgetBean("Maglia Home 22/23",nomeClubShop);
         CreateBuyGadget.getInstance().createController().aggiungiElemento(gadget);
     }
     @FXML
     private void aggiungiMagliaAway(){
-        BuyGadgetBean gadget=new BuyGadgetBean("Maglia Away 22/23","Manchester City");
+        BuyGadgetBean gadget=new BuyGadgetBean("Maglia Away 22/23",nomeClubShop);
         CreateBuyGadget.getInstance().createController().aggiungiElemento(gadget);
     }
     @FXML
     private void aggiungiKitHome(){
-        BuyGadgetBean gadget=new BuyGadgetBean("Kit Home 22/23","Manchester City");
+        BuyGadgetBean gadget=new BuyGadgetBean("Kit Home 22/23",nomeClubShop);
         CreateBuyGadget.getInstance().createController().aggiungiElemento(gadget);
     }
     @FXML
     private void aggiungiKitAway(){
-        BuyGadgetBean gadget=new BuyGadgetBean("Kit Away  22/23","Manchester City");
+        BuyGadgetBean gadget=new BuyGadgetBean("Kit Away  22/23",nomeClubShop);
         CreateBuyGadget.getInstance().createController().aggiungiElemento(gadget);
     }
     @FXML
     private void aggiungiPantsHome(){
-        BuyGadgetBean gadget=new BuyGadgetBean("Pants Home 22/23","Manchester City");
+        BuyGadgetBean gadget=new BuyGadgetBean("Pants Home 22/23",nomeClubShop);
         CreateBuyGadget.getInstance().createController().aggiungiElemento(gadget);
     }
     @FXML
     private void aggiungiPantsAway(){
-        BuyGadgetBean gadget=new BuyGadgetBean("Pants Away 22/23","Manchester City");
+        BuyGadgetBean gadget=new BuyGadgetBean("Pants Away 22/23",nomeClubShop);
         CreateBuyGadget.getInstance().createController().aggiungiElemento(gadget);
     }
     @FXML
     private void aggiungiCappelloVisiera(){
-        BuyGadgetBean gadget=new BuyGadgetBean("Cappello Visiera","Manchester City");
+        BuyGadgetBean gadget=new BuyGadgetBean("Cappello Visiera",nomeClubShop);
         CreateBuyGadget.getInstance().createController().aggiungiElemento(gadget);
     }
     @FXML
     private void aggiungiCappelloLana(){
-        BuyGadgetBean gadget=new BuyGadgetBean("Cappello Lana 22/23","Manchester City");
+        BuyGadgetBean gadget=new BuyGadgetBean("Cappello Lana 22/23",nomeClubShop);
         CreateBuyGadget.getInstance().createController().aggiungiElemento(gadget);
     }
     @FXML
     private void aggiungiSocksAway(){
-        BuyGadgetBean gadget=new BuyGadgetBean("Socks Away 22/23","Manchester City");
+        BuyGadgetBean gadget=new BuyGadgetBean("Socks Away 22/23",nomeClubShop);
         CreateBuyGadget.getInstance().createController().aggiungiElemento(gadget);
     }
     @FXML
     private void aggiungisocksHome() {
-        BuyGadgetBean gadget=new BuyGadgetBean("Socks Home 22/23","Manchester City");
+        BuyGadgetBean gadget=new BuyGadgetBean("Socks Home 22/23",nomeClubShop);
         CreateBuyGadget.getInstance().createController().aggiungiElemento(gadget);
     }
     @FXML

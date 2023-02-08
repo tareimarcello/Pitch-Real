@@ -10,7 +10,7 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="451.0" prefWidth="799.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllergrafici.cityview.CityticketSectorView">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="451.0" prefWidth="799.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllergrafici.cityview.TicketOrderView">
     <children>
         <AnchorPane prefHeight="78.0" prefWidth="804.0" style="-fx-background-color: #47484a;">
             <children>
@@ -19,14 +19,14 @@
                         <Font size="48.0" />
                     </font>
                 </Text>
-                <Button fx:id="HomeButton" layoutX="735.0" layoutY="22.0" mnemonicParsing="false" prefHeight="37.0" prefWidth="37.0" />
+                <Button fx:id="homeButton" layoutX="735.0" layoutY="22.0" mnemonicParsing="false" onAction="#goHomepage" prefHeight="37.0" prefWidth="37.0" />
                 <ImageView fitHeight="30.0" fitWidth="30.0" layoutX="739.0" layoutY="23.0" pickOnBounds="true" preserveRatio="true">
                     <image>
                         <Image url="@../ImmaginiUI/icons8-casa-24.png" />
                     </image>
                 </ImageView>
-                <Button fx:id="LogoutButton" layoutX="736.0" layoutY="22.0" mnemonicParsing="false" prefHeight="37.0" prefWidth="37.0" translateX="-65.0" />
-                <Button fx:id="messageButton" layoutX="671.0" layoutY="22.0" mnemonicParsing="false" prefHeight="37.0" prefWidth="37.0" translateX="-65.0" />
+                <Button fx:id="logOutButton" layoutX="736.0" layoutY="22.0" mnemonicParsing="false" onAction="#logOutClick" prefHeight="37.0" prefWidth="37.0" translateX="-65.0" />
+                <Button fx:id="msgButton" layoutX="671.0" layoutY="22.0" mnemonicParsing="false" onAction="#goToMsg" prefHeight="37.0" prefWidth="37.0" translateX="-65.0" />
                 <ImageView fitHeight="30.0" fitWidth="30.0" layoutX="675.0" layoutY="26.0" pickOnBounds="true" preserveRatio="true">
                     <image>
                         <Image url="@../ImmaginiUI/icons8-uscita-24.png" />
@@ -56,11 +56,8 @@
                         <Font size="24.0" />
                     </font>
                 </Text>
-                <Button layoutX="447.0" layoutY="156.0" mnemonicParsing="false" text="Torna alla Home" />
-                <Button layoutX="429.0" layoutY="80.0" mnemonicParsing="false" text="Invia Biglietto via mail" />
-                <TextField layoutX="44.0" layoutY="80.0" />
-                <TextField layoutX="44.0" layoutY="147.0" />
-                <TextField layoutX="44.0" layoutY="219.0" />
+                <Button fx:id="squadhomeButton" layoutX="447.0" layoutY="156.0" mnemonicParsing="false" onAction="#goSquadHome" text="Torna alla Home" />
+                <Button fx:id="mailButton" layoutX="429.0" layoutY="80.0" mnemonicParsing="false" onAction="#sendEmail" text="Invia Biglietto via mail" />
                 <Text fill="#f8f6f6" layoutX="44.0" layoutY="65.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Nome">
                     <font>
                         <Font size="18.0" />

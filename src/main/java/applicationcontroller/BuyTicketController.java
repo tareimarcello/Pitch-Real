@@ -28,6 +28,6 @@ public class BuyTicketController {
     public void creaBiglietto() throws DuplicatedNameException {                //metodo che crea un'istanza di bilgietto
         TicketDao createBiglietto=new TicketDao();
         createBiglietto.newInsertTicket(new CreateTicketBean(selectedSeat, selectedSector, Createentity.getInstance().getaccount().getNome()));            //Sto passando come ultimo parametro il nome dell'Account che fa l'acquisto
-        PageLoader.ticketPageLoader("First-View/CitySelectSeatOrder.fxml");
+        PageLoader.ticketPageLoader("First-View/CitySelectSeatOrder.fxml",null);
     }
 }

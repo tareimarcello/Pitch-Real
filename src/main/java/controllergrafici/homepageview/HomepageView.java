@@ -1,6 +1,6 @@
 package controllergrafici.homepageview;
 
-import bean.Buygadgetbean;
+import bean.ResearchBean;
 import create.Createentity;
 import dao.ClubDAO;
 import entity.Club;
@@ -18,7 +18,7 @@ public class HomepageView {
     protected TextField researchText;
     public void researchButtonClick(ActionEvent e){
         String clubName = researchText.getText();                     //Cattura del testo nella barra di ricerca
-        Buygadgetbean bean =new Buygadgetbean(clubName);             //Istanziazione del Bean
+        ResearchBean bean =new ResearchBean(clubName);             //Istanziazione del Bean
         ClubDAO club=new ClubDAO();
         Club researchClub =null;
         try {

@@ -1,6 +1,6 @@
 package dao;
 
-import bean.Buygadgetbean;
+import bean.ResearchBean;
 import bean.Connectionbean;
 import create.Createentity;
 import dao.operazionisuconnesione.ConnOperation;
@@ -15,7 +15,7 @@ public class ClubDAO {
     private static String dbpasswd="";
     private static String dburl ="";
     private static String driverclassname ="";                                                //Tutte queste sono le credenziali per accedere al database
-    public Club cercaPerNome(Buygadgetbean bean) throws ClubNotFoundException {
+    public Club cercaPerNome(ResearchBean bean) throws ClubNotFoundException {
         Connectionbean dbConnection = null;
         ConnOperation op = null;
         Club c=null;

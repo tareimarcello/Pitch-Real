@@ -1,0 +1,215 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="686.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
+    <children>
+        <ScrollPane layoutY="154.0" prefHeight="826.0" prefWidth="600.0" style="-fx-background-color: #47484a;">
+            <content>
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="808.0" prefWidth="601.0" style="-fx-background-radius: 0; -fx-background-color: #47484a;">
+                    <children>
+                        <AnchorPane layoutX="30.0" layoutY="57.0" prefHeight="97.0" prefWidth="234.0" style="-fx-background-color: white;">
+                            <children>
+                                <ImageView fitHeight="88.0" fitWidth="78.0" layoutX="8.0" layoutY="7.0" pickOnBounds="true" preserveRatio="true">
+                                    <image>
+                                        <Image url="@../ImmaginiUI/magliacity.jpeg" />
+                                    </image>
+                                </ImageView>
+                                <Text layoutX="81.0" layoutY="20.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Maglia Home 22/23" />
+                                <Button layoutX="100.0" layoutY="51.0" mnemonicParsing="false" prefHeight="35.0" prefWidth="35.0" text="+" />
+                                <Text layoutX="116.0" layoutY="41.0" strokeType="OUTSIDE" strokeWidth="0.0" text="90.00 €" />
+                                <Button layoutX="165.0" layoutY="51.0" mnemonicParsing="false" prefHeight="35.0" prefWidth="35.0" text="-" />
+                            </children>
+                        </AnchorPane>
+                        <AnchorPane layoutX="332.0" layoutY="57.0" prefHeight="97.0" prefWidth="234.0" style="-fx-background-color: white;">
+                            <children>
+                                <ImageView fitHeight="88.0" fitWidth="78.0" layoutX="8.0" layoutY="10.0" pickOnBounds="true" preserveRatio="true">
+                                    <image>
+                                        <Image url="@../ImmaginiUI/magliaaway.jpeg" />
+                                    </image>
+                                </ImageView>
+                                <Text layoutX="95.0" layoutY="20.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Maglia Away 22/23" />
+                                <Button layoutX="109.0" layoutY="51.0" mnemonicParsing="false" prefHeight="35.0" prefWidth="35.0" text="+" />
+                                <Text layoutX="126.0" layoutY="41.0" strokeType="OUTSIDE" strokeWidth="0.0" text="90.00€" />
+                                <Button layoutX="170.0" layoutY="51.0" mnemonicParsing="false" prefHeight="35.0" prefWidth="35.0" text="-" />
+                            </children>
+                        </AnchorPane>
+                        <Text fill="#fcf9f9" layoutX="30.0" layoutY="40.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Maglie" wrappingWidth="119.0703125">
+                            <font>
+                                <Font size="24.0" />
+                            </font>
+                        </Text>
+                        <Text fill="#fcf9f9" layoutX="30.0" layoutY="193.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Kit" wrappingWidth="119.0703125">
+                            <font>
+                                <Font size="24.0" />
+                            </font>
+                        </Text>
+                        <AnchorPane layoutX="32.0" layoutY="208.0" prefHeight="97.0" prefWidth="234.0" style="-fx-background-color: white;">
+                            <children>
+                                <ImageView fitHeight="88.0" fitWidth="78.0" layoutY="12.0" pickOnBounds="true" preserveRatio="true">
+                                    <image>
+                                        <Image url="@../ImmaginiUI/kitcasa.jpeg" />
+                                    </image>
+                                </ImageView>
+                                <Text layoutX="88.0" layoutY="20.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Kit Home 22/23" />
+                                <Button layoutX="100.0" layoutY="51.0" mnemonicParsing="false" prefHeight="35.0" prefWidth="35.0" text="+" />
+                                <Text layoutX="117.0" layoutY="41.0" strokeType="OUTSIDE" strokeWidth="0.0" text="130.00 €" />
+                                <Button layoutX="165.0" layoutY="51.0" mnemonicParsing="false" prefHeight="35.0" prefWidth="35.0" text="-" />
+                            </children>
+                        </AnchorPane>
+                        <AnchorPane layoutX="332.0" layoutY="208.0" prefHeight="97.0" prefWidth="234.0" style="-fx-background-color: white;">
+                            <children>
+                                <ImageView fitHeight="88.0" fitWidth="78.0" layoutX="8.0" layoutY="7.0" pickOnBounds="true" preserveRatio="true">
+                                    <image>
+                                        <Image url="@../ImmaginiUI/kitfuori.jpeg" />
+                                    </image>
+                                </ImageView>
+                                <Text layoutX="88.0" layoutY="20.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Kit Away 22/23" />
+                                <Button layoutX="109.0" layoutY="51.0" mnemonicParsing="false" prefHeight="35.0" prefWidth="35.0" text="+" />
+                                <Text layoutX="117.0" layoutY="41.0" strokeType="OUTSIDE" strokeWidth="0.0" text="130.00 €" />
+                                <Button layoutX="170.0" layoutY="51.0" mnemonicParsing="false" prefHeight="35.0" prefWidth="35.0" text="-" />
+                            </children>
+                        </AnchorPane>
+                        <AnchorPane layoutX="30.0" layoutY="358.0" prefHeight="97.0" prefWidth="234.0" style="-fx-background-color: white;">
+                            <children>
+                                <ImageView fitHeight="88.0" fitWidth="78.0" layoutY="12.0" pickOnBounds="true" preserveRatio="true">
+                                    <image>
+                                        <Image url="@../ImmaginiUI/homepants.jpeg" />
+                                    </image>
+                                </ImageView>
+                                <Text layoutX="88.0" layoutY="20.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Pants Home 22/23" />
+                                <Button layoutX="102.0" layoutY="51.0" mnemonicParsing="false" prefHeight="35.0" prefWidth="35.0" text="+" />
+                                <Text layoutX="117.0" layoutY="41.0" strokeType="OUTSIDE" strokeWidth="0.0" text="40.00 €" />
+                                <Button layoutX="165.0" layoutY="51.0" mnemonicParsing="false" prefHeight="35.0" prefWidth="35.0" text="-" />
+                            </children>
+                        </AnchorPane>
+                        <AnchorPane layoutX="332.0" layoutY="358.0" prefHeight="97.0" prefWidth="234.0" style="-fx-background-color: white;">
+                            <children>
+                                <ImageView fitHeight="88.0" fitWidth="78.0" layoutX="8.0" layoutY="7.0" pickOnBounds="true" preserveRatio="true">
+                                    <image>
+                                        <Image url="@../ImmaginiUI/awaypants.jpeg" />
+                                    </image>
+                                </ImageView>
+                                <Text layoutX="88.0" layoutY="20.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Pants Away 22/23" />
+                                <Button layoutX="109.0" layoutY="51.0" mnemonicParsing="false" prefHeight="35.0" prefWidth="35.0" text="+" />
+                                <Text layoutX="117.0" layoutY="41.0" strokeType="OUTSIDE" strokeWidth="0.0" text="40.00 €" />
+                                <Button layoutX="170.0" layoutY="51.0" mnemonicParsing="false" prefHeight="35.0" prefWidth="35.0" text="-" />
+                            </children>
+                        </AnchorPane>
+                        <Text fill="#fcf9f9" layoutX="32.0" layoutY="343.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Pants" wrappingWidth="147.0703125">
+                            <font>
+                                <Font size="24.0" />
+                            </font>
+                        </Text>
+                        <AnchorPane layoutX="32.0" layoutY="516.0" prefHeight="97.0" prefWidth="234.0" style="-fx-background-color: white;">
+                            <children>
+                                <ImageView fitHeight="88.0" fitWidth="78.0" layoutY="12.0" pickOnBounds="true" preserveRatio="true">
+                                    <image>
+                                        <Image url="@../ImmaginiUI/cappello.jpeg" />
+                                    </image>
+                                </ImageView>
+                                <Text layoutX="88.0" layoutY="20.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Cappello con visiera" />
+                                <Button layoutX="102.0" layoutY="51.0" mnemonicParsing="false" prefHeight="35.0" prefWidth="35.0" text="+" />
+                                <Text layoutX="117.0" layoutY="41.0" strokeType="OUTSIDE" strokeWidth="0.0" text="40.00 €" />
+                                <Button layoutX="165.0" layoutY="51.0" mnemonicParsing="false" prefHeight="35.0" prefWidth="35.0" text="-" />
+                            </children>
+                        </AnchorPane>
+                        <Text fill="#fcf9f9" layoutX="32.0" layoutY="496.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Gadget vari" wrappingWidth="147.0703125">
+                            <font>
+                                <Font size="24.0" />
+                            </font>
+                        </Text>
+                        <AnchorPane layoutX="332.0" layoutY="516.0" prefHeight="97.0" prefWidth="234.0" style="-fx-background-color: white;">
+                            <children>
+                                <ImageView fitHeight="88.0" fitWidth="78.0" layoutY="12.0" pickOnBounds="true" preserveRatio="true">
+                                    <image>
+                                        <Image url="@../ImmaginiUI/cappellolana.jpeg" />
+                                    </image>
+                                </ImageView>
+                                <Text layoutX="88.0" layoutY="20.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Cappello lana" />
+                                <Button layoutX="109.0" layoutY="51.0" mnemonicParsing="false" prefHeight="35.0" prefWidth="35.0" text="+" />
+                                <Text layoutX="117.0" layoutY="41.0" strokeType="OUTSIDE" strokeWidth="0.0" text="40.00 €" />
+                                <Button layoutX="170.0" layoutY="51.0" mnemonicParsing="false" prefHeight="35.0" prefWidth="35.0" text="-" />
+                            </children>
+                        </AnchorPane>
+                        <AnchorPane layoutX="30.0" layoutY="630.0" prefHeight="97.0" prefWidth="234.0" style="-fx-background-color: white;">
+                            <children>
+                                <ImageView fitHeight="88.0" fitWidth="78.0" layoutY="12.0" pickOnBounds="true" preserveRatio="true">
+                                    <image>
+                                        <Image url="@../ImmaginiUI/calzettoni.jpeg" />
+                                    </image>
+                                </ImageView>
+                                <Text layoutX="76.0" layoutY="20.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Socks Home 22/23" />
+                                <Button layoutX="102.0" layoutY="51.0" mnemonicParsing="false" prefHeight="35.0" prefWidth="35.0" text="+" />
+                                <Text layoutX="117.0" layoutY="41.0" strokeType="OUTSIDE" strokeWidth="0.0" text="17.50 €" />
+                                <Button layoutX="165.0" layoutY="51.0" mnemonicParsing="false" prefHeight="35.0" prefWidth="35.0" text="-" />
+                            </children>
+                        </AnchorPane>
+                        <AnchorPane layoutX="332.0" layoutY="630.0" prefHeight="97.0" prefWidth="234.0" style="-fx-background-color: white;">
+                            <children>
+                                <ImageView fitHeight="88.0" fitWidth="78.0" layoutY="12.0" pickOnBounds="true" preserveRatio="true">
+                                    <image>
+                                        <Image url="@../ImmaginiUI/calzettoniaway.jpeg" />
+                                    </image>
+                                </ImageView>
+                                <Text layoutX="88.0" layoutY="20.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Socks Away 22/23" />
+                                <Button layoutX="109.0" layoutY="51.0" mnemonicParsing="false" prefHeight="35.0" prefWidth="35.0" text="+" />
+                                <Text layoutX="117.0" layoutY="41.0" strokeType="OUTSIDE" strokeWidth="0.0" text="17.50 €" />
+                                <Button layoutX="170.0" layoutY="51.0" mnemonicParsing="false" prefHeight="35.0" prefWidth="35.0" text="-" />
+                            </children>
+                        </AnchorPane>
+                        <Button layoutX="340.0" layoutY="756.0" mnemonicParsing="false" text="Vai al carrello" />
+                        <Button layoutX="147.0" layoutY="756.0" mnemonicParsing="false" text="Torna indietro" />
+                  <Text fill="#ff0404" layoutX="148.0" layoutY="37.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Il gadget che hai aggiunto è terminato">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </Text>
+                    </children>
+                </AnchorPane>
+            </content>
+        </ScrollPane>
+        <AnchorPane prefHeight="78.0" prefWidth="603.0" style="-fx-background-color: #47484a;">
+            <children>
+                <Text fill="#fcf9f9" layoutX="14.0" layoutY="58.0" strokeType="OUTSIDE" strokeWidth="0.0" text="PITCH">
+                    <font>
+                        <Font size="48.0" />
+                    </font>
+                </Text>
+                <Button alignment="CENTER_RIGHT" layoutX="552.0" layoutY="24.0" mnemonicParsing="false" prefHeight="37.0" prefWidth="37.0" />
+                <Button layoutX="552.0" layoutY="24.0" mnemonicParsing="false" prefHeight="37.0" prefWidth="37.0" translateX="-65.0" />
+                <Button layoutX="552.0" layoutY="24.0" mnemonicParsing="false" prefHeight="37.0" prefWidth="37.0" translateX="-130.0" />
+                <ImageView fitHeight="30.0" fitWidth="30.0" layoutX="426.0" layoutY="28.0" pickOnBounds="true" preserveRatio="true">
+                    <image>
+                        <Image url="@../ImmaginiUI/icons8-nuovo-messaggio-24.png" />
+                    </image>
+                </ImageView>
+                <ImageView fitHeight="30.0" fitWidth="30.0" layoutX="491.0" layoutY="28.0" pickOnBounds="true" preserveRatio="true">
+                    <image>
+                        <Image url="@../ImmaginiUI/icons8-uscita-24.png" />
+                    </image>
+                </ImageView>
+                <ImageView fitHeight="30.0" fitWidth="30.0" layoutX="556.0" layoutY="28.0" pickOnBounds="true" preserveRatio="true">
+                    <image>
+                        <Image url="@../ImmaginiUI/icons8-casa-24.png" />
+                    </image>
+                </ImageView>
+            </children>
+        </AnchorPane>
+        <ImageView fitHeight="56.0" fitWidth="54.0" layoutX="148.0" layoutY="89.0" pickOnBounds="true" preserveRatio="true">
+            <image>
+                <Image url="@../ImmaginiUI/logo.png" />
+            </image>
+        </ImageView>
+        <Text layoutX="226.0" layoutY="125.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Manchester City FC">
+            <font>
+                <Font size="24.0" />
+            </font>
+        </Text>
+        <ImageView fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true" />
+    </children>
+</AnchorPane>

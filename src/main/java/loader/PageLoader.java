@@ -7,6 +7,7 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.TextField;
+import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
 
 import java.io.IOException;
@@ -15,6 +16,10 @@ import java.io.IOException;
 public class PageLoader {
     private PageLoader() throws PrivateConstructorException {
         throw new PrivateConstructorException("Non chiamare questo costruttore");
+    }
+    public static void setCoordinate(TextField setter,int x,int y){
+        setter.setLayoutX(x);
+        setter.setLayoutY(y);
     }
     public static void pageLoader(String filename){            //Metodo per il caricamneto della pagina
         FXMLLoader loader = new FXMLLoader(PageLoader.class.getResource(filename));
@@ -44,8 +49,9 @@ public class PageLoader {
     }
     public static void ticketPageLoader(String filename){
         FXMLLoader loader = new FXMLLoader(PageLoader.class.getClassLoader().getResource(filename));
+        AnchorPane ticketRoot=null;
         try {
-            loader.load();
+            ticketRoot=loader.load();
         } catch (IOException e) {
             System.exit(0);
         }
@@ -55,6 +61,6 @@ public class PageLoader {
         settore.setText(Createentity.getInstance().getSector().getNomeSettore());
         TextField seat=new TextField();
         seat.setText(Createentity.getInstance().getSeat().getNumSeat());
-        nome.set
+        PageLoader.setCoordinate();
     }
 }

@@ -37,7 +37,7 @@ public class Createentity {
         return this.ticket;
     }
     public Gadget createGadget(BuyGadgetBean gadget){
-        Gadget newGadget=new Gadget(gadget.getGadget(), gadget.getClubGadget() );
+        Gadget newGadget=new Gadget(gadget.getGadget(), gadget.getClubGadget(),gadget.getPrice() );
         return newGadget;
     }
     public static Createentity getInstance() {              //metodo per farsi restituire l'istazna di Createentity dato che è suna singleton class

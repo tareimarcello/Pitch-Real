@@ -31,8 +31,10 @@ public class GadgetDao {
             if(qt==0){
                 throw new GadgetFinishException("Quantità terminata");
             }
+            double prezzo=gadgetRs.getDouble("Prezzo");
             Createentity create = Createentity.getInstance();                                           //Utilizzo la classe Factory per creare un istanza di club
-            foundGadget=create.createGadget(searchGadget);                       //Creo anche un'istanza di club per realizzare l'associazione tra istanza di club e istanza di account
+            BuyGadgetBean newgadget=new BuyGadgetBean(searchGadget.getGadget(), searchGadget.getClubGadget(),prezzo);
+            foundGadget=create.createGadget(newgadget);                       //Creo anche un'istanza di club per realizzare l'associazione tra istanza di club e istanza di account
             gadgetRs.close();                                             //Chiusura del result set
         } catch (SQLException e) {
             System.exit(0);

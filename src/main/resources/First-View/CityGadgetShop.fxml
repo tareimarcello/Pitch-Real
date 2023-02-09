@@ -6,7 +6,7 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="686.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="686.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllergrafici.cityview.CityGadgetShopView">
    <children>
       <ScrollPane layoutY="154.0" prefHeight="826.0" prefWidth="600.0" style="-fx-background-color: #47484a;">
          <content>
@@ -20,9 +20,9 @@
                            </image>
                         </ImageView>
                         <Text layoutX="81.0" layoutY="20.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Maglia Home 22/23" />
-                        <Button layoutX="100.0" layoutY="51.0" mnemonicParsing="false" prefHeight="35.0" prefWidth="35.0" text="+" />
+                        <Button fx:id="addMagliaHomeButton" layoutX="100.0" layoutY="51.0" mnemonicParsing="false" onAction="#aggiungiMagliaHome" prefHeight="35.0" prefWidth="35.0" text="+" />
                         <Text layoutX="116.0" layoutY="41.0" strokeType="OUTSIDE" strokeWidth="0.0" text="90.00 €" />
-                        <Button layoutX="165.0" layoutY="51.0" mnemonicParsing="false" prefHeight="35.0" prefWidth="35.0" text="-" />
+                        <Button fx:id="removeMagliaHomeButton" layoutX="165.0" layoutY="51.0" mnemonicParsing="false" onAction="#rimuoviMagliaHome" prefHeight="35.0" prefWidth="35.0" text="-" />
                      </children>
                   </AnchorPane>
                   <AnchorPane layoutX="332.0" layoutY="57.0" prefHeight="97.0" prefWidth="234.0" style="-fx-background-color: white;">
@@ -33,9 +33,9 @@
                            </image>
                         </ImageView>
                         <Text layoutX="95.0" layoutY="20.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Maglia Away 22/23" />
-                        <Button layoutX="109.0" layoutY="51.0" mnemonicParsing="false" prefHeight="35.0" prefWidth="35.0" text="+" />
+                        <Button fx:id="addMagliaAwayButton" layoutX="109.0" layoutY="51.0" mnemonicParsing="false" onAction="#aggiungiMagliaAway" prefHeight="35.0" prefWidth="35.0" text="+" />
                         <Text layoutX="126.0" layoutY="41.0" strokeType="OUTSIDE" strokeWidth="0.0" text="90.00€" />
-                        <Button layoutX="170.0" layoutY="51.0" mnemonicParsing="false" prefHeight="35.0" prefWidth="35.0" text="-" />
+                        <Button fx:id="removeMagliaAwayButton" layoutX="170.0" layoutY="51.0" mnemonicParsing="false" onAction="#rimuoviMagliaAway" prefHeight="35.0" prefWidth="35.0" text="-" />
                      </children>
                   </AnchorPane>
                   <Text fill="#fcf9f9" layoutX="30.0" layoutY="40.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Maglie" wrappingWidth="119.0703125">
@@ -56,9 +56,9 @@
                            </image>
                         </ImageView>
                         <Text layoutX="88.0" layoutY="20.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Kit Home 22/23" />
-                        <Button layoutX="100.0" layoutY="51.0" mnemonicParsing="false" prefHeight="35.0" prefWidth="35.0" text="+" />
+                        <Button fx:id="addKitHomeButton" layoutX="100.0" layoutY="51.0" mnemonicParsing="false" onAction="#aggiungiKitHome" prefHeight="35.0" prefWidth="35.0" text="+" />
                         <Text layoutX="117.0" layoutY="41.0" strokeType="OUTSIDE" strokeWidth="0.0" text="130.00 €" />
-                        <Button layoutX="165.0" layoutY="51.0" mnemonicParsing="false" prefHeight="35.0" prefWidth="35.0" text="-" />
+                        <Button fx:id="removeKitHomeButton" layoutX="165.0" layoutY="51.0" mnemonicParsing="false" onAction="#rimuoviKitHome" prefHeight="35.0" prefWidth="35.0" text="-" />
                      </children>
                   </AnchorPane>
                   <AnchorPane layoutX="332.0" layoutY="208.0" prefHeight="97.0" prefWidth="234.0" style="-fx-background-color: white;">
@@ -69,9 +69,9 @@
                            </image>
                         </ImageView>
                         <Text layoutX="88.0" layoutY="20.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Kit Away 22/23" />
-                        <Button layoutX="109.0" layoutY="51.0" mnemonicParsing="false" prefHeight="35.0" prefWidth="35.0" text="+" />
+                        <Button fx:id="addKitAwayButton" layoutX="109.0" layoutY="51.0" mnemonicParsing="false" onAction="#aggiungiKitAway" prefHeight="35.0" prefWidth="35.0" text="+" />
                         <Text layoutX="117.0" layoutY="41.0" strokeType="OUTSIDE" strokeWidth="0.0" text="130.00 €" />
-                        <Button layoutX="170.0" layoutY="51.0" mnemonicParsing="false" prefHeight="35.0" prefWidth="35.0" text="-" />
+                        <Button fx:id="removeKitAwayButton" layoutX="170.0" layoutY="51.0" mnemonicParsing="false" onAction="#rimuoviKitAway" prefHeight="35.0" prefWidth="35.0" text="-" />
                      </children>
                   </AnchorPane>
                   <AnchorPane layoutX="30.0" layoutY="358.0" prefHeight="97.0" prefWidth="234.0" style="-fx-background-color: white;">
@@ -82,9 +82,9 @@
                            </image>
                         </ImageView>
                         <Text layoutX="88.0" layoutY="20.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Pants Home 22/23" />
-                        <Button layoutX="102.0" layoutY="51.0" mnemonicParsing="false" prefHeight="35.0" prefWidth="35.0" text="+" />
+                        <Button fx:id="addPantsHomeButton" layoutX="102.0" layoutY="51.0" mnemonicParsing="false" onAction="#aggiungiPantsHome" prefHeight="35.0" prefWidth="35.0" text="+" />
                         <Text layoutX="117.0" layoutY="41.0" strokeType="OUTSIDE" strokeWidth="0.0" text="40.00 €" />
-                        <Button layoutX="165.0" layoutY="51.0" mnemonicParsing="false" prefHeight="35.0" prefWidth="35.0" text="-" />
+                        <Button fx:id="removePantsHomeButton" layoutX="165.0" layoutY="51.0" mnemonicParsing="false" onAction="#rimuoviPantsHome" prefHeight="35.0" prefWidth="35.0" text="-" />
                      </children>
                   </AnchorPane>
                   <AnchorPane layoutX="332.0" layoutY="358.0" prefHeight="97.0" prefWidth="234.0" style="-fx-background-color: white;">
@@ -95,9 +95,9 @@
                            </image>
                         </ImageView>
                         <Text layoutX="88.0" layoutY="20.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Pants Away 22/23" />
-                        <Button layoutX="109.0" layoutY="51.0" mnemonicParsing="false" prefHeight="35.0" prefWidth="35.0" text="+" />
+                        <Button fx:id="addPantsAwayButton" layoutX="109.0" layoutY="51.0" mnemonicParsing="false" onAction="#aggiungiPantsAway" prefHeight="35.0" prefWidth="35.0" text="+" />
                         <Text layoutX="117.0" layoutY="41.0" strokeType="OUTSIDE" strokeWidth="0.0" text="40.00 €" />
-                        <Button layoutX="170.0" layoutY="51.0" mnemonicParsing="false" prefHeight="35.0" prefWidth="35.0" text="-" />
+                        <Button fx:id="removePantsAwayButton" layoutX="170.0" layoutY="51.0" mnemonicParsing="false" onAction="#rimuoviPantsAway" prefHeight="35.0" prefWidth="35.0" text="-" />
                      </children>
                   </AnchorPane>
                   <Text fill="#fcf9f9" layoutX="32.0" layoutY="343.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Pants" wrappingWidth="147.0703125">
@@ -113,9 +113,9 @@
                            </image>
                         </ImageView>
                         <Text layoutX="88.0" layoutY="20.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Cappello con visiera" />
-                        <Button layoutX="102.0" layoutY="51.0" mnemonicParsing="false" prefHeight="35.0" prefWidth="35.0" text="+" />
+                        <Button fx:id="addCappelloVisieraButton" layoutX="102.0" layoutY="51.0" mnemonicParsing="false" onAction="#aggiungiCappelloVisiera" prefHeight="35.0" prefWidth="35.0" text="+" />
                         <Text layoutX="117.0" layoutY="41.0" strokeType="OUTSIDE" strokeWidth="0.0" text="40.00 €" />
-                        <Button layoutX="165.0" layoutY="51.0" mnemonicParsing="false" prefHeight="35.0" prefWidth="35.0" text="-" />
+                        <Button fx:id="removeCappelloVisieraButton" layoutX="165.0" layoutY="51.0" mnemonicParsing="false" onAction="#rimuoviCappelloVisiera" prefHeight="35.0" prefWidth="35.0" text="-" />
                      </children>
                   </AnchorPane>
                   <Text fill="#fcf9f9" layoutX="32.0" layoutY="496.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Gadget vari" wrappingWidth="147.0703125">
@@ -131,9 +131,9 @@
                            </image>
                         </ImageView>
                         <Text layoutX="88.0" layoutY="20.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Cappello lana" />
-                        <Button layoutX="109.0" layoutY="51.0" mnemonicParsing="false" prefHeight="35.0" prefWidth="35.0" text="+" />
+                        <Button fx:id="addCappelloLanaButton" layoutX="109.0" layoutY="51.0" mnemonicParsing="false" onAction="#aggiungiCappelloLana" prefHeight="35.0" prefWidth="35.0" text="+" />
                         <Text layoutX="117.0" layoutY="41.0" strokeType="OUTSIDE" strokeWidth="0.0" text="40.00 €" />
-                        <Button layoutX="170.0" layoutY="51.0" mnemonicParsing="false" prefHeight="35.0" prefWidth="35.0" text="-" />
+                        <Button fx:id="removeCappelloLanaButton" layoutX="170.0" layoutY="51.0" mnemonicParsing="false" onAction="#rimuoviCappelloLana" prefHeight="35.0" prefWidth="35.0" text="-" />
                      </children>
                   </AnchorPane>
                   <AnchorPane layoutX="30.0" layoutY="630.0" prefHeight="97.0" prefWidth="234.0" style="-fx-background-color: white;">
@@ -144,9 +144,9 @@
                            </image>
                         </ImageView>
                         <Text layoutX="76.0" layoutY="20.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Socks Home 22/23" />
-                        <Button layoutX="102.0" layoutY="51.0" mnemonicParsing="false" prefHeight="35.0" prefWidth="35.0" text="+" />
+                        <Button fx:id="addSocksHomeButton" layoutX="102.0" layoutY="51.0" mnemonicParsing="false" onAction="#aggiungiSocksHome" prefHeight="35.0" prefWidth="35.0" text="+" />
                         <Text layoutX="117.0" layoutY="41.0" strokeType="OUTSIDE" strokeWidth="0.0" text="17.50 €" />
-                        <Button layoutX="165.0" layoutY="51.0" mnemonicParsing="false" prefHeight="35.0" prefWidth="35.0" text="-" />
+                        <Button fx:id="removeSocksHomeButton" layoutX="165.0" layoutY="51.0" mnemonicParsing="false" onAction="#rimuoviSocksHome" prefHeight="35.0" prefWidth="35.0" text="-" />
                      </children>
                   </AnchorPane>
                   <AnchorPane layoutX="332.0" layoutY="630.0" prefHeight="97.0" prefWidth="234.0" style="-fx-background-color: white;">
@@ -157,13 +157,13 @@
                            </image>
                         </ImageView>
                         <Text layoutX="88.0" layoutY="20.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Socks Away 22/23" />
-                        <Button layoutX="109.0" layoutY="51.0" mnemonicParsing="false" prefHeight="35.0" prefWidth="35.0" text="+" />
+                        <Button fx:id="addSocksAwayButton" layoutX="109.0" layoutY="51.0" mnemonicParsing="false" onAction="#aggiungiSocksAway" prefHeight="35.0" prefWidth="35.0" text="+" />
                         <Text layoutX="117.0" layoutY="41.0" strokeType="OUTSIDE" strokeWidth="0.0" text="17.50 €" />
-                        <Button layoutX="170.0" layoutY="51.0" mnemonicParsing="false" prefHeight="35.0" prefWidth="35.0" text="-" />
+                        <Button fx:id="removeSocksAwayButton" layoutX="170.0" layoutY="51.0" mnemonicParsing="false" onAction="#rimuoviSocksAway" prefHeight="35.0" prefWidth="35.0" text="-" />
                      </children>
                   </AnchorPane>
-                  <Button layoutX="340.0" layoutY="756.0" mnemonicParsing="false" text="Vai al carrello" />
-                  <Button layoutX="147.0" layoutY="756.0" mnemonicParsing="false" text="Torna indietro" />
+                  <Button fx:id="goOnButton" layoutX="340.0" layoutY="756.0" mnemonicParsing="false" onAction="#goToCarrello" text="Vai al carrello" />
+                  <Button fx:id="goBackButton" layoutX="147.0" layoutY="756.0" mnemonicParsing="false" onAction="#goBack" text="Torna indietro" />
                </children>
             </AnchorPane>
          </content>
@@ -175,9 +175,9 @@
                   <Font size="48.0" />
                </font>
             </Text>
-            <Button alignment="CENTER_RIGHT" layoutX="552.0" layoutY="24.0" mnemonicParsing="false" prefHeight="37.0" prefWidth="37.0" />
-            <Button layoutX="552.0" layoutY="24.0" mnemonicParsing="false" prefHeight="37.0" prefWidth="37.0" translateX="-65.0" />
-            <Button layoutX="552.0" layoutY="24.0" mnemonicParsing="false" prefHeight="37.0" prefWidth="37.0" translateX="-130.0" />
+            <Button fx:id="homeButton" alignment="CENTER_RIGHT" layoutX="552.0" layoutY="24.0" mnemonicParsing="false" onAction="#goHome" prefHeight="37.0" prefWidth="37.0" />
+            <Button fx:id="logOutButton" layoutX="552.0" layoutY="24.0" mnemonicParsing="false" onAction="#logOut" prefHeight="37.0" prefWidth="37.0" translateX="-65.0" />
+            <Button fx:id="msgButton" layoutX="552.0" layoutY="24.0" mnemonicParsing="false" onAction="#goToMsg" prefHeight="37.0" prefWidth="37.0" translateX="-130.0" />
             <ImageView fitHeight="30.0" fitWidth="30.0" layoutX="426.0" layoutY="28.0" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@../ImmaginiUI/icons8-nuovo-messaggio-24.png" />

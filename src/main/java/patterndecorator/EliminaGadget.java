@@ -9,10 +9,10 @@ public class EliminaGadget extends DecoratorCarrello{
 
     public void rimuoviDalCarrello(Gadget gadget) {
         int i=0;
-        while(this.component.ordine.get(i).getNomeGadget()!= gadget.getNomeGadget() && i<this.component.ordine.size()){
+        while(!(this.component.ordine.get(i).getNomeGadget().equals(gadget.getNomeGadget())) && i<this.component.ordine.size()){
             i++;
         }
-        if(this.component.ordine.get(i).getNomeGadget()!= gadget.getNomeGadget()) {
+        if(!(this.component.ordine.get(i).getNomeGadget().equals(gadget.getNomeGadget()))) {
             this.component.ordine.remove(i);
         }
     }

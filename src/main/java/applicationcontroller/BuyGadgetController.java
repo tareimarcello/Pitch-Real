@@ -10,7 +10,7 @@ import patterndecorator.Carrello;
 import patterndecorator.EliminaGadget;
 
 public class BuyGadgetController {
-    public Carrello carrello;
+    private Carrello carrello;
     public BuyGadgetController(){
         this.carrello=new Carrello();
     }
@@ -36,5 +36,8 @@ public class BuyGadgetController {
     }
     public void goToOrdine(){
         this.carrello.mostraCarrello();
+    }
+    public Carrello getCarrello(){
+        return this.carrello;
     }
 }

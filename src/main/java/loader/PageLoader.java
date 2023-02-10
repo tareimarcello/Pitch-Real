@@ -93,38 +93,38 @@ public class PageLoader {
     public static void loaderCarrello(){
         int i=0;
         double totPrice=0;
-        FXMLLoader fxmlLoader = new FXMLLoader(PageLoader.class.getResource("hello-view.fxml"));
+        FXMLLoader fxmlLoader = new FXMLLoader(PageLoader.class.getResource("Carrello.fxml"));
         AnchorPane rootCarrello=null;
         try {
             rootCarrello = fxmlLoader.load();
         } catch (IOException e) {
             System.exit(0);
         }
-        Carrello ordineDaStampare=CreateBuyGadget.getInstance().getcontroller().carrello;
+        Carrello ordineDaStampare=CreateBuyGadget.getInstance().getcontroller().getCarrello();
         Scene scene = new Scene(rootCarrello);
         Text text=new Text();
         text.setText("Stai acquistando: ");
-        for(i=0;i< ordineDaStampare.ordine.size();i++) {
-            text.setText(text.getText()+String.format("\n%s",ordineDaStampare.ordine.get(i).getNomeGadget()));
-            totPrice=totPrice+ordineDaStampare.ordine.get(i).getPrezzo();
+        for(i=0;i< ordineDaStampare.getOrdine().size();i++) {
+            text.setText(text.getText()+String.format("%n%s",ordineDaStampare.getOrdine().get(i).getNomeGadget()));
+            totPrice=totPrice+ordineDaStampare.getOrdine().get(i).getPrezzo();
         }
         Text price=new Text(String.format("%d",totPrice));
-        Button BuyButton=new Button(price.getText());
-        BuyButton.setOnAction(new EventHandler<ActionEvent>(){
-            public void handle(ActionEvent Event){
+        Button buyButton=new Button(price.getText());
+        buyButton.setOnAction(new EventHandler<ActionEvent>(){
+            public void handle(ActionEvent event){
                 PageLoader.pageLoader("First-View/OrdineEffettuato.fxml");
             }
         });
-        Button BackButton=new Button("Torna allo store");
-        BackButton.setOnAction(new EventHandler<ActionEvent>(){
-            public void handle(ActionEvent Event){
+        Button backButton=new Button("Torna allo store");
+        backButton.setOnAction(new EventHandler<ActionEvent>(){
+            public void handle(ActionEvent event){
                 PageLoader.pageLoader("First-View/CityGadgetShop.fxml");
             }
         });
-        PageLoader.setLayoutButton(BuyButton,330,250);
-        PageLoader.setLayoutButton(BackButton,450,250);
+        PageLoader.setLayoutButton(buyButton,330,250);
+        PageLoader.setLayoutButton(backButton,450,250);
         PageLoader.setLayoutLabel(text,30,200);
-        rootCarrello.getChildren().addAll(text,BuyButton,BackButton);
+        rootCarrello.getChildren().addAll(text,buyButton,backButton);
         Stage stageCarrello=new Stage();
         stageCarrello.setScene(scene);
         stageCarrello.show();

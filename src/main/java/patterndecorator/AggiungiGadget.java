@@ -8,6 +8,6 @@ public class AggiungiGadget extends DecoratorCarrello{
     }
 
     public void aggiungialCarrello(Gadget gadget) {
-        this.component.ordine.add(gadget);
+        this.component.getOrdine().add(gadget);
     }
 }

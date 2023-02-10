@@ -6,12 +6,17 @@ import loader.PageLoader;
 import java.util.ArrayList;
 
 public class Carrello extends InterfacciaCarrello{
-    private ArrayList<Gadget> ordine;
+    public final ArrayList<Gadget> ordine;
+    public Carrello() {
+        this.ordine=new ArrayList<Gadget>();
+    }
     @Override
     public void mostraCarrello() {
         PageLoader.loaderCarrello();
     }
-    public ArrayList<Gadget> getOrdine(){
+   /* public ArrayList<Gadget> getOrdine(){
         return this.ordine;
     }
+
+    */
 }

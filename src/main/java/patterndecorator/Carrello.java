@@ -4,9 +4,10 @@ import entity.Gadget;
 import loader.PageLoader;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public class Carrello extends InterfacciaCarrello{
-    public final ArrayList<Gadget> ordine;
+    public final List<Gadget> ordine;
     public Carrello() {
         this.ordine=new ArrayList<Gadget>();
     }

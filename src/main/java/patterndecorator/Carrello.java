@@ -14,9 +14,4 @@ public class Carrello extends InterfacciaCarrello{
     public void mostraCarrello() {
         PageLoader.loaderCarrello();
     }
-   /* public ArrayList<Gadget> getOrdine(){
-        return this.ordine;
-    }
-
-    */
 }

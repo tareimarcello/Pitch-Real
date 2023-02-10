@@ -104,9 +104,9 @@ public class PageLoader {
         Scene scene = new Scene(rootCarrello);
         Text text=new Text();
         text.setText("Stai acquistando: ");
-        for(i=0;i< ordineDaStampare.getOrdine().size();i++) {
-            text.setText(text.getText()+String.format("%n%s",ordineDaStampare.getOrdine().get(i).getNomeGadget()));
-            totPrice=totPrice+ordineDaStampare.getOrdine().get(i).getPrezzo();
+        for(i=0;i< ordineDaStampare.ordine.size();i++) {
+            text.setText(text.getText()+String.format("%n%s",ordineDaStampare.ordine.get(i).getNomeGadget()));
+            totPrice=totPrice+ordineDaStampare.ordine.get(i).getPrezzo();
         }
         Text price=new Text(String.format("%d",totPrice));
         Button buyButton=new Button(price.getText());

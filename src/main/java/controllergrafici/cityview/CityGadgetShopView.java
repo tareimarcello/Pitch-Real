@@ -177,6 +177,6 @@ public class CityGadgetShopView {
     }
     @FXML
     private void goToCarrello(){
-
+        CreateBuyGadget.getInstance().getcontroller().goToOrdine();
     }
 }

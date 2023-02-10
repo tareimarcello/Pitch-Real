@@ -1,20 +1,26 @@
 package loader;
 
 import controllergrafici.loginview.LoginView;
+import create.CreateBuyGadget;
 import create.Createentity;
 import exception.PrivateConstructorException;
+import javafx.event.ActionEvent;
+import javafx.event.EventHandler;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.text.Font;
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
+import patterndecorator.Carrello;
 
 import java.io.IOException;
 
 import static javafx.scene.paint.Color.GREEN;
+import static javafx.scene.paint.Color.WHITE;
 
 
 public class PageLoader {
@@ -83,5 +89,55 @@ public class PageLoader {
         Stage ticketOrderStage=new Stage();
         ticketOrderStage.setScene(ticketOrder);
         ticketOrderStage.show();                    //Ctreo una scena dinamicamente con i dati del biglietto
+    }
+    public static void loaderCarrello(){
+        int i=0;
+        double totPrice=0;
+        FXMLLoader fxmlLoader = new FXMLLoader(PageLoader.class.getResource("hello-view.fxml"));
+        AnchorPane rootCarrello=null;
+        try {
+            rootCarrello = fxmlLoader.load();
+        } catch (IOException e) {
+            System.exit(0);
+        }
+        Carrello ordineDaStampare=CreateBuyGadget.getInstance().getcontroller().carrello;
+        Scene scene = new Scene(rootCarrello);
+        Text text=new Text();
+        text.setText("Stai acquistando: ");
+        for(i=0;i< ordineDaStampare.ordine.size();i++) {
+            text.setText(text.getText()+String.format("\n%s",ordineDaStampare.ordine.get(i).getNomeGadget()));
+            totPrice=totPrice+ordineDaStampare.ordine.get(i).getPrezzo();
+        }
+        Text price=new Text(String.format("%d",totPrice));
+        Button BuyButton=new Button(price.getText());
+        BuyButton.setOnAction(new EventHandler<ActionEvent>(){
+            public void handle(ActionEvent Event){
+                PageLoader.pageLoader("First-View/OrdineEffettuato.fxml");
+            }
+        });
+        Button BackButton=new Button("Torna allo store");
+        BackButton.setOnAction(new EventHandler<ActionEvent>(){
+            public void handle(ActionEvent Event){
+                PageLoader.pageLoader("First-View/CityGadgetShop.fxml");
+            }
+        });
+        PageLoader.setLayoutButton(BuyButton,330,250);
+        PageLoader.setLayoutButton(BackButton,450,250);
+        PageLoader.setLayoutLabel(text,30,200);
+        rootCarrello.getChildren().addAll(text,BuyButton,BackButton);
+        Stage stageCarrello=new Stage();
+        stageCarrello.setScene(scene);
+        stageCarrello.show();
+    }
+    private static void setLayoutLabel(Text l,double x,double y){
+        l.setTranslateX(x);
+        l.setTranslateY(y);
+        l.setFill(WHITE);
+        Font myFont=new Font("System Regular",24);
+        l.setFont(myFont);
+    }
+    private static void setLayoutButton(Button b, double x, double y){
+        b.setTranslateX(x);
+        b.setTranslateY(y);
     }
 }

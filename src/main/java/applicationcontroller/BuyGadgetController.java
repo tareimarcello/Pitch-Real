@@ -10,7 +10,7 @@ import patterndecorator.Carrello;
 import patterndecorator.EliminaGadget;
 
 public class BuyGadgetController {
-    private Carrello carrello;
+    public Carrello carrello;
     public BuyGadgetController(){
         this.carrello=new Carrello();
     }

@@ -1,37 +1,18 @@
 package loader;
 
-import controllergrafici.loginview.LoginView;
-import create.CreateBuyGadget;
-import create.Createentity;
 import exception.PrivateConstructorException;
-import javafx.event.ActionEvent;
-import javafx.event.EventHandler;
-import javafx.fxml.FXMLLoader;
-import javafx.scene.Parent;
-import javafx.scene.Scene;
-import javafx.scene.control.Button;
-import javafx.scene.control.TextField;
-import javafx.scene.layout.AnchorPane;
-import javafx.scene.text.Font;
-import javafx.scene.text.Text;
-import javafx.stage.Stage;
-import patterndecorator.Carrello;
-
-import java.io.IOException;
-
-import static javafx.scene.paint.Color.GREEN;
-import static javafx.scene.paint.Color.WHITE;
 
 
 public class PageLoader {
     private PageLoader() throws PrivateConstructorException {
         throw new PrivateConstructorException("Non chiamare questo costruttore");
     }
+  /*
     public static void setCoordinate(TextField setter,int x,int y){
         setter.setLayoutX(x);
         setter.setLayoutY(y);
     }
-    public static void pageLoader(String filename){            //Metodo per il caricamneto della pagina
+    public static void pageLoader(String filename){            //Metodo per il caricamento della pagina
         FXMLLoader loader = new FXMLLoader(PageLoader.class.getResource(filename));
         Parent root = null;
         try {
@@ -118,7 +99,7 @@ public class PageLoader {
         Button backButton=new Button("Torna allo store");
         backButton.setOnAction(new EventHandler<ActionEvent>(){
             public void handle(ActionEvent event){
-                PageLoader.pageLoader("First-View/CityGadgetShop.fxml");
+                this.pageSwitch.switchToClub("First-View/ClubGadgetShop.fxml", event, "GadgetShop","");    //Occhio qua da rivedere
             }
         });
         PageLoader.setLayoutButton(buyButton,330,250);
@@ -140,4 +121,6 @@ public class PageLoader {
         b.setTranslateX(x);
         b.setTranslateY(y);
     }
+
+   */
 }

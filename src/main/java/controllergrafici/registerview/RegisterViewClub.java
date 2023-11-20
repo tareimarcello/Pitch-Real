@@ -2,29 +2,30 @@ package controllergrafici.registerview;
 
 import applicationcontroller.Registercontroller;
 import bean.RegisterBean;
-import controllergrafici.registerview.RegisterView;
 import create.Createregister;
 import exception.FormatErrorException;
 import exception.NullString;
 import exception.ShortPassException;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.TextField;
-import loader.PageLoader;
+import loader.Page;
 
 public class RegisterViewClub extends RegisterView {
+    private Page pageSwitch = new Page();
     @FXML
     private TextField nomeClubText;
     @Override
-    protected void registerButtonClick() {
+    protected void registerButtonClick(ActionEvent event) {
         RegisterBean registraClub=null;
         try{
             registraClub = new RegisterBean(emailText.getText(), passwdText.getText(), nomeClubText.getText(), "Club",null);
         } catch (ShortPassException e) {
-            PageLoader.pageLoader("First-View/RegisterViewClubShortPass.fxml");
+            this.pageSwitch.switchTo("First-View/RegisterViewClubShortPass.fxml", event, "RegisterViewClubShortPass");
         } catch (FormatErrorException e) {
-            PageLoader.pageLoader("First-View/RegisterViewClubFormatError.fxml");
+            this.pageSwitch.switchTo("First-View/RegisterViewClubFormatError.fxml", event, "RegisterViewClubFormatError");
         } catch (NullString e) {
-            PageLoader.pageLoader("First-View/RegisterViewClubNullString.fxml");
+            this.pageSwitch.switchTo("First-View/RegisterViewClubNullString.fxml", event, "RegisterViewClubNullString");
         }
         Createregister log=Createregister.getInstance();
         Registercontroller registra=log.createController();

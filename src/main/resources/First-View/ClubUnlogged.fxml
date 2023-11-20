@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.image.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.shape.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="483.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllergrafici.cityview.ClubGadgetShopView">
+    <children>
+        <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#47484a" height="78.0" stroke="BLACK" strokeType="INSIDE" width="603.0" />
+        <Text fill="#fcf9f9" layoutX="14.0" layoutY="58.0" strokeType="OUTSIDE" strokeWidth="0.0" text="PITCH">
+            <font>
+                <Font size="48.0" />
+            </font>
+        </Text>
+        <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#47484a" height="319.0" layoutX="-2.0" layoutY="171.0" stroke="BLACK" strokeType="INSIDE" width="603.0" />
+        <Text fill="WHITE" layoutX="26.0" layoutY="234.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Benvenuto nella Homepage del club. Cosa vuoi fare?">
+            <font>
+                <Font size="24.0" />
+            </font>
+        </Text>
+        <Button layoutX="132.0" layoutY="315.0" mnemonicParsing="false" prefHeight="45.0" prefWidth="45.0" />
+        <Button layoutX="408.0" layoutY="315.0" mnemonicParsing="false" prefHeight="45.0" prefWidth="45.0" />
+        <ImageView fitHeight="40.0" fitWidth="40.0" layoutX="135.0" layoutY="318.0" pickOnBounds="true" preserveRatio="true">
+            <image>
+                <Image url="@../ImmaginiUI/icons8-biglietto-stellato-24.png" />
+            </image>
+        </ImageView>
+        <ImageView fitHeight="40.0" fitWidth="40.0" layoutX="411.0" layoutY="318.0" pickOnBounds="true" preserveRatio="true">
+            <image>
+                <Image url="@../ImmaginiUI/icons8-negozio-online-24.png" />
+            </image>
+        </ImageView>
+      <Button layoutX="506.0" layoutY="24.0" mnemonicParsing="false" text="Login" />
+    </children>
+</AnchorPane>

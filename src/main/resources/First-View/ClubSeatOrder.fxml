@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.image.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.shape.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="483.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllergrafici.cityview.ClubTicketSeatView">
+    <children>
+        <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#47484a" height="78.0" stroke="BLACK" strokeType="INSIDE" width="603.0" />
+        <Text fill="#fcf9f9" layoutX="14.0" layoutY="58.0" strokeType="OUTSIDE" strokeWidth="0.0" text="PITCH">
+            <font>
+                <Font size="48.0" />
+            </font>
+        </Text>
+        <Button fx:id="messageButton" layoutX="552.0" layoutY="24.0" mnemonicParsing="false" onAction="#messageButtonClick" prefHeight="37.0" prefWidth="37.0" translateX="-130.0" />
+        <ImageView fitHeight="30.0" fitWidth="30.0" layoutX="426.0" layoutY="28.0" pickOnBounds="true" preserveRatio="true">
+            <image>
+                <Image url="@../ImmaginiUI/icons8-nuovo-messaggio-24.png" />
+            </image>
+        </ImageView>
+        <Button fx:id="logOutButton" layoutX="552.0" layoutY="24.0" mnemonicParsing="false" onAction="#logOutButtonClick" prefHeight="37.0" prefWidth="37.0" translateX="-65.0" />
+        <ImageView fitHeight="30.0" fitWidth="30.0" layoutX="491.0" layoutY="28.0" pickOnBounds="true" preserveRatio="true">
+            <image>
+                <Image url="@../ImmaginiUI/icons8-uscita-24.png" />
+            </image>
+        </ImageView>
+        <Button fx:id="homeButton" layoutX="552.0" layoutY="24.0" mnemonicParsing="false" onAction="#homeButtonClick" prefHeight="37.0" prefWidth="37.0" />
+        <ImageView fitHeight="30.0" fitWidth="30.0" layoutX="556.0" layoutY="28.0" pickOnBounds="true" preserveRatio="true">
+            <image>
+                <Image url="@../ImmaginiUI/icons8-casa-24.png" />
+            </image>
+        </ImageView>
+        <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#47484a" height="319.0" layoutX="-2.0" layoutY="171.0" stroke="BLACK" strokeType="INSIDE" width="603.0" />
+        <Text fill="#fcfafa" layoutX="42.0" layoutY="220.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Il biglietto è stato generato, verrà presto inviato via mail. Se il biglietto non è stato inviato cliccare su invia via mail per richiedere un'altra copia." wrappingWidth="518.62890625">
+            <font>
+                <Font size="24.0" />
+            </font>
+        </Text>
+        <Button fx:id="sendMail" layoutX="110.0" layoutY="362.0" mnemonicParsing="false" onAction="#sendMailButtonClick" text="Invia via mail" />
+        <Button fx:id="goSquadHome" layoutX="309.0" layoutY="362.0" mnemonicParsing="false" onAction="#goSquadHomeButtonClick" text="Torna alla Home della squadra " />
+    </children>
+</AnchorPane>

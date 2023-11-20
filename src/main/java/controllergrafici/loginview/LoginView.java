@@ -8,14 +8,16 @@ import exception.FormatErrorException;
 import exception.NullString;
 import exception.ShortPassException;
 import interfacce.Credenziali;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
-import loader.PageLoader;
+import loader.Page;
 
 import java.util.ArrayList;
 
 public class LoginView implements Credenziali {
+    private Page pageSwitch= new Page();
     @FXML
     private Button loginButton;
     @FXML
@@ -24,28 +26,28 @@ public class LoginView implements Credenziali {
     private TextField passwdText;
     private ArrayList<String> credenziali;
     @FXML
-    private void startLogin(){
+    private void startLogin(ActionEvent e){
         this.catturaCredenziali();
         Loginbean credenzialiInput=null;
         try {
             credenzialiInput=new Loginbean(credenziali.get(0),credenziali.get(1));
-        }catch (NullString e){                                      //Eccezione che lancio in caso i campi email e password vengano lasciati vuoti
+        }catch (NullString ex){                                      //Eccezione che lancio in caso i campi email e password vengano lasciati vuoti
             credenzialiInput=null;
-            PageLoader.loginPageLoader("First-View/LoginViewNullString.fxml");
-        }catch(FormatErrorException e){
+            this.pageSwitch.switchTo("First-View/LoginViewNullString.fxml", e, "LoginNullString");
+        }catch(FormatErrorException ex){
             credenzialiInput=null;
-            PageLoader.loginPageLoader("First-View/LoginViewFormatError.fxml");
-        }catch (ShortPassException e){
+            this.pageSwitch.switchTo("First-View/LoginViewFormatError.fxml", e, "LoginViewFormatError");
+        }catch (ShortPassException ex){
             credenzialiInput=null;
-            PageLoader.loginPageLoader("First-View/loginViewShortPass.fxml");
+            this.pageSwitch.switchTo("First-View/loginViewShortPass.fxml", e, "LoginViewShortPass");
         }
         if(credenzialiInput!=null) {
                 Createlogin create = Createlogin.getInstance();
                 Logincontroller controller = create.createController();
                 try {
                     controller.controllaCredenziali(credenzialiInput);
-                }catch(CredentialException e){
-                    PageLoader.loginPageLoader("First-View/LoginViewCredError.fxml");
+                }catch(CredentialException ex){
+                    this.pageSwitch.switchTo("First-View/LoginViewCredError.fxml", e, "LoginViewCredError");
                 }
         }
     }
@@ -58,6 +60,6 @@ public class LoginView implements Credenziali {
     }
 
     public void finalizzaControllo() {
-        PageLoader.loginPageLoader("First-View/LoggedHomepage.fxml");
+        this.pageSwitch.switchTo("First-View/LoggedHomepage.fxml", null, "LoggedHomepage");     //è da provare se non funziona qualcosa torna qui
     }
 }

@@ -41,7 +41,7 @@
         </AnchorPane>
         <AnchorPane layoutY="155.0" prefHeight="254.0" prefWidth="600.0" style="-fx-background-color: #47484a;">
          <children>
-            <Text fill="#fffdfd" layoutX="56.0" layoutY="45.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Ordine effetuato.Quando verrà accettato verrai informato nella casella messaggi" wrappingWidth="488.0400390625">
+            <Text fill="#fffdfd" layoutX="56.0" layoutY="45.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Ordine effettuato.Quando verrà accettato verrai informato nella casella messaggi" wrappingWidth="488.0400390625">
                <font>
                   <Font size="18.0" />
                </font>

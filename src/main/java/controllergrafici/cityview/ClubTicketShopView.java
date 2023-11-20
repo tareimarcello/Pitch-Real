@@ -1,11 +1,13 @@
 package controllergrafici.cityview;
 
 import buttonbehavior.ButtonOperation;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
-import loader.PageLoader;
+import loader.Page;
 
-public abstract class CityTicketShopView {
+public abstract class ClubTicketShopView {
+    private Page pageSwitch = new Page();
     @FXML
     protected Button goOnButton;
     @FXML
@@ -13,7 +15,7 @@ public abstract class CityTicketShopView {
     @FXML
     protected Button homeButton;
     @FXML
-    protected Button logoutButton;
+    protected Button logOutButton;
     @FXML
     protected Button messageButton;
     @FXML
@@ -25,9 +27,9 @@ public abstract class CityTicketShopView {
         ButtonOperation.behaviorMsgButton();
     }
     @FXML
-    protected void homeButtonClick(){
-        PageLoader.pageLoader("First-View/LoggedHomepage.fxml");
+    protected void homeButtonClick(ActionEvent e){
+        this.pageSwitch.switchTo("First-View/LoggedHompegae.fxml",e,"LoggedHomepage");
     }
     @FXML
-    protected abstract void goBackButtonClick();
+    protected abstract void goBackButtonClick(ActionEvent e);
 }

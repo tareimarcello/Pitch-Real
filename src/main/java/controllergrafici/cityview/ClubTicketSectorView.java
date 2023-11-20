@@ -5,33 +5,36 @@ import create.CreateBuyTicket;
 import exception.NullSelectionException;
 import exception.SectorFullException;
 import javafx.collections.FXCollections;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.ComboBox;
-import loader.PageLoader;
+import loader.Page;
 
-public class CityticketSectorView extends CityTicketShopView{
+public class ClubTicketSectorView extends ClubTicketShopView {
+    private Page pageSwitch =new Page();
     @FXML
     private ComboBox<String> sector;
     public void initialize(){               //Metodo per inizializzare la comboBox
         sector.setItems(FXCollections.observableArrayList("North Stand","East Stand","South Stand","The Collin Bell Stand"));
     }
-    @FXML @Override
-    protected void goBackButtonClick(){
-        PageLoader.pageLoader("First-View/ManchesterCityLogged.fxml");
+    @FXML
+    @Override
+    protected void goBackButtonClick(ActionEvent e){
+        this.pageSwitch.switchToClub("First-View/ClubLogged.fxml",e,"","ClubLogged","");
     }
     @FXML
-    private void goToSelectSeat(){
+    private void goToSelectSeat(ActionEvent event){
         BuyTicketBean sectorInput=new BuyTicketBean("Manchester City");
         try {
             sectorInput.setSectorName(sector.getValue());
         }catch(NullSelectionException e){
-            PageLoader.pageLoader("First-View/CityTicketShopNullSelection.fxml");
+            this.pageSwitch.switchToClub("ClubSectorFull.fxml", event, "","ClubSectorFull","");
         }
         try {
             CreateBuyTicket.getInstance().createController().verificaDispSector(sectorInput);
         }catch(SectorFullException e){
-            PageLoader.pageLoader("First-View/CityTicketShopSectorFull.fxml");
+            this.pageSwitch.switchToClub("ClubTicketShopNullSelection.fxml", event, "","ClubTicketShopNullSelection","");
         }
-        PageLoader.pageLoader("First-View/CitySelectSeat.fxml");
+        this.pageSwitch.switchToClub("First-View/ClubSeatOrder",event,"","ClubSeatOrder","");
     }
 }

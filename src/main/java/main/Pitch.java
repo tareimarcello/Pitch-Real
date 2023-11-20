@@ -11,7 +11,7 @@ import java.io.IOException;
 public class Pitch extends Application {
     @Override
     public void start(Stage primaryStage) throws IOException {
-        FXMLLoader loader = new FXMLLoader(getClass().getClassLoader().getResource("First-View/CitySelectSeatOrder.fxml"));
+        FXMLLoader loader = new FXMLLoader(getClass().getClassLoader().getResource("First-View/Homepage.fxml"));
         Parent root=loader.load();
         Scene scene = new Scene(root);
         primaryStage.setScene(scene);

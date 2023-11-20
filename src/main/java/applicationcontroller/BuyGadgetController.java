@@ -7,7 +7,6 @@ import dao.OrderDao;
 import entity.Gadget;
 import exception.GadgetFinishException;
 import loader.Page;
-import loader.PageLoader;
 import patterndecorator.AggiungiGadget;
 import patterndecorator.Carrello;
 import patterndecorator.EliminaGadget;

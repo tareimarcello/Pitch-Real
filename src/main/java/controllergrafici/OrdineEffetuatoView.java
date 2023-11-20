@@ -1,7 +1,7 @@
 package controllergrafici;
 
-import bean.ClubBean;
 import buttonbehavior.ButtonOperation;
+import create.Createentity;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
@@ -23,7 +23,8 @@ public class OrdineEffetuatoView {
     }
     @FXML
     private void goBack(ActionEvent event){      //Implementa Bean con nome club in cui sto nella home
-        this.pageSwitch.switchTo("First-View/" + ClubBean.ClubRequest.getNomeClub() + "Logged.fxml", event, "ClubSearchView");
+        String nomeClub = Createentity.getInstance().getclub().getName();
+        this.pageSwitch.switchTo("First-View/" + nomeClub + "Logged.fxml", event, "ClubSearchView");
     }
     @FXML
     private void goMsg(){

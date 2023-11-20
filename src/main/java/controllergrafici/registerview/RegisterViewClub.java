@@ -10,10 +10,8 @@ import exception.ShortPassException;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.TextField;
-import loader.Page;
 
 public class RegisterViewClub extends RegisterView {
-    private Page pageSwitch = new Page();
     @FXML
     private TextField nomeClubText;
     @Override

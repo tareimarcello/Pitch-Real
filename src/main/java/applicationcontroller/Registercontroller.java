@@ -8,10 +8,8 @@ import entity.Account;
 import entity.Club;
 import exception.CredentialException;
 import exception.DuplicatedRecordException;
-import loader.Page;
 
 public class Registercontroller {
-    private Page pageSwitch = new Page();
     public void  registra(RegisterBean b) throws DuplicatedRecordException {
         AccountDao registerDaoFan = new AccountDao();
         Club c = null;

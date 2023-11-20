@@ -12,6 +12,7 @@ import loader.Page;
 public class ClubGadgetShopView {
     private Page pageSwitch=new Page();
     private String finish = "GadgetFinish";
+    private String finishView = "First-View/GadgetFinish.fxml";
     @FXML
     private Button homeButton;
     @FXML
@@ -69,7 +70,7 @@ public class ClubGadgetShopView {
         try {
             CreateBuyGadget.getInstance().createController().aggiungiElemento(gadget);
         }catch(GadgetFinishException ex){
-            this.pageSwitch.switchToClub("First-View/GadgetFinish.fxml",e,"",finish,"");
+            this.pageSwitch.switchToClub(finishView,e,"",finish,"");
         }
     }
     @FXML
@@ -78,7 +79,7 @@ public class ClubGadgetShopView {
         try {
             CreateBuyGadget.getInstance().createController().aggiungiElemento(gadget);
         }catch(GadgetFinishException ex){
-            this.pageSwitch.switchToClub("First-View/GadgetFinish.fxml",e,"",finish,"");
+            this.pageSwitch.switchToClub(finishView,e,"",finish,"");
         }
     }
     @FXML
@@ -88,7 +89,7 @@ public class ClubGadgetShopView {
             CreateBuyGadget.getInstance().createController().aggiungiElemento(gadget);
 
         } catch (GadgetFinishException ex) {
-            this.pageSwitch.switchToClub("First-View/GadgetFinish.fxml",e,"",finish,"");
+            this.pageSwitch.switchToClub(finishView,e,"",finish,"");
         }
     }
     @FXML
@@ -97,7 +98,7 @@ public class ClubGadgetShopView {
         try {
             CreateBuyGadget.getInstance().createController().aggiungiElemento(gadget);
         }catch(GadgetFinishException ex){
-            this.pageSwitch.switchToClub("First-View/GadgetFinish.fxml",e,"",finish,"");
+            this.pageSwitch.switchToClub(finishView,e,"",finish,"");
         }
     }
     @FXML
@@ -107,7 +108,7 @@ public class ClubGadgetShopView {
             CreateBuyGadget.getInstance().createController().aggiungiElemento(gadget);
 
         }catch(GadgetFinishException ex){
-            this.pageSwitch.switchToClub("First-View/GadgetFinish.fxml",e,"",finish,"");
+            this.pageSwitch.switchToClub(finishView,e,"",finish,"");
         }
     }
     @FXML
@@ -116,7 +117,7 @@ public class ClubGadgetShopView {
         try {
             CreateBuyGadget.getInstance().createController().aggiungiElemento(gadget);
         }catch(GadgetFinishException ex){
-            this.pageSwitch.switchToClub("First-View/GadgetFinish.fxml",e,"",finish,"");
+            this.pageSwitch.switchToClub(finishView,e,"",finish,"");
         }
     }
     @FXML

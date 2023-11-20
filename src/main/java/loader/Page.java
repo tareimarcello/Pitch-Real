@@ -108,9 +108,9 @@ public class Page {
 
     public void setSize(String name, ActionEvent event) {
         Stage stage = (Stage)((Node)event.getSource()).getScene().getWindow();
-        int index = name.indexOf("interf2");
+        int index = name.indexOf(INTERF2);
         if (index == -1) {
-            index = name.indexOf("interf1");
+            index = name.indexOf(INTERF1);
         }
 
         if (stage.getWidth() > 500.0) {

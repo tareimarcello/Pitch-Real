@@ -24,27 +24,4 @@ public class ClubTicketSeatView extends ClubTicketShopView {
     private void goSquadHomeButtonClick(ActionEvent e){
         this.pageSwitch.switchToClub("First-View/ClubLogged",e,"","Club Logged","");
     }
-    /*
-    @FXML
-    private void goToOrder(){
-        BuyTicketBean seat=new BuyTicketBean("Manchester City");
-        try {
-            seat.setSeatNum(seatNumber.getText());
-        }catch(NullSelectionException e){               //Catch dell'eccezione in caso di inserimento nullo
-
-        }catch(FormatErrorException e){                 //Catch dell'eccezione in caso di formato errato
-
-        }
-        try {
-            CreateBuyTicket.getInstance().getcontroller().verificaDispSeat(seat);
-        }catch(OccupedSeatException e){
-        }
-        try {
-            CreateBuyTicket.getInstance().getcontroller().creaBiglietto();
-        }catch(DuplicatedNameException e){
-
-        }
-    }
-    */
-
 }

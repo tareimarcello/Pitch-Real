@@ -19,8 +19,8 @@ public abstract class ClubTicketShopView {
     @FXML
     protected Button messageButton;
     @FXML
-    protected void logOutButtonClick(){
-        ButtonOperation.behaviorLogOut();
+    protected void logOutButtonClick(ActionEvent e){
+        ButtonOperation.behaviorLogOut(e);
     }
     @FXML
     protected void messageButtonClick(){

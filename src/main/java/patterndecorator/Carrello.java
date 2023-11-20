@@ -1,7 +1,6 @@
 package patterndecorator;
 
 import entity.Gadget;
-import loader.PageLoader;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -13,6 +12,5 @@ public class Carrello extends InterfacciaCarrello{
     }
     @Override
     public void mostraCarrello() {
-        PageLoader.loaderCarrello();
     }
 }

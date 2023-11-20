@@ -25,7 +25,7 @@ public class ClubHomeViewLogged extends ClubHomeView {
     }
     @FXML
     private void logOutButtonClick(ActionEvent e){                       //Metodo che mi fa fare il logout
-        ButtonOperation.behaviorLogOut();                   //
+        ButtonOperation.behaviorLogOut(e);                   //
     }
     @FXML
     private void msgButtonClick(ActionEvent e){

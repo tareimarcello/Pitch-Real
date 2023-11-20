@@ -53,8 +53,8 @@ public class ClubGadgetShopView {
         this.pageSwitch.switchTo("First-View/LoggedHomepage.fxml",e,"Homepage");
     }
     @FXML
-    private void logOut(){
-        ButtonOperation.behaviorLogOut();
+    private void logOut(ActionEvent e){
+        ButtonOperation.behaviorLogOut(e);
     }
     @FXML
     private void goToMsg(){

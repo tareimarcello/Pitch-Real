@@ -18,8 +18,8 @@ public class OrdineEffetuatoView {
     @FXML
     private Button goSquadHome;
     @FXML
-    private void logOut(){
-        ButtonOperation.behaviorLogOut();
+    private void logOut(ActionEvent e){
+        ButtonOperation.behaviorLogOut(e);
     }
     @FXML
     private void goBack(ActionEvent event){      //Implementa Bean con nome club in cui sto nella home

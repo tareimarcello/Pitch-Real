@@ -35,12 +35,12 @@ public class Page {
 
     static String check(String name, Stage stage) {
         int index;
-        if (stage.getWidth() > 500.0 && name.indexOf("interf1") > -1) {
-            index = name.indexOf("interf1");
+        if (stage.getWidth() > 500.0 && name.indexOf(INTERF1) > -1) {
+            index = name.indexOf(INTERF1);
             name = name.substring(0, index);
             name = name + "interf2.fxml";
-        } else if (stage.getWidth() < 500.0 && name.indexOf("interf2") > -1) {
-            index = name.indexOf("interf2");
+            } else if (stage.getWidth() < 500.0 && name.indexOf(INTERF2) > -1) {
+            index = name.indexOf(INTERF2);
             name = name.substring(0, index);
             name = name + "interf1.fxml";
             stage.setMaxWidth(414.0);

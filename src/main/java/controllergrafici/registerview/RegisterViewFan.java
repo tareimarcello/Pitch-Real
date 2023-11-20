@@ -3,6 +3,7 @@ package controllergrafici.registerview;
 import applicationcontroller.Registercontroller;
 import bean.RegisterBean;
 import create.Createregister;
+import exception.DuplicatedRecordException;
 import exception.FormatErrorException;
 import exception.NullString;
 import exception.ShortPassException;
@@ -27,6 +28,10 @@ public class RegisterViewFan extends RegisterView {
         }
         Createregister log=Createregister.getInstance();
         Registercontroller registra=log.createController();
-        registra.registra(registraFan);                       //Lancio la registrazione
+        try {
+            registra.registra(registraFan);                       //Lancio la registrazione
+        }catch(DuplicatedRecordException ex){
+            this.pageSwitch.switchTo("First-View/RegisterViewExistCredentialFan.fxml",event,"RegisterViewCredErr");
+        }
     }
 }

@@ -1,5 +1,6 @@
 package applicationcontroller;
 //Classe controller applicativo del caso d'uso registrati
+
 import bean.RegisterBean;
 import create.Createentity;
 import dao.AccountDao;
@@ -7,10 +8,11 @@ import entity.Account;
 import entity.Club;
 import exception.CredentialException;
 import exception.DuplicatedRecordException;
-import loader.PageLoader;
+import loader.Page;
 
 public class Registercontroller {
-    public void  registra(RegisterBean b) {
+    private Page pageSwitch = new Page();
+    public void  registra(RegisterBean b) throws DuplicatedRecordException {
         AccountDao registerDaoFan = new AccountDao();
         Club c = null;
         try {
@@ -23,15 +25,7 @@ public class Registercontroller {
             }
             Createentity createAcc = new Createentity();
             Account newAcc = createAcc.createAccount(b.getNome(), b.getEmail(), b.getPasswd(), b.getType(), c);   //Creo l'istanza di accout da inserire nel database
-            try {
-                registerDaoFan.newInsert(b, newAcc);                  //Inserimento dell'istanza sul db
-            } catch (DuplicatedRecordException duplicEx) {
-                if (newAcc.getClub() != null) {
-                    PageLoader.pageLoader("First-View/RegisterViewExistCredentialClub.fxml");
-                } else {
-                    PageLoader.pageLoader("First-View/RegisterViewExistCredentialFan.fxml");
-                }
-            }
+            registerDaoFan.newInsert(b, newAcc);                  //Inserimento dell'istanza sul db
         }
     }
 }
